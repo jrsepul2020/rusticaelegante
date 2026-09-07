@@ -69,7 +69,7 @@ Después, abrir `http://localhost:8000`.
 
 El sitio tiene once rutas HTML:
 
-1. `/index.html`: portada; carga `styles.css`, `site-chrome.css`, `site-chrome.js` y `script.js`.
+1. `/index.html`: portada; carga `styles.css`, `site-chrome.css`, `site-chrome.js` y `script.js`. En móvil el hero usa la pizza a pantalla completa como fondo bajo el titular; el directorio de categorías muestra cinco vías (sin vinos/bebidas/postres); el carrusel lleva ocho pizzas; la ubicación va en banda oscura para no encadenar dos rojos con la newsletter.
 2. `/carta-rustica-napoletana/index.html`: carta; reutiliza `styles.css`, añade `carta.css`, `site-chrome.css`, `site-chrome.js` y `carta.js`.
 3. `/eventos-rustica-napoletana/index.html`: celebraciones; carga `styles.css`, `internas.css`, `site-chrome.css` y `site-chrome.js`.
 4. `/novedades/index.html`: listado editorial; cada “Leer más” abre una página estática dentro de `/novedades/<slug>/`.

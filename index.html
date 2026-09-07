@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="site-chrome.css" />
+  <link rel="stylesheet" href="site-chrome.css?v=20260907k" />
 </head>
 <body>
   <aside class="top-bar" aria-label="Información de contacto">
@@ -90,10 +90,10 @@
       <section class="categories-section section-dark home-band home-paper" id="categorias">
         <div class="section-heading">
           <div>
-            <span class="section-kicker">Nuestra carta</span>
-            <h2>Empieza por aquí.</h2>
+            <span class="section-kicker">La carta</span>
+            <h2>Del horno a la mesa.</h2>
           </div>
-          <p>Ocho formas de recorrer la carta: del horno a la mesa, de una copa de la Sierra al último bocado dulce.</p>
+          <p>Cinco caminos para sentarse: pizzas, ensaladas, entrantes, focaccia y padelino. Elige por dónde empezar.</p>
         </div>
 
         <div class="category-grid">
@@ -104,29 +104,20 @@
             <span>02</span><div><small>Fresco</small><h3>Ensaladas</h3></div>
           </a>
           <a class="category-card" href="carta-rustica-napoletana/#entrantes" style="--bg:url('assets/carta/cazuela-de-provolone-italiano.png')">
-            <span>03</span><div><small>Para abrir boca</small><h3>Entrantes</h3></div>
-          </a>
-          <a class="category-card" href="carta-rustica-napoletana/#padelino" style="--bg:url('assets/carta/padelino-el-punto-prohibido.jpeg')">
-            <span>04</span><div><small>Pequeño formato</small><h3>Padelino</h3></div>
+            <span>03</span><div><small>Para compartir</small><h3>Entrantes</h3></div>
           </a>
           <a class="category-card" href="carta-rustica-napoletana/#focaccia" style="--bg:url('assets/carta/pan-baho-2-unidades.png')">
-            <span>05</span><div><small>Ligera y crujiente</small><h3>Focaccia</h3></div>
+            <span>04</span><div><small>Ligera y crujiente</small><h3>Focaccia</h3></div>
           </a>
-          <a class="category-card category-card--type category-card--green" href="carta-rustica-napoletana/#vinos">
-            <span>06</span><div><small>De aquí cerca</small><h3>Vinos</h3></div>
-          </a>
-          <a class="category-card category-card--type" href="carta-rustica-napoletana/#bebidas">
-            <span>07</span><div><small>Para brindar</small><h3>Bebidas</h3></div>
-          </a>
-          <a class="category-card category-card--type category-card--red" href="carta-rustica-napoletana/#postres">
-            <span>08</span><div><small>La dolce vita</small><h3>Postres</h3></div>
+          <a class="category-card" href="carta-rustica-napoletana/#padelino" style="--bg:url('assets/carta/padelino-el-punto-prohibido.jpeg')">
+            <span>05</span><div><small>Pequeño formato</small><h3>Padelino</h3></div>
           </a>
         </div>
       </section>
 
       <section class="pizza-slider-section section-dark home-band home-dark" aria-labelledby="slider-title">
         <div class="section-heading slider-heading">
-          <div><span class="section-kicker">Cuatro imprescindibles</span><h2 id="slider-title">Pizzas que vuelven.</h2></div>
+          <div><span class="section-kicker">Las que más pedimos</span><h2 id="slider-title">Ocho pizzas para no dudar.</h2></div>
           <div class="slider-controls" aria-label="Controles del carrusel">
             <button class="slider-btn prev" type="button" aria-label="Pizza anterior">←</button>
             <button class="slider-btn next" type="button" aria-label="Pizza siguiente">→</button>
@@ -151,6 +142,22 @@
               <img src="assets/carta/pizza-deluxe.jpeg" alt="Pizza Deluxe" />
               <div class="pizza-info"><div><span>04</span><h3>Deluxe</h3></div><strong>13,50 €</strong><p>San Marzano, carne, champiñones, cebolla, salami picante y pimiento.</p></div>
             </article>
+            <article class="pizza-slide">
+              <img src="assets/carta/pizza-trufada.jpeg" alt="Pizza Trufada" />
+              <div class="pizza-info"><div><span>05</span><h3>Trufada</h3></div><strong>15,00 €</strong><p>Boletus, fiordilatte, setas, parmesano, trufa y huevo.</p></div>
+            </article>
+            <article class="pizza-slide">
+              <img src="assets/carta/pizza-diavola.png" alt="Pizza Diavola" />
+              <div class="pizza-info"><div><span>06</span><h3>Diavola</h3></div><strong>12,00 €</strong><p>San Marzano, salami picante napolitano, fiordilatte y albahaca.</p></div>
+            </article>
+            <article class="pizza-slide">
+              <img src="assets/carta/pizza-siciliana.png" alt="Pizza Siciliana" />
+              <div class="pizza-info"><div><span>07</span><h3>Siciliana</h3></div><strong>15,00 €</strong><p>Crema bianca, mortadela, rúcula, pesto, burrata y parmesano.</p></div>
+            </article>
+            <article class="pizza-slide">
+              <img src="assets/carta/pizza-encanto.png" alt="Pizza Encanto" />
+              <div class="pizza-info"><div><span>08</span><h3>Encanto</h3></div><strong>15,00 €</strong><p>San Marzano, fiordilatte, cherry, rúcula, burrata y albahaca.</p></div>
+            </article>
           </div>
         </div>
       </section>
@@ -159,7 +166,8 @@
         <div class="menu-intro">
           <span class="section-kicker">Selección de la casa</span>
           <h2>Un vistazo a la carta.</h2>
-          <p>Producto italiano, ingredientes de la Sierra y masa de larga fermentación. Consulta la carta completa para descubrir todas las opciones.</p>
+          <p>Producto italiano, ingredientes de la Sierra y masa de larga fermentación. Abre la carta completa y elige con calma.</p>
+          <div class="menu-intro-cta"><a class="btn btn-red" href="carta-rustica-napoletana/">Ver carta completa <span>→</span></a></div>
         </div>
 
         <div class="menu-columns">
@@ -214,11 +222,11 @@
 
       <section class="about-section home-band home-paper home-about" id="nosotros">
         <div class="about-media"><img src="assets/forno-valoriani.jpg" alt="Horno Valoriani de Rústica Napoletana" /></div>
-        <div class="about-copy"><span class="section-kicker">Sobre nosotros</span><h2>Fuego, tiempo y masa.</h2><p>La pizza napolitana se entiende mejor cuando sobran las prisas. Fermentaciones largas, un horno que manda y una materia prima que no necesita esconderse detrás de nada.</p><a class="text-link" href="nosotros/">Conoce nuestra historia →</a></div>
+        <div class="about-copy"><span class="section-kicker">Sobre nosotros</span><h2>Fuego lento. Masa con tiempo.</h2><p>La pizza napolitana se entiende mejor cuando sobran las prisas. Fermentaciones largas, un horno que manda y una materia prima que no necesita esconderse detrás de nada.</p><a class="text-link" href="nosotros/">Conoce nuestra historia →</a></div>
       </section>
 
-      <section class="location-section home-band home-red" id="ubicacion">
-        <div><span class="section-kicker">Cazalla de la Sierra</span><h2>Tu próxima pizza está aquí.</h2></div>
+      <section class="location-section home-band home-dark" id="ubicacion">
+        <div><span class="section-kicker">Cazalla de la Sierra</span><h2>Reserva mesa. Enciende el horno.</h2></div>
         <div class="location-actions"><a class="btn btn-red" href="tel:+34955498119">Reservar</a><a class="btn btn-outline" href="tel:+34955498119">955 498 119</a></div>
       </section>
     </main>
@@ -258,7 +266,7 @@
     </div>
     <div class="site-footer__bottom"><span>© 2026 Rústica Napoletana</span><span>Cazalla de la Sierra · Sevilla</span><span class="site-footer__legal"><a href="aviso-legal/">Aviso legal</a><a href="politica-privacidad/">Privacidad</a><a href="politica-cookies/">Cookies</a></span><a href="#top">Volver arriba ↑</a></div>
   </footer>
-  <script src="site-chrome.js?v=20260907b"></script>
-  <script src="script.js?v=20260907"></script>
+  <script src="site-chrome.js?v=20260907k"></script>
+  <script src="script.js?v=20260907k"></script>
 </body>
 </html>

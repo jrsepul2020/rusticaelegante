@@ -3,8 +3,12 @@ const track = document.querySelector('.pizza-track');
 const prev = document.querySelector('.slider-btn.prev');
 const next = document.querySelector('.slider-btn.next');
 
-// Entrada visible + movimiento orgánico continuo de la pizza.
-if (pizzaMotion && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+// Entrada visible + movimiento orgánico continuo de la pizza (solo escritorio).
+if (
+  pizzaMotion &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+  !window.matchMedia('(max-width: 860px)').matches
+) {
   let pointerX = 0;
   let pointerY = 0;
   let currentX = 0;

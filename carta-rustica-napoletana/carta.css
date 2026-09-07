@@ -93,7 +93,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .dish p{max-width:800px;margin:9px 0 0;color:#69645e;font-size:13px;line-height:1.6}
 .dish>strong{font-family:Oswald,sans-serif;font-size:22px;white-space:nowrap;color:var(--menu-red)}
 .dish-title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.badge{padding:5px 8px 4px;border-radius:2px;color:#fff;font-family:Inter,sans-serif;font-size:7px;text-transform:uppercase;letter-spacing:.11em;font-weight:800;white-space:nowrap}
+.badge{padding:7px 11px 6px;border-radius:2px;color:#fff;font-family:Inter,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;white-space:nowrap}
 .badge.veggie{background:var(--menu-green)}
 .badge.spicy{background:var(--menu-red)}
 .badge.award{background:var(--menu-ink)}
@@ -105,7 +105,6 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .pizzas-section{position:relative}
 .pizza-heading{grid-template-columns:1fr minmax(320px,38%)}
 .pizza-heading img{height:480px}
-.flour-words{display:flex;justify-content:space-between;border-top:1px solid var(--menu-ink);border-bottom:1px solid var(--menu-ink);padding:14px 0;margin-bottom:54px;font-family:Georgia,serif;font-size:clamp(20px,2.5vw,38px);font-style:italic;color:var(--menu-red)}
 .dish-list-two{display:grid;grid-template-columns:1fr 1fr;column-gap:70px;border-top:2px solid var(--menu-ink)}
 .dish-list-two .dish.has-image{grid-template-columns:124px 1fr auto;gap:22px}
 .dish-list-two .dish-thumb{width:124px;height:124px}
@@ -251,7 +250,6 @@ body.lightbox-open{overflow:hidden}
   .dish>strong{font-size:19px}
   .dish-title{align-items:flex-start;flex-direction:column;gap:7px}
   .signature{margin:0 -8px;padding:24px 8px}
-  .flour-words{font-size:20px}
   .featured-menu-section{padding:82px 16px}
   .featured-menu-heading{margin-bottom:42px}
   .featured-menu-heading h2{font-size:clamp(43px,11vw,58px)}
