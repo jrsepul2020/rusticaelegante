@@ -10,6 +10,9 @@
     { "source": "/novedades/guia-repsol-2026", "destination": "/novedades/guia-repsol-2026/index.html" },
     { "source": "/novedades/segundo-mejor-pizzero-espana-2026", "destination": "/novedades/segundo-mejor-pizzero-espana-2026/index.html" },
     { "source": "/novedades/silvestre-finalista-la-mejor-pizza-2026", "destination": "/novedades/silvestre-finalista-la-mejor-pizza-2026/index.html" },
-    { "source": "/nosotros", "destination": "/nosotros/index.html" }
+    { "source": "/nosotros", "destination": "/nosotros/index.html" },
+    { "source": "/aviso-legal", "destination": "/aviso-legal/index.html" },
+    { "source": "/politica-privacidad", "destination": "/politica-privacidad/index.html" },
+    { "source": "/politica-cookies", "destination": "/politica-cookies/index.html" }
   ]
 }

@@ -11,18 +11,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css" />
   <link rel="stylesheet" href="../../internas.css" />
+  <link rel="stylesheet" href="../../site-chrome.css" />
 </head>
 <body class="inner-page">
-  <header class="inner-header" id="top">
+  <aside class="top-bar" aria-label="Información de contacto">
+    <div class="top-bar__inner"><a href="tel:+34955498119">955 498 119</a><span class="top-bar__star" aria-hidden="true">✱</span><span>C/ Egido 13, Cazalla de la Sierra, Sevilla</span><span class="top-bar__star" aria-hidden="true">✱</span><span>Jueves a Lunes: 20:00-00:00 · Cerrado mar-mié</span></div>
+  </aside>
+  <header class="site-header" id="top">
     <a class="brand" href="../../index.html" aria-label="Rústica Napoletana, volver al inicio">
       <span class="brand-mark" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span>
       <span class="brand-copy"><strong>PIZZERÍA NAPOLETANA</strong><span class="tricolore" aria-hidden="true"><i></i><i></i><i></i></span><small>CAZALLA DE LA SIERRA</small></span>
     </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="article-main-nav" aria-label="Abrir menú"><span></span><span></span></button>
     <nav class="main-nav" id="article-main-nav" aria-label="Navegación principal">
       <a href="../../index.html">Inicio</a><a href="../../carta-rustica-napoletana/">Carta</a><a href="../../eventos-rustica-napoletana/">Eventos</a><a class="active" href="../">Novedades</a><a href="../../nosotros/">Nosotros</a>
+      <div class="mobile-nav-context"><span class="mobile-nav-logo" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span><div class="mobile-nav-contact"><a href="tel:+34955498119">955 498 119</a><address>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</address><p>Jueves a Lunes: 20:00-00:00<br>Cerrado mar-mié</p></div></div>
     </nav>
-    <a class="btn btn-red btn-small header-reserve" href="../../carta-rustica-napoletana/">Ver carta</a>
+    <a class="btn btn-red btn-small header-reserve" href="tel:+34955498119">Reservar</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="article-main-nav" aria-label="Abrir menú"><span></span><span></span></button>
   </header>
 
   <main>
@@ -75,9 +80,22 @@
     <a class="article-next" href="../segundo-mejor-pizzero-espana-2026/"><span>Siguiente historia<strong>2º Mejor Pizzero de España 2026</strong></span><b aria-hidden="true">→</b></a>
   </main>
 
-  <footer class="inner-footer">
-    <a class="inner-footer-brand" href="../../index.html">Rústica <span>Napoletana</span></a><p>Historias de pizza napolitana, oficio y Sierra Norte de Sevilla.</p><a class="back-top" href="#top">Volver arriba ↑</a>
+  <section class="newsletter-prefooter" aria-labelledby="newsletter-title">
+    <div><p class="newsletter-prefooter__eyebrow">Mesa, fuego y noticias</p><h2 id="newsletter-title">Lo último de Rústica, en tu bandeja.</h2></div>
+    <form class="newsletter-form" data-mailrelay-pending>
+      <div class="newsletter-form__fields"><label class="newsletter-field"><span>Nombre</span><input name="name" type="text" autocomplete="name" required /></label><label class="newsletter-field"><span>Email</span><input name="email" type="email" autocomplete="email" required /></label><button type="button" disabled title="Pendiente de conectar con Mailrelay">Apuntarme</button></div>
+      <label class="newsletter-consent"><input name="privacy" type="checkbox" required /><span>Acepto la <a href="../../politica-privacidad/">política de privacidad</a> y el envío de comunicaciones de Rústica Napoletana.</span></label>
+      <p class="newsletter-status">Formulario preparado · conexión con Mailrelay pendiente</p>
+    </form>
+  </section>
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div class="site-footer__identity"><a class="site-footer__brand" href="#top"><span>Rústica</span><span>Napoletana</span></a><p class="site-footer__claim">Historias de pizza napolitana, oficio y Sierra Norte de Sevilla.</p></div>
+      <nav aria-label="Categorías de la carta"><p class="site-footer__title">La carta</p><div class="site-footer__links"><a href="../../carta-rustica-napoletana/#ensaladas">Ensaladas</a><a href="../../carta-rustica-napoletana/#entrantes">Entrantes</a><a href="../../carta-rustica-napoletana/#pizzas">Pizzas</a><a href="../../carta-rustica-napoletana/#focaccia">Focaccia</a><a href="../../carta-rustica-napoletana/#padelino">Padelino</a></div></nav>
+      <div><p class="site-footer__title">Contacto</p><div class="site-footer__contact"><a class="site-footer__phone" href="tel:+34955498119">955 498 119</a><address>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</address><p class="site-footer__schedule"><strong>Horario</strong>Jueves a Lunes: 20:00-00:00<br>Cerrado martes y miércoles</p></div></div>
+    </div>
+    <div class="site-footer__bottom"><span>© 2026 Rústica Napoletana</span><span>Cazalla de la Sierra · Sevilla</span><span class="site-footer__legal"><a href="../../aviso-legal/">Aviso legal</a><a href="../../politica-privacidad/">Privacidad</a><a href="../../politica-cookies/">Cookies</a></span><a href="#top">Volver arriba ↑</a></div>
   </footer>
-  <script src="../../internas.js"></script>
+  <script src="../../site-chrome.js?v=20260907b"></script>
 </body>
 </html>

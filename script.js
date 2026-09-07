@@ -1,21 +1,7 @@
-const header = document.querySelector('.site-header');
-const menuButton = document.querySelector('.menu-toggle');
 const pizzaMotion = document.querySelector('.pizza-motion');
 const track = document.querySelector('.pizza-track');
 const prev = document.querySelector('.slider-btn.prev');
 const next = document.querySelector('.slider-btn.next');
-
-menuButton?.addEventListener('click', () => {
-  const open = header.classList.toggle('menu-open');
-  menuButton.setAttribute('aria-expanded', String(open));
-});
-
-document.querySelectorAll('.main-nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    header.classList.remove('menu-open');
-    menuButton?.setAttribute('aria-expanded', 'false');
-  });
-});
 
 // Entrada visible + movimiento orgánico continuo de la pizza.
 if (pizzaMotion && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
