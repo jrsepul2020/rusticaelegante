@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="Rústica Napoletana · Auténtica pizza napolitana en Cazalla de la Sierra." />
+  <title>Rústica Napoletana · Cazalla de la Sierra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="Rústica Napoletana, inicio">
+        <span class="brand-mark" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span>
+        <span class="brand-copy">
+          <strong>PIZZERÍA NAPOLETANA</strong>
+          <span class="tricolore" aria-hidden="true"><i></i><i></i><i></i></span>
+          <small>CAZALLA DE LA SIERRA</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú"><span></span><span></span></button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a class="active" href="#top">Inicio</a>
+        <a href="carta-rustica-napoletana/">Carta</a>
+        <a href="eventos-rustica-napoletana/">Eventos</a>
+        <a href="novedades/">Novedades</a>
+        <a href="nosotros/">Nosotros</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-red btn-small" href="#reservar">Reservar</a>
+        <a class="phone-link" href="tel:+34611829414" aria-label="Llamar al 611 82 94 14">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg>
+          <span>611 82 94 14</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow reveal reveal-1">Tradición · Calidad · Pasión</div>
+          <h1 id="hero-title" class="reveal reveal-2">
+            <span>Auténtica</span>
+            <span class="accent">Pizza</span>
+            <span class="accent">Napoletana</span>
+          </h1>
+          <p class="hero-lead reveal reveal-3">Masa de larga fermentación, ingredientes italianos y horno de leña. Pizza napolitana hecha como debe ser, en Cazalla de la Sierra.</p>
+
+          <div class="hero-cta reveal reveal-4" id="reservar">
+            <a class="btn btn-red" href="https://wa.me/34611829414" target="_blank" rel="noopener">Reservar mesa <span>→</span></a>
+            <a class="btn btn-outline" href="tel:+34611829414">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg>
+              Llamar
+            </a>
+          </div>
+
+          <div class="awards reveal reveal-5" aria-label="Reconocimientos 50 Top Pizza Europa">
+            <div class="award-card"><b>50<br>TOP<br>PIZZA</b><span>EUROPA 2024</span><small>EXCELLENT</small></div>
+            <div class="award-card"><b>50<br>TOP<br>PIZZA</b><span>EUROPA 2025</span><small>EXCELLENT</small></div>
+            <div class="award-card"><b>50<br>TOP<br>PIZZA</b><span>EUROPA 2026</span><small>EXCELLENT</small></div>
+            <p><strong>3 años consecutivos</strong><br>entre las 50 mejores pizzerías de Europa</p>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="pizza-motion">
+            <div class="pizza-halo"></div>
+            <img class="pizza" src="assets/pizza-hero.jpg" alt="" />
+          </div>
+          <div class="pizza-caption">La pizza<br>que nos une</div>
+        </div>
+      </section>
+
+      <section class="categories-section section-dark" id="categorias">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Nuestra carta</span>
+            <h2>Empieza por aquí.</h2>
+          </div>
+          <p>Cinco caminos para entrar en Rústica. Elige uno y deja que el horno haga el resto.</p>
+        </div>
+
+        <div class="category-grid">
+          <a class="category-card category-large" href="carta-rustica-napoletana/#pizzas" style="--bg:url('assets/carta/pizza-silvestre.png')">
+            <span>01</span><div><small>Dal forno</small><h3>Pizzas</h3></div>
+          </a>
+          <a class="category-card" href="carta-rustica-napoletana/#ensaladas" style="--bg:url('assets/carta/ensalada-de-elite.jpeg')">
+            <span>02</span><div><small>Fresco</small><h3>Ensaladas</h3></div>
+          </a>
+          <a class="category-card" href="carta-rustica-napoletana/#entrantes" style="--bg:url('assets/carta/cazuela-de-provolone-italiano.png')">
+            <span>03</span><div><small>Para abrir boca</small><h3>Entrantes</h3></div>
+          </a>
+          <a class="category-card" href="carta-rustica-napoletana/#padelino" style="--bg:url('assets/carta/padelino-el-punto-prohibido.jpeg')">
+            <span>04</span><div><small>Pequeño formato</small><h3>Padelino</h3></div>
+          </a>
+          <a class="category-card" href="carta-rustica-napoletana/#focaccia" style="--bg:url('assets/carta/pan-baho-2-unidades.png')">
+            <span>05</span><div><small>Ligera y crujiente</small><h3>Focaccia</h3></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="pizza-slider-section section-dark" aria-labelledby="slider-title">
+        <div class="section-heading slider-heading">
+          <div><span class="section-kicker">Cuatro imprescindibles</span><h2 id="slider-title">Pizzas que vuelven.</h2></div>
+          <div class="slider-controls" aria-label="Controles del carrusel">
+            <button class="slider-btn prev" type="button" aria-label="Pizza anterior">←</button>
+            <button class="slider-btn next" type="button" aria-label="Pizza siguiente">→</button>
+          </div>
+        </div>
+
+        <div class="pizza-track-wrap">
+          <div class="pizza-track" tabindex="0">
+            <article class="pizza-slide">
+              <img src="assets/carta/pizza-silvestre.png" alt="Pizza Silvestre" />
+              <div class="pizza-info"><div><span>01</span><h3>Silvestre</h3></div><strong>15,00 €</strong><p>San Marzano, búfala ahumada, limón, pesto rojo crujiente y Pecorino Romano.</p></div>
+            </article>
+            <article class="pizza-slide">
+              <img src="assets/carta/pizza-la-mama.jpeg" alt="Pizza La Mama" />
+              <div class="pizza-info"><div><span>02</span><h3>La Mama</h3></div><strong>15,00 €</strong><p>Crema de parmesano, mortadela trufada, panceta y miel de azahar.</p></div>
+            </article>
+            <article class="pizza-slide">
+              <img src="assets/carta/pizza-aires-de-la-sierra.jpeg" alt="Pizza Aires de la Sierra" />
+              <div class="pizza-info"><div><span>03</span><h3>Aires de la Sierra</h3></div><strong>15,50 €</strong><p>Boletus, tocino de la Sierra, tomate fiochi, parmesano y berenjena.</p></div>
+            </article>
+            <article class="pizza-slide">
+              <img src="assets/carta/pizza-deluxe.jpeg" alt="Pizza Deluxe" />
+              <div class="pizza-info"><div><span>04</span><h3>Deluxe</h3></div><strong>13,50 €</strong><p>San Marzano, carne, champiñones, cebolla, salami picante y pimiento.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section" id="carta-completa">
+        <div class="menu-intro">
+          <span class="section-kicker">Selección de la casa</span>
+          <h2>Un vistazo a la carta.</h2>
+          <p>Producto italiano, ingredientes de la Sierra y masa de larga fermentación. Consulta la carta completa para descubrir todas las opciones.</p>
+        </div>
+
+        <div class="menu-columns">
+          <div class="menu-group">
+            <div class="menu-group-title"><span>01</span><h3>Ensaladas</h3></div>
+            <div class="menu-item"><div><h4>Ensalada Maradona</h4><p>Tomate XL, stracciatella de burrata, pistacho, parmesano, pesto y albahaca.</p></div><strong>8,50 €</strong></div>
+            <div class="menu-item"><div><h4>Ensalada de Elite</h4><p>Tres tipos de tomates, burrata, pesto Genovese y vinagre balsámico.</p></div><strong>9,50 €</strong></div>
+            <div class="menu-item"><div><h4>Ensalada de Cogollos</h4><p>Cebolla, tomate, aguacate, nueces, zanahoria y salsa de yogur.</p></div><strong>6,50 €</strong></div>
+            <div class="menu-item"><div><h4>Ensalada César</h4><p>Lechugas crujientes, pollo, picatostes, parmesano y salsa César.</p></div><strong>9,50 €</strong></div>
+          </div>
+
+          <div class="menu-group">
+            <div class="menu-group-title"><span>02</span><h3>Entrantes</h3></div>
+            <div class="menu-item"><div><h4>Tosta Caramelizada</h4><p>Queso de cabra, cebolla crujiente y caramelizada, mostaza y miel.</p></div><strong>Consultar</strong></div>
+            <div class="menu-item"><div><h4>Provolone Italiano</h4><p>Tomate natural, orégano y aceites de oliva y ajo.</p></div><strong>10,00 €</strong></div>
+            <div class="menu-item"><div><h4>Lasagna Bolognese</h4><p>Carne, salsa boloñesa, queso, bechamel y fundido al horno.</p></div><strong>6,50 €</strong></div>
+            <div class="menu-item"><div><h4>Patatas Gratinadas</h4><p>Patatas gratinadas con salsa de la casa y queso fundido.</p></div><strong>5,50 €</strong></div>
+          </div>
+
+          <div class="menu-group">
+            <div class="menu-group-title"><span>03</span><h3>Pizzas</h3></div>
+            <div class="menu-item featured"><div><h4>Silvestre</h4><p>San Marzano, búfala ahumada, limón, pesto rojo crujiente y Pecorino Romano.</p></div><strong>15,00 €</strong></div>
+            <div class="menu-item"><div><h4>La Mama</h4><p>Crema de parmesano, mortadela trufada, panceta y miel de azahar.</p></div><strong>15,00 €</strong></div>
+            <div class="menu-item"><div><h4>Aires de la Sierra</h4><p>Boletus, tocino de la Sierra, tomate fiochi, parmesano y berenjena.</p></div><strong>15,50 €</strong></div>
+            <div class="menu-item"><div><h4>Diavola</h4><p>San Marzano, salami picante, fiordilatte y albahaca.</p></div><strong>12,00 €</strong></div>
+            <div class="menu-item"><div><h4>Trufada</h4><p>Boletus, fiordilatte, setas, parmesano, trufa y huevo.</p></div><strong>15,00 €</strong></div>
+          </div>
+
+          <div class="menu-group">
+            <div class="menu-group-title"><span>04</span><h3>Focaccia</h3></div>
+            <div class="menu-item"><div><h4>Focaccia Ibérica</h4><p>Jamón curado italiano, mozzarella, tomate, canónigos y AOVE.</p></div><strong>9,50 €</strong></div>
+            <div class="menu-item"><div><h4>Reginella</h4><p>Mortadella Bologna, stracciatella, rúcula y pesto Genovese.</p></div><strong>9,50 €</strong></div>
+            <div class="menu-item"><div><h4>Focaccia Piccante</h4><p>Spianata picante, rúcula, parmesano y stracciatella.</p></div><strong>9,50 €</strong></div>
+          </div>
+
+          <div class="menu-group">
+            <div class="menu-group-title"><span>05</span><h3>Padelino</h3></div>
+            <div class="menu-item"><div><h4>Classico</h4><p>Aceites aromáticos, orégano y sales.</p></div><strong>6,00 €</strong></div>
+            <div class="menu-item"><div><h4>Ibéricos</h4><p>Rúcula, parmesano D.O.P., jamón ibérico y mozzarella de búfala.</p></div><strong>9,50 €</strong></div>
+            <div class="menu-item"><div><h4>El Punto Prohibido</h4><p>Salami italiano, tomate cherry, rúcula, albahaca y aceite.</p></div><strong>8,50 €</strong></div>
+          </div>
+
+          <div class="menu-group">
+            <div class="menu-group-title"><span>06</span><h3>Postres</h3></div>
+            <div class="menu-item"><div><h4>Tiramisú con Pistacho</h4></div><strong>6,50 €</strong></div>
+            <div class="menu-item"><div><h4>Tiramisú Clásico</h4><p>Sabor a café y cacao.</p></div><strong>6,00 €</strong></div>
+            <div class="menu-item"><div><h4>Helados</h4></div><strong>5,60 €</strong></div>
+          </div>
+        </div>
+        <div class="menu-full-cta"><a class="btn btn-red" href="carta-rustica-napoletana/">Explorar la carta completa <span>→</span></a></div>
+      </section>
+
+      <section class="about-section" id="nosotros">
+        <div class="about-media"><img src="assets/forno-valoriani.jpg" alt="Horno Valoriani de Rústica Napoletana" /></div>
+        <div class="about-copy"><span class="section-kicker">Sobre nosotros</span><h2>Fuego, tiempo y masa.</h2><p>La pizza napolitana se entiende mejor cuando sobran las prisas. Fermentaciones largas, un horno que manda y una materia prima que no necesita esconderse detrás de nada.</p><a class="text-link" href="nosotros/">Conoce nuestra historia →</a></div>
+      </section>
+
+      <section class="location-section" id="ubicacion">
+        <div><span class="section-kicker">Cazalla de la Sierra</span><h2>Tu próxima pizza está aquí.</h2></div>
+        <div class="location-actions"><a class="btn btn-red" href="https://wa.me/34611829414" target="_blank" rel="noopener">Reservar</a><a class="btn btn-outline" href="tel:+34611829414">611 82 94 14</a></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
