@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="site-chrome.css?v=20260907k" />
+  <link rel="stylesheet" href="site-chrome.css?v=20260907y" />
 </head>
 <body>
   <aside class="top-bar" aria-label="Información de contacto">
@@ -52,7 +52,7 @@
     </header>
 
     <main>
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero hero--desktop" aria-labelledby="hero-title">
         <div class="hero-copy">
           <div class="eyebrow reveal reveal-1">Tradición · Calidad · Pasión</div>
           <h1 id="hero-title" class="reveal reveal-2">
@@ -62,7 +62,7 @@
           </h1>
           <p class="hero-lead reveal reveal-3">Masa de larga fermentación, ingredientes italianos y horno de leña. Pizza napolitana hecha como debe ser, en Cazalla de la Sierra.</p>
 
-          <div class="hero-cta reveal reveal-4" id="reservar">
+          <div class="hero-cta reveal reveal-4">
             <a class="btn btn-red" href="tel:+34955498119">Reservar mesa <span>→</span></a>
             <a class="btn btn-outline" href="tel:+34955498119">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg>
@@ -84,6 +84,81 @@
             <img class="pizza" src="assets/pizza-hero.jpg" alt="" />
           </div>
           <div class="pizza-caption">La pizza<br>que nos une</div>
+        </div>
+      </section>
+
+      <section class="hero hero--mobile" aria-labelledby="hero-title-mobile">
+        <div class="hero-mobile__visual" aria-hidden="true">
+          <img src="assets/pizza-hero.jpg" alt="" />
+        </div>
+        <div class="hero-mobile__copy">
+          <div class="eyebrow">Tradición · Calidad · Pasión</div>
+          <h1 id="hero-title-mobile">
+            <span>Auténtica</span>
+            <span class="accent">Pizza</span>
+            <span class="accent">Napoletana</span>
+          </h1>
+          <p class="hero-lead">Masa de larga fermentación, ingredientes italianos y horno de leña. Pizza napolitana hecha como debe ser, en Cazalla de la Sierra.</p>
+          <div class="hero-cta" id="reservar">
+            <a class="btn btn-red" href="tel:+34955498119">Reservar mesa <span>→</span></a>
+            <a class="btn btn-outline" href="tel:+34955498119">Llamar</a>
+          </div>
+          <div class="awards" aria-label="Reconocimientos 50 Top Pizza Europa">
+            <div class="award-card"><b>50<br>TOP<br>PIZZA</b><span>EUROPA 2024</span><small>EXCELLENT</small></div>
+            <div class="award-card"><b>50<br>TOP<br>PIZZA</b><span>EUROPA 2025</span><small>EXCELLENT</small></div>
+            <div class="award-card"><b>50<br>TOP<br>PIZZA</b><span>EUROPA 2026</span><small>EXCELLENT</small></div>
+            <p><strong>3 años consecutivos</strong><br>entre las 50 mejores pizzerías de Europa</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="promos-section home-band home-paper" id="promociones" aria-labelledby="promo-list-title">
+        <div class="promo-list">
+          <div class="promo-list__intro">
+            <span class="section-kicker">Promociones</span>
+            <h2 id="promo-list-title">Tres motivos para venir esta semana.</h2>
+          </div>
+          <ol class="promo-list__grid">
+            <li>
+              <figure class="promo-list__media">
+                <img src="assets/carta/pizza-margarita.png" alt="Pizza Margarita" />
+              </figure>
+              <div class="promo-list__body">
+                <span>01</span>
+                <div>
+                  <h3>Menú mediodía</h3>
+                  <p>Pizza + bebida antes de las 15:00.</p>
+                </div>
+                <strong>Desde 12 €</strong>
+              </div>
+            </li>
+            <li>
+              <figure class="promo-list__media">
+                <img src="assets/carta/padelino-clasico.jpeg" alt="Padelino clásico" />
+              </figure>
+              <div class="promo-list__body">
+                <span>02</span>
+                <div>
+                  <h3>2×1 en padelinos</h3>
+                  <p>Los jueves al abrir, dos por el precio de uno.</p>
+                </div>
+                <strong>2×1</strong>
+              </div>
+            </li>
+            <li>
+              <figure class="promo-list__media">
+                <img src="assets/eduardo/interior-comedor.jpeg" alt="Comedor de Rústica Napoletana" />
+              </figure>
+              <div class="promo-list__body">
+                <span>03</span>
+                <div>
+                  <h3>Cumpleaños en la mesa</h3>
+                  <p>Postre de la casa si avisas al reservar.</p>
+                </div>
+                <strong>Detalle</strong>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -128,35 +203,75 @@
           <div class="pizza-track" tabindex="0">
             <article class="pizza-slide">
               <img src="assets/carta/pizza-silvestre.png" alt="Pizza Silvestre" />
-              <div class="pizza-info"><div><span>01</span><h3>Silvestre</h3></div><strong>15,00 €</strong><p>San Marzano, búfala ahumada, limón, pesto rojo crujiente y Pecorino Romano.</p></div>
+              <div class="pizza-info">
+                <p class="pizza-reason">Finalista</p>
+                <div class="pizza-info__head"><span>01</span><h3>Silvestre</h3></div>
+                <p>San Marzano, búfala ahumada, limón, pesto rojo crujiente y Pecorino Romano.</p>
+                <strong>15,00 €</strong>
+              </div>
             </article>
             <article class="pizza-slide">
               <img src="assets/carta/pizza-la-mama.jpeg" alt="Pizza La Mama" />
-              <div class="pizza-info"><div><span>02</span><h3>La Mama</h3></div><strong>15,00 €</strong><p>Crema de parmesano, mortadela trufada, panceta y miel de azahar.</p></div>
+              <div class="pizza-info">
+                <p class="pizza-reason">Indulgente</p>
+                <div class="pizza-info__head"><span>02</span><h3>La Mama</h3></div>
+                <p>Crema de parmesano, mortadela trufada, panceta y miel de azahar.</p>
+                <strong>15,00 €</strong>
+              </div>
             </article>
             <article class="pizza-slide">
               <img src="assets/carta/pizza-aires-de-la-sierra.jpeg" alt="Pizza Aires de la Sierra" />
-              <div class="pizza-info"><div><span>03</span><h3>Aires de la Sierra</h3></div><strong>15,50 €</strong><p>Boletus, tocino de la Sierra, tomate fiochi, parmesano y berenjena.</p></div>
+              <div class="pizza-info">
+                <p class="pizza-reason">De sierra</p>
+                <div class="pizza-info__head"><span>03</span><h3>Aires de la Sierra</h3></div>
+                <p>Boletus, tocino de la Sierra, tomate fiochi, parmesano y berenjena.</p>
+                <strong>15,50 €</strong>
+              </div>
             </article>
             <article class="pizza-slide">
               <img src="assets/carta/pizza-deluxe.jpeg" alt="Pizza Deluxe" />
-              <div class="pizza-info"><div><span>04</span><h3>Deluxe</h3></div><strong>13,50 €</strong><p>San Marzano, carne, champiñones, cebolla, salami picante y pimiento.</p></div>
+              <div class="pizza-info">
+                <p class="pizza-reason">Completa</p>
+                <div class="pizza-info__head"><span>04</span><h3>Deluxe</h3></div>
+                <p>San Marzano, carne, champiñones, cebolla, salami picante y pimiento.</p>
+                <strong>13,50 €</strong>
+              </div>
             </article>
             <article class="pizza-slide">
               <img src="assets/carta/pizza-trufada.jpeg" alt="Pizza Trufada" />
-              <div class="pizza-info"><div><span>05</span><h3>Trufada</h3></div><strong>15,00 €</strong><p>Boletus, fiordilatte, setas, parmesano, trufa y huevo.</p></div>
+              <div class="pizza-info">
+                <p class="pizza-reason">Gourmet</p>
+                <div class="pizza-info__head"><span>05</span><h3>Trufada</h3></div>
+                <p>Boletus, fiordilatte, setas, parmesano, trufa y huevo.</p>
+                <strong>15,00 €</strong>
+              </div>
             </article>
             <article class="pizza-slide">
               <img src="assets/carta/pizza-diavola.png" alt="Pizza Diavola" />
-              <div class="pizza-info"><div><span>06</span><h3>Diavola</h3></div><strong>12,00 €</strong><p>San Marzano, salami picante napolitano, fiordilatte y albahaca.</p></div>
+              <div class="pizza-info">
+                <p class="pizza-reason">Picante</p>
+                <div class="pizza-info__head"><span>06</span><h3>Diavola</h3></div>
+                <p>San Marzano, salami picante napolitano, fiordilatte y albahaca.</p>
+                <strong>12,00 €</strong>
+              </div>
             </article>
             <article class="pizza-slide">
               <img src="assets/carta/pizza-siciliana.png" alt="Pizza Siciliana" />
-              <div class="pizza-info"><div><span>07</span><h3>Siciliana</h3></div><strong>15,00 €</strong><p>Crema bianca, mortadela, rúcula, pesto, burrata y parmesano.</p></div>
+              <div class="pizza-info">
+                <p class="pizza-reason">Cremosa</p>
+                <div class="pizza-info__head"><span>07</span><h3>Siciliana</h3></div>
+                <p>Crema bianca, mortadela, rúcula, pesto, burrata y parmesano.</p>
+                <strong>15,00 €</strong>
+              </div>
             </article>
             <article class="pizza-slide">
               <img src="assets/carta/pizza-encanto.png" alt="Pizza Encanto" />
-              <div class="pizza-info"><div><span>08</span><h3>Encanto</h3></div><strong>15,00 €</strong><p>San Marzano, fiordilatte, cherry, rúcula, burrata y albahaca.</p></div>
+              <div class="pizza-info">
+                <p class="pizza-reason">Fresca</p>
+                <div class="pizza-info__head"><span>08</span><h3>Encanto</h3></div>
+                <p>San Marzano, fiordilatte, cherry, rúcula, burrata y albahaca.</p>
+                <strong>15,00 €</strong>
+              </div>
             </article>
           </div>
         </div>
@@ -217,12 +332,17 @@
             <div class="menu-item"><div><h4>Helados</h4></div><strong>5,60 €</strong></div>
           </div>
         </div>
-        <div class="menu-full-cta"><a class="btn btn-red" href="carta-rustica-napoletana/">Explorar la carta completa <span>→</span></a></div>
+        <div class="menu-full-cta"><a class="btn btn-red" href="carta-rustica-napoletana/">Ver carta completa <span>→</span></a></div>
       </section>
 
       <section class="about-section home-band home-paper home-about" id="nosotros">
-        <div class="about-media"><img src="assets/forno-valoriani.jpg" alt="Horno Valoriani de Rústica Napoletana" /></div>
-        <div class="about-copy"><span class="section-kicker">Sobre nosotros</span><h2>Fuego lento. Masa con tiempo.</h2><p>La pizza napolitana se entiende mejor cuando sobran las prisas. Fermentaciones largas, un horno que manda y una materia prima que no necesita esconderse detrás de nada.</p><a class="text-link" href="nosotros/">Conoce nuestra historia →</a></div>
+        <div class="about-media"><img src="assets/eduardo/eduardo-accion.jpg" alt="Eduardo Ramírez, pizzero de Rústica Napoletana" /></div>
+        <div class="about-copy">
+          <span class="section-kicker">Sobre nosotros</span>
+          <h2>Eduardo Ramírez.</h2>
+          <p>Chef pizzero de Rústica Napoletana. Guía Repsol 2026, 2º Mejor Pizzero de España 2026, Top 7 Pizzeros de España 2026/27 y dos veces Mejor Pizza Sin Gluten.</p>
+          <a class="text-link" href="nosotros/">Conoce nuestra historia →</a>
+        </div>
       </section>
 
       <section class="location-section home-band home-dark" id="ubicacion">
@@ -246,7 +366,7 @@
   <footer class="site-footer">
     <div class="site-footer__grid">
       <div class="site-footer__identity">
-        <a class="site-footer__brand" href="#top"><span>Rústica</span><span>Napoletana</span></a>
+        <a class="site-footer__brand" href="#top"><span class="site-footer__mark" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span><span class="site-footer__wordmark"><span>Rústica</span><span>Napoletana</span></span></a>
         <p class="site-footer__claim">Pizza napolitana contemporánea, masa de larga fermentación y horno de leña en el corazón de la Sierra Norte de Sevilla.</p>
       </div>
       <nav aria-label="Categorías de la carta">
@@ -266,7 +386,7 @@
     </div>
     <div class="site-footer__bottom"><span>© 2026 Rústica Napoletana</span><span>Cazalla de la Sierra · Sevilla</span><span class="site-footer__legal"><a href="aviso-legal/">Aviso legal</a><a href="politica-privacidad/">Privacidad</a><a href="politica-cookies/">Cookies</a></span><a href="#top">Volver arriba ↑</a></div>
   </footer>
-  <script src="site-chrome.js?v=20260907k"></script>
-  <script src="script.js?v=20260907k"></script>
+  <script src="site-chrome.js?v=20260907r"></script>
+  <script src="script.js?v=20260907u"></script>
 </body>
 </html>

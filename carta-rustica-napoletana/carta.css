@@ -88,10 +88,10 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .food-section img,.featured-menu-card img{cursor:zoom-in}
 .food-section img:focus-visible,.featured-menu-card img:focus-visible{outline:3px solid var(--menu-red);outline-offset:5px}
 .dish.has-image:hover .dish-thumb{transform:scale(1.035);filter:saturate(1.08) contrast(1.02)}
-.dish h3{font-family:Oswald,sans-serif;font-size:clamp(23px,2vw,32px);line-height:1.05;text-transform:uppercase;margin:0;font-weight:600}
-.dish h3 small{font-family:Inter,sans-serif;font-size:9px;letter-spacing:.12em;color:#7a746d}
+.dish h3{font-family:Oswald,sans-serif;font-size:clamp(23px,2vw,32px);line-height:1.05;text-transform:uppercase;margin:0;font-weight:600;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.dish h3 small{font-family:Inter,sans-serif;font-size:9px;letter-spacing:.12em;color:#7a746d;font-weight:700;text-transform:uppercase}
 .dish p{max-width:800px;margin:9px 0 0;color:#69645e;font-size:13px;line-height:1.6}
-.dish>strong{font-family:Oswald,sans-serif;font-size:22px;white-space:nowrap;color:var(--menu-red)}
+.dish>strong{font-family:Oswald,sans-serif;font-size:22px;white-space:nowrap;color:var(--menu-red);font-weight:700}
 .dish-title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .badge{padding:7px 11px 6px;border-radius:2px;color:#fff;font-family:Inter,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;white-space:nowrap}
 .badge.veggie{background:var(--menu-green)}
@@ -245,9 +245,27 @@ body.lightbox-open{overflow:hidden}
   .dish{gap:16px;padding:23px 0}
   .dish.has-image,.dish-list-two .dish.has-image{grid-template-columns:minmax(0,1fr) auto;gap:20px 14px;min-height:0;align-items:start}
   .dish-thumb,.dish-list-two .dish-thumb{grid-column:1/-1;width:100%;height:auto;aspect-ratio:1/1}
-  .dish h3{font-size:21px}
-  .dish p{font-size:12.5px}
-  .dish>strong{font-size:19px}
+  .dish h3{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+    font-size:clamp(28px,8vw,36px);
+    line-height:1;
+    font-weight:700;
+  }
+  .dish h3 small{
+    display:block;
+    font-size:13px;
+    letter-spacing:.16em;
+    color:var(--menu-ink);
+    font-weight:800;
+  }
+  .dish p{font-size:13px}
+  .dish>strong{
+    font-size:22px;
+    font-weight:700;
+    color:var(--menu-red);
+  }
   .dish-title{align-items:flex-start;flex-direction:column;gap:7px}
   .signature{margin:0 -8px;padding:24px 8px}
   .featured-menu-section{padding:82px 16px}
