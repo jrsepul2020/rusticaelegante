@@ -13,7 +13,7 @@ Existe un brief relacionado en `../RUSTICANAPOLETANA/CLAUDE.md`, pero describe u
 Diferencias verificadas:
 
 - El contacto ya se sincronizó por indicación del usuario con el teléfono `955 498 119`; las reservas y consultas se realizan por llamada.
-- Este demo combina una base oscura con superficies editoriales claras `#f2f0ed` y usa Inter/Oswald; el brief define una base crema general y una única tipografía Poppins.
+- Este demo combina una base oscura con superficies editoriales claras `#f2f0ed` y usa Inter/Cormorant Garamond; el brief define una base crema general y una única tipografía Poppins.
 - Este demo muestra reconocimientos “50 Top Pizza Europa”; el brief enumera Guía Repsol 2026, 2º Mejor Pizzero de España 2026 y otros premios.
 - Este demo es una landing estática; el brief plantea más secciones y un futuro panel con Supabase.
 
@@ -26,7 +26,7 @@ Antes de sincronizar datos o rediseñar, confirmar con el usuario si se está tr
 - No hay proceso de compilación, lint ni tests automatizados.
 - El directorio es un repositorio Git conectado a GitHub.
 - Idioma y mercado: español (`lang="es"`), España; precios en euros.
-- Fuente externa: Google Fonts (`Inter` y `Oswald`).
+- Fuente externa: Google Fonts (`Inter` y `Cormorant Garamond`).
 
 ## Cómo ejecutar
 
@@ -163,7 +163,7 @@ Tokens principales en `:root`:
 Tipografía:
 
 - `Inter`: navegación, cuerpo, botones y datos.
-- `Oswald`: titulares y nombres destacados.
+- `Cormorant Garamond`: titulares y nombres destacados en caja natural (sin forzar mayúsculas).
 - `Georgia` cursiva: frase decorativa del hero.
 
 Breakpoints:

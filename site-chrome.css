@@ -74,15 +74,15 @@ body.menu-page{
 
 .menu-directory,.menu-content,.event-intro{background:var(--site-paper)}
 
-/* Más aire vertical en títulos que parten en dos o más líneas. */
-.hero h1{line-height:.94}
-.section-heading h2,.menu-intro h2,.about-copy h2,.location-section h2{line-height:1}
-.menu-hero h1{line-height:.9}
-.food-heading h2,.compact-heading h2{line-height:.92}
-.inner-hero h1,.article-hero h1{line-height:.94}
-.editorial-heading h2,.story-copy h2,.cta-panel h2,.empty-state h2{line-height:.98}
-.event-feature-copy h2{line-height:.94}
-.article-next strong{line-height:1}
+/* Aire vertical para titulares en caja natural (Cormorant). */
+.hero h1{line-height:1.05}
+.section-heading h2,.menu-intro h2,.about-copy h2,.location-section h2{line-height:1.08}
+.menu-hero h1{line-height:1.02}
+.food-heading h2,.compact-heading h2{line-height:1.05}
+.inner-hero h1,.article-hero h1{line-height:1.05}
+.editorial-heading h2,.story-copy h2,.cta-panel h2,.empty-state h2{line-height:1.08}
+.event-feature-copy h2{line-height:1.05}
+.article-next strong{line-height:1.08}
 
 .mobile-nav-context{display:none}
 
@@ -129,33 +129,34 @@ body.menu-page{
 }
 .home-paper .menu-group-title span{
   color:#fff;
-  font-family:Oswald,Impact,sans-serif;
-  font-size:clamp(36px,10vw,52px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(30px,8vw,42px);
   font-weight:700;
-  letter-spacing:-.04em;
+  letter-spacing:-.015em;
   line-height:.85;
 }
 .home-paper .menu-group-title h3{
   color:#fff;
-  font-size:clamp(34px,9vw,48px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(28px,7.5vw,40px);
   letter-spacing:-.035em;
   line-height:.9;
 }
 .home-paper .menu-item{border-top-color:rgba(5,5,5,.11)}
 .home-paper .menu-item p{color:#66615c}
 .home-paper .menu-item h4{
-  font-family:Oswald,Impact,sans-serif;
-  font-size:clamp(22px,5.8vw,30px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(20px,4.8vw,26px);
   line-height:1.05;
-  letter-spacing:-.04em;
-  text-transform:uppercase;
+  letter-spacing:-.015em;
+  
   font-weight:700;
   margin:0 0 8px;
 }
 .home-paper .menu-item strong{
   color:var(--site-red);
-  font-family:Oswald,Impact,sans-serif;
-  font-size:clamp(22px,5.2vw,28px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(20px,4.4vw,26px);
   font-weight:700;
   letter-spacing:-.02em;
   white-space:nowrap;
@@ -271,9 +272,9 @@ body.menu-page{
 }
 .promo-list__intro h2{
   margin:10px 0 0;
-  font-family:Oswald,Impact,sans-serif;
-  text-transform:uppercase;
-  font-size:clamp(36px,4.5vw,64px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  
+  font-size:clamp(30px,3.6vw,52px);
   line-height:.92;
   letter-spacing:-.03em;
   color:#111;
@@ -316,7 +317,7 @@ body.menu-page{
   align-items:start;
 }
 .promo-list__body span{
-  font-family:Oswald,Impact,sans-serif;
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
   font-size:clamp(36px,4vw,52px);
   font-weight:700;
   line-height:.85;
@@ -325,9 +326,9 @@ body.menu-page{
 }
 .promo-list__body h3{
   margin:0;
-  font-family:Oswald,Impact,sans-serif;
-  text-transform:uppercase;
-  font-size:clamp(22px,2vw,28px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  
+  font-size:clamp(20px,1.8vw,26px);
   letter-spacing:-.02em;
   line-height:1;
   color:#111;
@@ -415,20 +416,20 @@ body.menu-page{
 .pizza-info__head span{
   flex:0 0 auto;
   color:var(--site-red);
-  font-family:Oswald,Impact,sans-serif;
-  font-size:clamp(42px,5vw,56px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(34px,4vw,44px);
   font-weight:700;
-  letter-spacing:-.05em;
+  letter-spacing:-.02em;
   line-height:.8;
 }
 
 .pizza-info__head h3{
   margin:0;
   min-width:0;
-  font-family:Oswald,Impact,sans-serif;
-  font-size:clamp(28px,3.2vw,34px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(24px,2.6vw,30px);
   line-height:.95;
-  text-transform:uppercase;
+  
 }
 
 .pizza-info>p:not(.pizza-reason){
@@ -443,7 +444,7 @@ body.menu-page{
   margin-top:16px;
   text-align:right;
   color:var(--site-red);
-  font-family:Oswald,Impact,sans-serif;
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
   font-size:22px;
   font-weight:700;
   letter-spacing:-.02em;
@@ -473,11 +474,11 @@ body.menu-page{
 .newsletter-prefooter h2{
   max-width:620px;
   margin:0;
-  font-family:Oswald,Impact,sans-serif;
-  font-size:clamp(46px,5.4vw,92px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(36px,4.2vw,68px);
   line-height:.94;
-  letter-spacing:-.04em;
-  text-transform:uppercase;
+  letter-spacing:-.015em;
+  
 }
 
 .newsletter-form{display:grid;gap:18px}
@@ -561,11 +562,11 @@ body.menu-page{
 .legal-hero h1{
   max-width:1100px;
   margin:0;
-  font-family:Oswald,Impact,sans-serif;
-  font-size:clamp(62px,8vw,138px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(46px,6vw,96px);
   line-height:.94;
-  letter-spacing:-.045em;
-  text-transform:uppercase;
+  letter-spacing:-.015em;
+  
 }
 
 .legal-content{
@@ -594,10 +595,10 @@ body.menu-page{
 .legal-copy section{scroll-margin-top:150px}
 .legal-copy h2{
   margin:0 0 18px;
-  font-family:Oswald,Impact,sans-serif;
-  font-size:clamp(32px,4vw,55px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(28px,3.2vw,44px);
   line-height:1;
-  text-transform:uppercase;
+  
 }
 
 .legal-copy p,.legal-copy li{color:#514d49;font-size:15px;line-height:1.8}
@@ -707,11 +708,11 @@ body.menu-page{
   flex-direction:column;
   align-items:flex-start;
   gap:22px;
-  font-family:Oswald,Impact,sans-serif;
-  font-size:clamp(70px,8.5vw,152px);
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(52px,6.5vw,108px);
   line-height:.76;
-  letter-spacing:-.055em;
-  text-transform:uppercase;
+  letter-spacing:-.02em;
+  
 }
 
 .site-footer__mark{
@@ -735,10 +736,10 @@ body.menu-page{
 .site-footer__claim{max-width:490px;margin:40px 0 0;color:#9c9690;font-size:14px;line-height:1.8}
 .site-footer__title{margin:0 0 28px;color:var(--site-red);font-size:14px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
 .site-footer__links{display:grid;gap:15px}
-.site-footer__links a{font-family:Oswald,sans-serif;font-size:23px;line-height:1.1;text-transform:uppercase;transition:color .2s,padding .2s}
+.site-footer__links a{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:23px;line-height:1.1transition:color .2s,padding .2s}
 .site-footer__links a:hover{color:var(--site-red);padding-left:5px}
 .site-footer__contact{display:grid;gap:24px}
-.site-footer__phone{font-family:Oswald,sans-serif;font-size:clamp(30px,3vw,48px);line-height:1;color:#fff}
+.site-footer__phone{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(26px,2.6vw,40px);line-height:1;color:#fff}
 .site-footer address,.site-footer__schedule{margin:0;color:#aaa49e;font-size:12px;line-height:1.7;font-style:normal}
 .site-footer__schedule strong{display:block;color:#fff;margin-bottom:4px}
 
@@ -839,12 +840,12 @@ body.menu-page{
     width:max-content;
     max-width:100%;
     padding:0;
-    font-family:Oswald,Impact,sans-serif;
+    font-family:"Cormorant Garamond",Garamond,Georgia,serif;
     font-size:clamp(49px,7.2vw,88px);
     font-weight:700;
     line-height:.93;
-    letter-spacing:-.035em;
-    text-transform:uppercase;
+    letter-spacing:-.01em;
+    
     color:#fff;
   }
 
@@ -865,22 +866,22 @@ body.menu-page{
   }
 
   .mobile-nav-logo{
-    width:clamp(116px,15vw,170px);
-    height:clamp(116px,15vw,170px);
+    width:clamp(116px,11.5vw,170px);
+    height:clamp(116px,11.5vw,170px);
     border-radius:50%;
     display:grid;
     place-content:center;
     text-align:center;
     background:var(--site-red);
     color:#050505;
-    font-family:Oswald,sans-serif;
+    font-family:"Cormorant Garamond",Garamond,Georgia,serif;
     font-size:clamp(31px,4vw,47px);
     font-weight:700;
-    line-height:.78;
+    line-height:.92;
   }
 
   .mobile-nav-contact{display:grid;gap:20px;color:#aaa49e}
-  .mobile-nav-contact a{font-family:Oswald,sans-serif;font-size:29px;color:#fff}
+  .mobile-nav-contact a{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:29px;color:#fff}
   .mobile-nav-contact a{width:max-content;padding:0;text-transform:none;letter-spacing:0}
   .mobile-nav-contact a::after{display:none!important}
   .mobile-nav-contact address,.mobile-nav-contact p{margin:0;font-size:10px;line-height:1.7;font-style:normal;text-transform:uppercase;letter-spacing:.1em}
@@ -990,11 +991,10 @@ body.menu-page{
 
   .hero-mobile__copy h1{
     margin:0;
-    font-family:Oswald,Impact,sans-serif;
-    text-transform:uppercase;
-    font-size:clamp(54px,17vw,78px);
-    line-height:.98;
-    letter-spacing:-.035em;
+    font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+    font-size:clamp(40px,11vw,56px);
+    line-height:1.05;
+    letter-spacing:-.01em;
     font-weight:700;
   }
 
@@ -1045,7 +1045,7 @@ body.menu-page{
   .site-footer{padding:80px 20px 25px}
   .site-footer__grid{grid-template-columns:1fr;gap:60px}
   .site-footer__identity{grid-column:auto}
-  .site-footer__brand{font-size:clamp(66px,20vw,106px)}
+  .site-footer__brand{font-size:clamp(48px,11.5vw,82px)}
   .site-footer__mark{width:96px;height:96px;font-size:26px}
   .site-footer__claim{margin-top:30px}
   .site-footer__bottom{margin-top:80px;flex-direction:column;gap:12px}

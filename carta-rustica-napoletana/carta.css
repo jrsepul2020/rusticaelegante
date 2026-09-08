@@ -26,14 +26,14 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .menu-hero::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.08);margin:24px;pointer-events:none}
 .menu-hero-copy{position:absolute;left:clamp(28px,8vw,150px);top:50%;transform:translateY(-48%);width:min(760px,55vw)}
 .menu-eyebrow{margin:0 0 27px;color:#ddd5cb;font-size:11px;text-transform:uppercase;letter-spacing:.42em}
-.menu-hero h1{margin:0;font-family:Oswald,Impact,sans-serif;font-size:clamp(82px,9.4vw,170px);line-height:.78;text-transform:uppercase;letter-spacing:-.055em}
+.menu-hero h1{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(60px,7vw,112px);line-height:.92letter-spacing:-.02em}
 .menu-hero h1 span{display:block;color:var(--menu-red);margin-left:.33em}
 .menu-hero-lead{width:min(600px,100%);font-size:clamp(15px,1.15vw,19px);line-height:1.7;color:#d3ccc4;margin:42px 0 0}
 .menu-hero-meta{display:flex;align-items:center;gap:18px;margin-top:34px}
 .menu-hero-meta>p{margin:0;padding-left:18px;border-left:1px solid rgba(255,255,255,.25);font-size:10px;line-height:1.55;text-transform:uppercase;letter-spacing:.12em;color:#aaa39d}
 .menu-hero-meta strong{color:#fff;font-size:11px}
 .top-pizza-mark{width:62px;height:62px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;gap:4px}
-.top-pizza-mark b{font-family:Oswald,sans-serif;color:var(--menu-red);font-size:23px}
+.top-pizza-mark b{font-family:"Cormorant Garamond",Garamond,Georgia,serif;color:var(--menu-red);font-size:23px}
 .top-pizza-mark span{font-size:6px;font-weight:800;line-height:1.15}
 .explore-link{position:absolute;left:0;top:calc(100% + 44px);display:flex;gap:28px;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:.2em;font-weight:800}
 .explore-link span{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.4);border-radius:50%;transition:.25s}
@@ -48,15 +48,15 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .honours article{min-height:124px;padding:24px clamp(18px,2.2vw,38px);display:flex;gap:18px;align-items:center;border-right:1px solid rgba(255,255,255,.12)}
 .honours article:last-child{border-right:0}
 .honours img{display:none}
-.honours span{font-family:Oswald,sans-serif;color:var(--menu-red);font-size:13px}
+.honours span{font-family:"Cormorant Garamond",Garamond,Georgia,serif;color:var(--menu-red);font-size:13px}
 .honours p{font-size:10px;line-height:1.5;text-transform:uppercase;letter-spacing:.13em;margin:0;color:#a9a39e}
 .honours strong{display:block;color:#fff;font-size:12px}
 
 .menu-directory{padding:150px max(32px,calc((100vw - 1600px)/2));display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(70px,10vw,170px);background:var(--menu-cream)}
-.directory-intro h2{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:clamp(58px,6.2vw,110px);line-height:.9;letter-spacing:-.045em;margin:20px 0 0}
+.directory-intro h2{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(44px,5vw,82px);line-height:1.02;letter-spacing:-.015em;margin:20px 0 0}
 .directory-intro h2 span{display:block;color:var(--menu-red)}
 .category-directory{border-top:1px solid var(--menu-ink)}
-.category-directory a{min-height:67px;border-bottom:1px solid var(--menu-line);display:flex;align-items:center;gap:24px;font-family:Oswald,sans-serif;text-transform:uppercase;font-size:clamp(22px,2vw,34px);transition:padding .25s,color .25s}
+.category-directory a{min-height:67px;border-bottom:1px solid var(--menu-line);display:flex;align-items:center;gap:24px;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(22px,2vw,34px);transition:padding .25s,color .25s}
 .category-directory a span{font-family:Inter,sans-serif;color:var(--menu-red);font-size:9px;font-weight:800;letter-spacing:.15em}
 .category-directory a::after{content:"↘";margin-left:auto;font-size:17px;transition:transform .25s}
 .category-directory a:hover,.category-directory a.is-active{color:var(--menu-red);padding-left:12px}
@@ -74,7 +74,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .food-heading.image-left{grid-template-columns:minmax(320px,43%) 1fr}
 .food-heading.text-only,.pizza-heading.text-only{grid-template-columns:1fr}
 .food-heading>div>p,.compact-heading>p{margin:0 0 17px;color:var(--menu-red);font-size:10px;text-transform:uppercase;letter-spacing:.24em;font-weight:800}
-.food-heading h2,.compact-heading h2{margin:0;font-family:Oswald,sans-serif;font-size:clamp(70px,8.6vw,148px);line-height:.82;text-transform:uppercase;letter-spacing:-.05em}
+.food-heading h2,.compact-heading h2{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(52px,6.4vw,104px);line-height:.95letter-spacing:-.02em}
 .food-heading>div>span,.compact-heading>span{display:block;margin-top:30px;max-width:500px;color:#615d57;line-height:1.65}
 .food-heading img{display:block;width:100%;height:360px;object-fit:cover;border-radius:2px;filter:saturate(.86) contrast(1.05)}
 .food-heading.image-left img{order:0}
@@ -88,10 +88,10 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .food-section img,.featured-menu-card img{cursor:zoom-in}
 .food-section img:focus-visible,.featured-menu-card img:focus-visible{outline:3px solid var(--menu-red);outline-offset:5px}
 .dish.has-image:hover .dish-thumb{transform:scale(1.035);filter:saturate(1.08) contrast(1.02)}
-.dish h3{font-family:Oswald,sans-serif;font-size:clamp(23px,2vw,32px);line-height:1.05;text-transform:uppercase;margin:0;font-weight:600;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.dish h3{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(20px,1.7vw,28px);line-height:1.05margin:0;font-weight:600;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
 .dish h3 small{font-family:Inter,sans-serif;font-size:9px;letter-spacing:.12em;color:#7a746d;font-weight:700;text-transform:uppercase}
 .dish p{max-width:800px;margin:9px 0 0;color:#69645e;font-size:13px;line-height:1.6}
-.dish>strong{font-family:Oswald,sans-serif;font-size:22px;white-space:nowrap;color:var(--menu-red);font-weight:700}
+.dish>strong{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:22px;white-space:nowrap;color:var(--menu-red);font-weight:700}
 .dish-title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .badge{padding:7px 11px 6px;border-radius:2px;color:#fff;font-family:Inter,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;white-space:nowrap}
 .badge.veggie{background:var(--menu-green)}
@@ -119,7 +119,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .featured-menu-heading>span{grid-column:1/-1;display:inline-flex;align-items:center;width:fit-content;padding:8px 12px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
 .chef-selection .featured-menu-heading>span{border-color:rgba(239,20,35,.55);background:rgba(239,20,35,.18);color:#ffd5d8}
 .popular-pizzas .featured-menu-heading>span{border-color:rgba(255,255,255,.45);background:rgba(0,0,0,.18);color:#fff}
-.featured-menu-heading h2{margin:0;font-family:Oswald,sans-serif;font-size:clamp(62px,7vw,122px);line-height:.86;letter-spacing:-.045em;text-transform:uppercase}
+.featured-menu-heading h2{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(46px,5.4vw,88px);line-height:.98;letter-spacing:-.015em}
 .featured-menu-heading p{max-width:580px;margin:0;color:#bbb4ad;line-height:1.6}
 .popular-pizzas .featured-menu-heading p{color:rgba(255,255,255,.88)}
 .featured-menu-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
@@ -129,9 +129,9 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .featured-menu-card>div{position:relative;padding:22px 22px 26px;min-height:230px;background:linear-gradient(180deg,#fff 0%,#f7f2ea 100%)}
 .featured-menu-card>div>span{display:inline-flex;align-items:center;margin:0 0 14px;padding:7px 10px;border-radius:2px;background:var(--menu-red);color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;line-height:1.2}
 .featured-menu-card__title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:0 0 12px}
-.featured-menu-card h3{margin:0;font-family:Oswald,sans-serif;font-size:clamp(28px,2.4vw,42px);line-height:.95;text-transform:uppercase}
+.featured-menu-card h3{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(24px,2vw,34px);line-height:.95}
 .featured-menu-card p{margin:0;color:#4f4a45;line-height:1.55}
-.featured-menu-card strong{flex:0 0 auto;color:var(--menu-red);font-family:Oswald,sans-serif;font-size:24px;line-height:1;white-space:nowrap}
+.featured-menu-card strong{flex:0 0 auto;color:var(--menu-red);font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:24px;line-height:1;white-space:nowrap}
 .featured-award{box-shadow:0 18px 40px rgba(0,0,0,.28),inset 0 0 0 4px #111}
 .featured-award>div>span{background:#111}
 
@@ -139,14 +139,14 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .drinks-grid .category-pastel::before{left:-32px;right:-32px;width:auto;transform:none}
 .compact-section{width:auto;padding:140px 0;margin:0;border:0}
 .compact-heading{min-height:330px}
-.compact-heading h2{font-size:clamp(62px,6vw,100px)}
-#vinos-title{font-size:clamp(42px,5.1vw,86px);white-space:nowrap}
+.compact-heading h2{font-size:clamp(46px,5vw,76px)}
+#vinos-title{font-size:clamp(34px,4.2vw,64px);white-space:nowrap}
 .simple{align-items:center}
 .simple h3{font-size:21px}
 .simple h3 small{display:block;margin-top:5px}
 
 .menu-footer{background:#050505;color:#fff;min-height:370px;padding:80px max(32px,calc((100vw - 1600px)/2));display:grid;grid-template-columns:1fr 1fr auto;gap:60px;align-items:end}
-.footer-mark{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:clamp(48px,6vw,100px);line-height:.75;letter-spacing:-.05em}
+.footer-mark{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(48px,6vw,100px);line-height:.75;letter-spacing:-.02em}
 .footer-mark span,.footer-mark strong{display:block}
 .footer-mark strong{color:var(--menu-red)}
 .footer-note{border-left:1px solid rgba(255,255,255,.2);padding-left:28px;color:#9f9993;text-transform:uppercase;letter-spacing:.11em;font-size:9px;line-height:1.5}
@@ -157,8 +157,8 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .product-lightbox figure{display:grid;grid-template-columns:minmax(0,1fr) 310px;margin:0;max-height:88vh}
 .product-lightbox img{display:block;width:100%;height:88vh;max-height:880px;object-fit:contain;background:#030303}
 .product-lightbox figcaption{display:flex;flex-direction:column;justify-content:flex-end;gap:15px;padding:40px 34px;background:#111}
-.product-lightbox figcaption span{font-family:Oswald,sans-serif;font-size:38px;line-height:1;text-transform:uppercase}
-.product-lightbox figcaption strong{color:var(--menu-red);font-family:Oswald,sans-serif;font-size:27px}
+.product-lightbox figcaption span{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:38px;line-height:1}
+.product-lightbox figcaption strong{color:var(--menu-red);font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:27px}
 .product-lightbox-close{position:absolute;z-index:2;right:-18px;top:-18px;width:52px;height:52px;border:0;border-radius:50%;background:var(--menu-red);color:#fff;font-size:34px;line-height:1;cursor:pointer}
 body.lightbox-open{overflow:hidden}
 
@@ -193,19 +193,19 @@ body.lightbox-open{overflow:hidden}
   .menu-hero-shade{background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.3)),linear-gradient(0deg,rgba(0,0,0,.8),transparent)}
   .menu-hero::after{margin:12px}
   .menu-hero-copy{left:28px;top:43%;width:calc(100% - 56px)}
-  .menu-hero h1{font-size:clamp(76px,19vw,130px)}
+  .menu-hero h1{font-size:clamp(56px,14vw,96px)}
   .menu-hero h1 span{margin-left:0}
   .menu-hero-lead{max-width:530px}
   .oven-note{right:8%;top:auto;bottom:9%;font-size:31px}
   .hero-index{display:none}
   .explore-link{top:calc(100% + 34px)}
   .menu-directory{padding:100px 24px;grid-template-columns:1fr;gap:70px}
-  .menu-directory h2{font-size:clamp(57px,14vw,92px)}
+  .menu-directory h2{font-size:clamp(44px,11vw,72px)}
   .food-section{width:calc(100% - 40px);padding:100px 0}
   .food-heading,.food-heading.image-left,.pizza-heading{grid-template-columns:1fr;gap:40px;margin-bottom:50px}
   .food-heading.image-left img{order:2}
   .food-heading img,.pizza-heading img{height:min(62vw,410px)}
-  .food-heading h2{font-size:clamp(68px,17vw,116px)}
+  .food-heading h2{font-size:clamp(50px,13vw,88px)}
   .dish-list-two{grid-template-columns:1fr}
   .dish-list-two .dish.has-image{grid-template-columns:132px 1fr auto;gap:24px}
   .dish-list-two .dish-thumb{width:132px;height:132px}
@@ -225,7 +225,7 @@ body.lightbox-open{overflow:hidden}
   .menu-hero{height:720px}
   .menu-hero-copy{left:20px;width:calc(100% - 40px)}
   .menu-eyebrow{letter-spacing:.28em}
-  .menu-hero h1{font-size:21vw;line-height:.84}
+  .menu-hero h1{font-size:16vw;line-height:.84}
   .menu-hero-lead{font-size:14px;margin-top:30px}
   .menu-hero-meta{margin-top:28px}
   .oven-note{display:none}
@@ -238,7 +238,7 @@ body.lightbox-open{overflow:hidden}
   .menu-directory{padding:78px 20px}
   .category-directory a{font-size:25px}
   .food-section{width:calc(100% - 32px);padding:82px 0}
-  .food-heading h2{font-size:18vw}
+  .food-heading h2{font-size:14vw}
   .food-heading img,.pizza-heading img{height:75vw}
   .food-section img,.featured-menu-card img{cursor:default}
   .heading-stamp{width:170px;height:170px!important;font-size:18px!important}
@@ -270,7 +270,7 @@ body.lightbox-open{overflow:hidden}
   .signature{margin:0 -8px;padding:24px 8px}
   .featured-menu-section{padding:82px 16px}
   .featured-menu-heading{margin-bottom:42px}
-  .featured-menu-heading h2{font-size:clamp(43px,11vw,58px)}
+  .featured-menu-heading h2{font-size:clamp(28px,7.5vw,40px)}
   .featured-menu-heading>span{font-size:10px;padding:9px 12px}
   .featured-menu-grid{grid-template-columns:1fr;gap:16px}
   .featured-menu-card{display:block;box-shadow:0 14px 28px rgba(0,0,0,.28)}
