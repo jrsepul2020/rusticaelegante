@@ -27,7 +27,7 @@ body.inner-page{background:var(--paper);color:var(--ink)}
 .inner-hero h1 span{display:block;color:var(--red)}
 .inner-hero-lead{max-width:680px;margin:38px 0 0;color:#c5beb6;font-size:clamp(16px,1.2vw,20px);line-height:1.7}
 .inner-hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
-.inner-hero-media{position:relative;min-height:650px;overflow:hidden}
+.inner-hero-media{position:relative;min-height:650px;overflow:hidden;margin:0;width:100%}
 .inner-hero-media img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.06)}
 .inner-hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080808 0%,rgba(8,8,8,.96) 9%,rgba(8,8,8,.78) 23%,rgba(8,8,8,.42) 39%,rgba(8,8,8,.12) 55%,transparent 70%),linear-gradient(0deg,rgba(0,0,0,.42),transparent 52%)}
 .hero-caption{position:absolute;z-index:2;left:38px;bottom:35px;color:#fff;font-size:9px;text-transform:uppercase;letter-spacing:.16em;max-width:280px;line-height:1.6}
@@ -37,8 +37,8 @@ body.inner-page{background:var(--paper);color:var(--ink)}
 .editorial-heading h2,.story-copy h2,.cta-panel h2,.empty-state h2{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(40px,4.4vw,70px);line-height:1.05;letter-spacing:-.015em;margin:12px 0 0;text-wrap:balance}
 .editorial-heading>p{max-width:52ch;margin:0;color:#6a655f;font-size:clamp(15px,1.05vw,17px);line-height:1.7}
 
-.story-section{width:100%;max-width:none;margin:0;padding:clamp(72px,9vw,120px) max(32px,calc((100vw - 1520px)/2));display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:clamp(40px,7vw,110px);align-items:center;background:var(--paper-soft);border-top:0}
-.story-portrait{position:relative}
+.story-section{width:100%;max-width:none;margin:0;padding:clamp(72px,9vw,120px) max(32px,calc((100vw - 1520px)/2));display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:clamp(40px,7vw,110px);align-items:center;background:var(--paper-soft);border-top:0;box-sizing:border-box}
+.story-portrait{position:relative;margin:0}
 .story-portrait img{display:block;width:100%;height:min(760px,70vw);object-fit:cover}
 .story-portrait figcaption{position:absolute;left:18px;right:18px;bottom:18px;background:#050505;color:#fff;padding:17px 19px;font-size:9px;line-height:1.5;text-transform:uppercase;letter-spacing:.13em}
 .story-copy .role{display:block;margin:24px 0 31px;color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:12px;line-height:1.6}
@@ -643,13 +643,13 @@ body.inner-page{background:var(--paper);color:var(--ink)}
   .inner-header .header-reserve{min-height:42px;min-width:0;padding:0 15px;font-size:10px}
   .inner-header.menu-open .main-nav{top:80px}
   .inner-hero{min-height:auto;grid-template-columns:1fr}
-  .inner-hero-copy{padding:90px 36px 80px}
+  .inner-hero-copy{order:2;padding:48px 24px 72px}
   .inner-hero h1{font-size:clamp(48px,12vw,84px)}
-  .inner-hero-media{min-height:620px}
-  .inner-hero-media::after{background:linear-gradient(180deg,#080808 0%,rgba(8,8,8,.68) 12%,rgba(8,8,8,.24) 28%,transparent 48%),linear-gradient(0deg,rgba(0,0,0,.54),transparent 52%)}
+  .inner-hero-media{order:1;min-height:min(78vw,520px)}
+  .inner-hero-media::after{background:linear-gradient(180deg,rgba(8,8,8,.35) 0%,transparent 28%),linear-gradient(0deg,#080808 0%,rgba(8,8,8,.55) 22%,transparent 48%)}
   .editorial-section{width:calc(100% - 56px);padding:95px 0}
   .editorial-heading,.story-section{grid-template-columns:1fr;gap:45px}
-  .story-section{padding:72px 20px}
+  .story-section{width:calc(100% - 40px);max-width:none;margin:0 auto;padding:72px 0;box-sizing:border-box}
   .story-portrait img{height:70vw;max-height:720px}
   .awards-feature{grid-template-columns:1fr;gap:24px;margin-bottom:42px}
   .awards-feature__photo img{height:min(480px,72vw)}
@@ -700,9 +700,10 @@ body.inner-page{background:var(--paper);color:var(--ink)}
 }
 
 @media(max-width:540px){
-  .inner-hero-copy{padding:84px 36px 72px}
-  .inner-hero-media{min-height:500px}
-  .editorial-section{width:calc(100% - 56px);padding:78px 0}
+  .inner-hero-copy{padding:40px 20px 64px}
+  .inner-hero-media{min-height:min(88vw,480px)}
+  .editorial-section{width:calc(100% - 40px);padding:78px 0}
+  .story-section{width:calc(100% - 32px);padding:64px 0}
   .awards-section,.gallery-section{padding-top:72px}
   .award-marks{gap:8px}
   .award-marks img{padding:5px}
