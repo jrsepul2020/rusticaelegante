@@ -26,7 +26,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .menu-hero::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.08);margin:24px;pointer-events:none}
 .menu-hero-copy{position:absolute;left:clamp(28px,8vw,150px);top:50%;transform:translateY(-48%);width:min(760px,55vw)}
 .menu-eyebrow{margin:0 0 27px;color:#ddd5cb;font-size:11px;text-transform:uppercase;letter-spacing:.42em}
-.menu-hero h1{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(60px,7vw,112px);line-height:.92letter-spacing:-.02em}
+.menu-hero h1{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(60px,7vw,112px);line-height:.92;letter-spacing:-.02em}
 .menu-hero h1 span{display:block;color:var(--menu-red);margin-left:.33em}
 .menu-hero-lead{width:min(600px,100%);font-size:clamp(15px,1.15vw,19px);line-height:1.7;color:#d3ccc4;margin:42px 0 0}
 .menu-hero-meta{display:flex;align-items:center;gap:18px;margin-top:34px}
@@ -44,7 +44,9 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 
 @keyframes hero-settle{from{transform:scale(1.12)}to{transform:scale(1.035)}}
 
-.honours{display:grid;grid-template-columns:repeat(5,1fr);background:#090909;color:#fff;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.honours{background:#090909;color:#fff;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.honours-title{display:none;margin:0}
+.honours-list{display:grid;grid-template-columns:repeat(5,1fr)}
 .honours article{min-height:124px;padding:24px clamp(18px,2.2vw,38px);display:flex;gap:18px;align-items:center;border-right:1px solid rgba(255,255,255,.12)}
 .honours article:last-child{border-right:0}
 .honours img{display:none}
@@ -74,7 +76,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .food-heading.image-left{grid-template-columns:minmax(320px,43%) 1fr}
 .food-heading.text-only,.pizza-heading.text-only{grid-template-columns:1fr}
 .food-heading>div>p,.compact-heading>p{margin:0 0 17px;color:var(--menu-red);font-size:10px;text-transform:uppercase;letter-spacing:.24em;font-weight:800}
-.food-heading h2,.compact-heading h2{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(52px,6.4vw,104px);line-height:.95letter-spacing:-.02em}
+.food-heading h2,.compact-heading h2{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(52px,6.4vw,104px);line-height:.95;letter-spacing:-.02em}
 .food-heading>div>span,.compact-heading>span{display:block;margin-top:30px;max-width:500px;color:#615d57;line-height:1.65}
 .food-heading img{display:block;width:100%;height:360px;object-fit:cover;border-radius:2px;filter:saturate(.86) contrast(1.05)}
 .food-heading.image-left img{order:0}
@@ -82,31 +84,32 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .dessert-script{font-family:Georgia,serif;font-style:italic;font-size:clamp(30px,4vw,62px);line-height:.9;color:var(--menu-red);transform:rotate(-7deg);justify-self:center}
 
 .dish-list{border-top:2px solid var(--menu-ink)}
-.dish{display:grid;grid-template-columns:1fr auto;gap:40px;padding:27px 0;border-bottom:1px solid var(--menu-line);align-items:start}
-.dish.has-image{grid-template-columns:148px 1fr auto;gap:28px;align-items:center;min-height:176px}
+.dish{display:grid;grid-template-columns:1fr;gap:0;padding:27px 0;border-bottom:1px solid var(--menu-line);align-items:start}
+.dish.has-image{grid-template-columns:148px minmax(0,1fr);gap:28px;align-items:center;min-height:176px}
 .dish-thumb{width:148px;height:148px;display:block;object-fit:cover;background:#d9d0c3;filter:saturate(.92) contrast(1.02);transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s}
 .food-section img,.featured-menu-card img{cursor:zoom-in}
 .food-section img:focus-visible,.featured-menu-card img:focus-visible{outline:3px solid var(--menu-red);outline-offset:5px}
 .dish.has-image:hover .dish-thumb{transform:scale(1.035);filter:saturate(1.08) contrast(1.02)}
-.dish h3{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(20px,1.7vw,28px);line-height:1.05margin:0;font-weight:600;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.dish-head,.dish-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px 18px;flex-wrap:wrap;width:100%}
+.dish h3{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(20px,1.7vw,28px);line-height:1.05;margin:0;font-weight:600;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;min-width:0;flex:1 1 auto}
 .dish h3 small{font-family:Inter,sans-serif;font-size:9px;letter-spacing:.12em;color:#7a746d;font-weight:700;text-transform:uppercase}
 .dish p{max-width:800px;margin:9px 0 0;color:#69645e;font-size:13px;line-height:1.6}
-.dish>strong{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:22px;white-space:nowrap;color:var(--menu-red);font-weight:700}
-.dish-title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.dish-head strong,.dish-title strong,.dish strong{font-family:Inter,Arial,sans-serif;font-size:16px;line-height:1.2;white-space:nowrap;color:var(--menu-red);font-weight:800;letter-spacing:.02em;margin-left:auto;flex:0 0 auto}
+.dish-title .badge{align-self:center}
 .badge{padding:7px 11px 6px;border-radius:2px;color:#fff;font-family:Inter,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;white-space:nowrap}
 .badge.veggie{background:var(--menu-green)}
 .badge.spicy{background:var(--menu-red)}
 .badge.award{background:var(--menu-ink)}
 .signature{background:var(--menu-red);color:#fff;margin:0 -24px;padding:28px 24px;border:0}
 .signature p{color:rgba(255,255,255,.75)}
-.signature>strong{color:#fff}
+.signature .dish-head strong,.signature .dish-title strong,.signature strong{color:#fff}
 .signature .badge.award{background:#fff;color:var(--menu-ink)}
 
 .pizzas-section{position:relative}
 .pizza-heading{grid-template-columns:1fr minmax(320px,38%)}
 .pizza-heading img{height:480px}
 .dish-list-two{display:grid;grid-template-columns:1fr 1fr;column-gap:70px;border-top:2px solid var(--menu-ink)}
-.dish-list-two .dish.has-image{grid-template-columns:124px 1fr auto;gap:22px}
+.dish-list-two .dish.has-image{grid-template-columns:124px minmax(0,1fr);gap:22px}
 .dish-list-two .dish-thumb{width:124px;height:124px}
 .dish-list-two .dish:nth-child(2){border-top:0}
 .dish-list-two .signature{margin:0 -12px;padding-left:12px;padding-right:12px}
@@ -119,10 +122,11 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .featured-menu-heading>span{grid-column:1/-1;display:inline-flex;align-items:center;width:fit-content;padding:8px 12px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
 .chef-selection .featured-menu-heading>span{border-color:rgba(239,20,35,.55);background:rgba(239,20,35,.18);color:#ffd5d8}
 .popular-pizzas .featured-menu-heading>span{border-color:rgba(255,255,255,.45);background:rgba(0,0,0,.18);color:#fff}
-.featured-menu-heading h2{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(46px,5.4vw,88px);line-height:.98;letter-spacing:-.015em}
+.featured-menu-heading h2{margin:0;font-family:Inter,Arial,sans-serif;font-size:clamp(42px,5.2vw,76px);line-height:1.02;letter-spacing:-.03em;font-weight:800}
 .featured-menu-heading p{max-width:580px;margin:0;color:#bbb4ad;line-height:1.6}
 .popular-pizzas .featured-menu-heading p{color:rgba(255,255,255,.88)}
 .featured-menu-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+a.featured-menu-card{display:block;text-decoration:none;color:inherit}
 .featured-menu-card{position:relative;overflow:hidden;background:#fff;color:var(--menu-ink);min-width:0;box-shadow:0 18px 40px rgba(0,0,0,.22)}
 .featured-menu-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transition:filter .3s,transform .45s cubic-bezier(.2,.7,.2,1)}
 .featured-menu-card:hover img{filter:saturate(1.08);transform:scale(1.018)}
@@ -131,9 +135,10 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .featured-menu-card__title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:0 0 12px}
 .featured-menu-card h3{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(24px,2vw,34px);line-height:.95}
 .featured-menu-card p{margin:0;color:#4f4a45;line-height:1.55}
-.featured-menu-card strong{flex:0 0 auto;color:var(--menu-red);font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:24px;line-height:1;white-space:nowrap}
+.featured-menu-card strong{flex:0 0 auto;color:var(--menu-red);font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:800;letter-spacing:.02em;line-height:1.2;white-space:nowrap}
 .featured-award{box-shadow:0 18px 40px rgba(0,0,0,.28),inset 0 0 0 4px #111}
 .featured-award>div>span{background:#111}
+.dish[id]{scroll-margin-top:96px}
 
 .drinks-grid{width:min(calc(100% - 64px),1600px);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:90px;border-top:1px solid var(--menu-line)}
 .drinks-grid .category-pastel::before{left:-32px;right:-32px;width:auto;transform:none}
@@ -141,9 +146,10 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .compact-heading{min-height:330px}
 .compact-heading h2{font-size:clamp(46px,5vw,76px)}
 #vinos-title{font-size:clamp(34px,4.2vw,64px);white-space:nowrap}
-.simple{align-items:center}
-.simple h3{font-size:21px}
+.simple{display:flex;align-items:baseline;justify-content:space-between;gap:12px 18px}
+.simple h3{font-size:21px;flex:1 1 auto;min-width:0;margin:0}
 .simple h3 small{display:block;margin-top:5px}
+.simple strong{margin-left:auto;flex:0 0 auto}
 
 .menu-footer{background:#050505;color:#fff;min-height:370px;padding:80px max(32px,calc((100vw - 1600px)/2));display:grid;grid-template-columns:1fr 1fr auto;gap:60px;align-items:end}
 .footer-mark{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(48px,6vw,100px);line-height:.75;letter-spacing:-.02em}
@@ -158,7 +164,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .product-lightbox img{display:block;width:100%;height:88vh;max-height:880px;object-fit:contain;background:#030303}
 .product-lightbox figcaption{display:flex;flex-direction:column;justify-content:flex-end;gap:15px;padding:40px 34px;background:#111}
 .product-lightbox figcaption span{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:38px;line-height:1}
-.product-lightbox figcaption strong{color:var(--menu-red);font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:27px}
+.product-lightbox figcaption strong{color:var(--menu-red);font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:800;letter-spacing:.02em}
 .product-lightbox-close{position:absolute;z-index:2;right:-18px;top:-18px;width:52px;height:52px;border:0;border-radius:50%;background:var(--menu-red);color:#fff;font-size:34px;line-height:1;cursor:pointer}
 body.lightbox-open{overflow:hidden}
 
@@ -176,7 +182,7 @@ body.lightbox-open{overflow:hidden}
   .menu-header.menu-open{align-items:center;padding-top:0}
   .menu-header.menu-open .main-nav{display:flex;position:absolute;top:104px;left:0;right:0;padding:28px 32px;background:#090909;flex-direction:column;align-items:flex-end;gap:4px;border:0;border-radius:0}
   .menu-header.menu-open .main-nav a{font-size:15px}
-  .honours{grid-template-columns:repeat(5,260px);overflow-x:auto;scroll-snap-type:x mandatory}
+  .honours-list{grid-template-columns:repeat(5,260px);overflow-x:auto;scroll-snap-type:x mandatory}
   .honours article{scroll-snap-align:start}
   .dish-list-two{column-gap:40px}
 }
@@ -188,33 +194,60 @@ body.lightbox-open{overflow:hidden}
   .menu-header .brand-copy{display:none}
   .menu-header .header-reserve{min-height:42px;min-width:0;padding:0 16px;font-size:10px}
   .menu-header.menu-open .main-nav{top:80px}
-  .menu-hero{height:760px;min-height:0}
-  .menu-hero-image{background-position:60% center}
-  .menu-hero-shade{background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.3)),linear-gradient(0deg,rgba(0,0,0,.8),transparent)}
-  .menu-hero::after{margin:12px}
-  .menu-hero-copy{left:28px;top:43%;width:calc(100% - 56px)}
+  .menu-hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:0 0 56px}
+  .menu-hero-image{position:relative;inset:auto;z-index:0;width:100%;height:min(72vw,460px);background-position:center 42%;transform:none;animation:none;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 38%,rgba(0,0,0,.55) 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 38%,rgba(0,0,0,.55) 62%,transparent 100%)}
+  .menu-hero-shade{inset:auto;left:0;right:0;top:calc(min(72vw,460px) * .28);bottom:0;z-index:1;background:linear-gradient(180deg,rgba(9,9,9,0) 0%,rgba(9,9,9,.42) 22%,#090909 58%)}
+  .menu-hero::after{display:none}
+  .menu-hero-copy{position:relative;left:auto;top:auto;transform:none;z-index:2;width:calc(100% - 48px);margin:-148px auto 0;padding:0 4px}
   .menu-hero h1{font-size:clamp(56px,14vw,96px)}
   .menu-hero h1 span{margin-left:0}
-  .menu-hero-lead{max-width:530px}
-  .oven-note{right:8%;top:auto;bottom:9%;font-size:31px}
-  .hero-index{display:none}
-  .explore-link{top:calc(100% + 34px)}
-  .menu-directory{padding:100px 24px;grid-template-columns:1fr;gap:70px}
+  .menu-hero-lead{max-width:530px;margin-top:28px}
+  .oven-note,.hero-index{display:none}
+  .explore-link{position:relative;left:auto;top:auto;margin-top:28px}
+  .menu-directory{padding:100px 24px;grid-template-columns:1fr;gap:48px}
   .menu-directory h2{font-size:clamp(44px,11vw,72px)}
-  .food-section{width:calc(100% - 40px);padding:100px 0}
+  .category-directory{border-top:0}
+  .category-directory a{gap:18px;min-height:72px;border-bottom:0}
+  .category-directory a span{font-size:18px;letter-spacing:.08em;font-weight:800}
+  .food-section{width:calc(100% - 40px);padding:100px 0;border-top:0}
   .food-heading,.food-heading.image-left,.pizza-heading{grid-template-columns:1fr;gap:40px;margin-bottom:50px}
   .food-heading.image-left img{order:2}
   .food-heading img,.pizza-heading img{height:min(62vw,410px)}
   .food-heading h2{font-size:clamp(50px,13vw,88px)}
+  .dish{border-bottom:0}
+  .dish-list,.dish-list-two{border-top:0}
   .dish-list-two{grid-template-columns:1fr}
-  .dish-list-two .dish.has-image{grid-template-columns:132px 1fr auto;gap:24px}
+  .dish-list-two .dish.has-image{grid-template-columns:132px minmax(0,1fr);gap:24px}
   .dish-list-two .dish-thumb{width:132px;height:132px}
-  .dish-list-two .dish:nth-child(2){border-top:1px solid var(--menu-line)}
-  .featured-menu-section{padding:100px 24px}
-  .featured-menu-heading{grid-template-columns:1fr;gap:30px}
+  .dish-list-two .dish:nth-child(2){border-top:0}
+  .dish-head strong,.dish-title strong,.dish strong{font-size:20px}
+  .dish[id]{scroll-margin-top:88px}
+  .honours{padding:48px 24px 28px;border-top:0;border-bottom:0}
+  .honours-title{display:block;margin:0 0 28px;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(36px,9vw,52px);line-height:.95;letter-spacing:-.015em;font-weight:600;color:#fff}
+  .honours-list{display:grid;grid-template-columns:1fr;overflow:visible;scroll-snap-type:none}
+  .honours article{display:flex;align-items:baseline;gap:22px;min-height:0;padding:22px 0;border-right:0;border-bottom:0}
+  .honours article:last-child{border-bottom:0}
+  .honours img{display:none}
+  .honours span{flex:0 0 auto;font-size:clamp(42px,11vw,58px);line-height:.85;font-weight:600;letter-spacing:-.02em}
+  .honours p{font-size:15px;line-height:1.35;letter-spacing:.08em;align-self:center}
+  .honours strong{font-size:16px;margin-top:4px}
+  .featured-menu-section{padding:72px 24px}
+  .featured-menu-heading{grid-template-columns:1fr;gap:18px;margin-bottom:28px}
   .featured-menu-heading>span{grid-column:auto}
-  .featured-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .drinks-grid{width:calc(100% - 40px);grid-template-columns:1fr;gap:0}
+  .featured-menu-heading p{display:none}
+  .featured-menu-heading h2{font-family:Inter,Arial,sans-serif;font-weight:800;font-style:normal;letter-spacing:-.03em;font-size:clamp(36px,9vw,52px)}
+  .featured-menu-grid{grid-template-columns:1fr;gap:0}
+  .featured-menu-card,.featured-award{background:transparent;box-shadow:none;overflow:visible;border-bottom:1px solid rgba(255,255,255,.22)}
+  .featured-menu-card:last-child{border-bottom:0}
+  .featured-menu-card img,.featured-menu-card>div>span,.featured-menu-card p{display:none}
+  .featured-menu-card>div{padding:18px 0;min-height:0;background:transparent}
+  .featured-menu-card__title{align-items:baseline;gap:16px;margin:0}
+  .featured-menu-card h3{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(26px,6.5vw,34px);color:#fff;line-height:1.05;font-weight:600}
+  .featured-menu-card strong{font-size:20px;color:#fff}
+  .chef-selection .featured-menu-card strong{color:#ffb4ba}
+  .popular-pizzas .featured-menu-card strong{color:#fff}
+  .featured-menu-card:hover img{transform:none;filter:none}
+  .drinks-grid{width:calc(100% - 40px);grid-template-columns:1fr;gap:0;border-top:0}
   .drinks-grid .category-pastel::before{left:50%;right:auto;width:100vw;transform:translateX(-50%)}
   .compact-section{padding:100px 0}
   .compact-heading{min-height:0;margin-bottom:50px}
@@ -222,34 +255,53 @@ body.lightbox-open{overflow:hidden}
 }
 
 @media(max-width:540px){
-  .menu-hero{height:720px}
-  .menu-hero-copy{left:20px;width:calc(100% - 40px)}
+  .menu-hero{padding-bottom:44px}
+  .menu-hero-image{height:min(78vw,420px)}
+  .menu-hero-shade{top:calc(min(78vw,420px) * .26)}
+  .menu-hero-copy{width:calc(100% - 40px);margin-top:-136px}
   .menu-eyebrow{letter-spacing:.28em}
   .menu-hero h1{font-size:16vw;line-height:.84}
-  .menu-hero-lead{font-size:14px;margin-top:30px}
-  .menu-hero-meta{margin-top:28px}
-  .oven-note{display:none}
-  .honours{display:grid;grid-template-columns:1fr;overflow:visible;scroll-snap-type:none}
-  .honours article{display:grid;grid-template-columns:118px 24px minmax(0,1fr);gap:14px;min-height:148px;padding:0 18px 0 0;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
-  .honours article:last-child{border-bottom:0}
-  .honours img{display:block;width:118px;height:148px;object-fit:cover;filter:saturate(.82) contrast(1.05)}
-  .honours p{font-size:20px!important;line-height:1.22;letter-spacing:.07em}
-  .honours strong{font-size:20px}
-  .menu-directory{padding:78px 20px}
-  .category-directory a{font-size:25px}
+  .menu-hero-lead{font-size:14px;margin-top:24px}
+  .menu-hero-meta{margin-top:24px}
+  .honours{padding:42px 20px 22px}
+  .honours-title{margin-bottom:22px;font-size:clamp(34px,10vw,48px)}
+  .honours article{padding:20px 0;gap:18px}
+  .honours span{font-size:clamp(48px,14vw,64px)}
+  .honours p{font-size:14px;letter-spacing:.06em}
+  .honours strong{font-size:15px}
+  .menu-directory{padding:78px 20px;gap:36px}
+  .category-directory a{font-size:25px;min-height:68px}
+  .category-directory a span{font-size:20px;letter-spacing:.06em}
   .food-section{width:calc(100% - 32px);padding:82px 0}
   .food-heading h2{font-size:14vw}
   .food-heading img,.pizza-heading img{height:75vw}
   .food-section img,.featured-menu-card img{cursor:default}
   .heading-stamp{width:170px;height:170px!important;font-size:18px!important}
   .dish{gap:16px;padding:23px 0}
-  .dish.has-image,.dish-list-two .dish.has-image{grid-template-columns:minmax(0,1fr) auto;gap:20px 14px;min-height:0;align-items:start}
+  .dish.simple{display:flex;align-items:baseline;justify-content:space-between;gap:12px 16px}
+  .dish.simple h3{
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:6px 10px;
+    font-size:clamp(20px,5.5vw,26px);
+    font-weight:600;
+  }
+  .dish.simple h3 small{
+    display:inline;
+    font-size:11px;
+    letter-spacing:.1em;
+    color:#7a746d;
+    font-weight:700;
+  }
+  .dish.has-image,.dish-list-two .dish.has-image{grid-template-columns:1fr;gap:20px;min-height:0;align-items:start}
   .dish-thumb,.dish-list-two .dish-thumb{grid-column:1/-1;width:100%;height:auto;aspect-ratio:1/1}
+  .dish-head,.dish-title{align-items:flex-start;gap:10px 14px}
   .dish h3{
     flex-direction:column;
     align-items:flex-start;
     gap:8px;
-    font-size:clamp(28px,8vw,36px);
+    font-size:clamp(26px,7.5vw,34px);
     line-height:1;
     font-weight:700;
   }
@@ -261,25 +313,22 @@ body.lightbox-open{overflow:hidden}
     font-weight:800;
   }
   .dish p{font-size:13px}
-  .dish>strong{
+  .dish-head strong,.dish-title strong,.dish strong{
+    font-family:Inter,Arial,sans-serif;
     font-size:22px;
-    font-weight:700;
+    font-weight:800;
     color:var(--menu-red);
+    margin-top:4px;
   }
-  .dish-title{align-items:flex-start;flex-direction:column;gap:7px}
+  .dish-title .badge{order:3;flex-basis:100%;margin-top:2px}
   .signature{margin:0 -8px;padding:24px 8px}
-  .featured-menu-section{padding:82px 16px}
-  .featured-menu-heading{margin-bottom:42px}
-  .featured-menu-heading h2{font-size:clamp(28px,7.5vw,40px)}
+  .featured-menu-section{padding:64px 16px}
+  .featured-menu-heading{margin-bottom:20px}
+  .featured-menu-heading h2{font-size:clamp(34px,9vw,48px);font-family:Inter,Arial,sans-serif;font-weight:800}
   .featured-menu-heading>span{font-size:10px;padding:9px 12px}
-  .featured-menu-grid{grid-template-columns:1fr;gap:16px}
-  .featured-menu-card{display:block;box-shadow:0 14px 28px rgba(0,0,0,.28)}
-  .featured-menu-card img{height:auto;aspect-ratio:1/1;min-height:0}
-  .featured-menu-card>div{padding:20px 18px 22px;min-height:0}
-  .featured-menu-card>div>span{display:inline-flex;margin-bottom:12px;padding:8px 11px;font-size:11px;letter-spacing:.1em}
-  .featured-menu-card__title{align-items:center;gap:12px;margin-bottom:10px}
-  .featured-menu-card h3{font-size:30px}
-  .featured-menu-card strong{font-size:23px}
+  .featured-menu-card>div{padding:16px 0}
+  .featured-menu-card h3{font-size:28px}
+  .featured-menu-card strong{font-size:22px}
   .drinks-grid{width:calc(100% - 32px)}
   .menu-footer{padding:70px 20px;min-height:430px}
   .product-lightbox{width:calc(100vw - 24px)}

@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20260908b" />
-  <link rel="stylesheet" href="carta.css?v=20260908b" />
-  <link rel="stylesheet" href="../site-chrome.css?v=20260908b" />
+  <link rel="stylesheet" href="../styles.css?v=20260908e" />
+  <link rel="stylesheet" href="carta.css?v=20260908j" />
+  <link rel="stylesheet" href="../site-chrome.css?v=20260908q" />
 </head>
 <body class="menu-page">
   <aside class="top-bar" aria-label="Información de contacto">
@@ -37,17 +37,26 @@
       <a href="../eventos-rustica-napoletana/">Eventos</a>
       <a href="../novedades/">Novedades</a>
       <a href="../nosotros/">Nosotros</a>
-      <div class="mobile-nav-context">
-        <span class="mobile-nav-logo" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span>
-        <div class="mobile-nav-contact">
-          <a href="tel:+34955498119">955 498 119</a>
-          <address>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</address>
-          <p>Jueves a Lunes: 20:00-00:00<br>Cerrado mar-mié</p>
+      <div class="mobile-nav-panel">
+        <p class="mobile-nav-brand">Rústica Napoletana</p>
+        <div class="mobile-nav-actions">
+          <a class="btn btn-red mobile-nav-reserve" href="tel:+34955498119">Reservar</a>
+          <a class="btn btn-outline mobile-nav-call" href="tel:+34955498119"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg> Llamar</a>
+        </div>
+        <div class="mobile-nav-links">
+          <a class="active" href="./">Carta</a>
+          <a href="../eventos-rustica-napoletana/">Eventos</a>
+          <a href="../novedades/">Novedades</a>
+          <a href="../nosotros/">Nosotros</a>
+          <a href="../index.html#ubicacion">Contacto</a>
         </div>
       </div>
     </nav>
 
-    <a class="btn btn-red btn-small header-reserve" href="tel:+34955498119">Reservar</a>
+    <div class="header-cta">
+      <a class="btn btn-red btn-small header-reserve" href="tel:+34955498119">Reservar</a>
+      <a class="btn btn-outline btn-small header-call" href="tel:+34955498119" aria-label="Llamar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg><span>Llamar</span></a>
+    </div>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-main-nav" aria-label="Abrir menú"><span></span><span></span></button>
   </header>
 
@@ -69,12 +78,15 @@
       <div class="hero-index" aria-hidden="true">RÚSTICA / 2026</div>
     </section>
 
-    <section class="honours" aria-label="Premios y reconocimientos">
-      <article><img src="../assets/eduardo/trofeos.jpeg" alt="" loading="lazy" /><span>01</span><p>Guía Repsol <strong>2026</strong></p></article>
-      <article><img src="../assets/eduardo/eduardo-competicion-1.jpeg" alt="" loading="lazy" /><span>02</span><p>2º Mejor Pizzero de España <strong>2026</strong></p></article>
-      <article><img src="../assets/eduardo/eduardo-competicion-2.jpeg" alt="" loading="lazy" /><span>03</span><p>Top 7 Pizzeros de España <strong>2026/27</strong></p></article>
-      <article><img src="../assets/eduardo/trofeos.jpeg" alt="" loading="lazy" /><span>04</span><p>2× Mejor Pizza <strong>Sin Gluten</strong></p></article>
-      <article><img src="../assets/carta/pizza-silvestre.png" alt="" loading="lazy" /><span>05</span><p>Participante <strong>La Mejor Pizza</strong></p></article>
+    <section class="honours" aria-labelledby="honours-title">
+      <h2 id="honours-title" class="honours-title">Premios obtenidos</h2>
+      <div class="honours-list">
+        <article><img src="../assets/eduardo/trofeos.jpeg" alt="" loading="lazy" /><span>01</span><p>Guía Repsol <strong>2026</strong></p></article>
+        <article><img src="../assets/eduardo/eduardo-competicion-1.jpeg" alt="" loading="lazy" /><span>02</span><p>2º Mejor Pizzero de España <strong>2026</strong></p></article>
+        <article><img src="../assets/eduardo/eduardo-competicion-2.jpeg" alt="" loading="lazy" /><span>03</span><p>Top 7 Pizzeros de España <strong>2026/27</strong></p></article>
+        <article><img src="../assets/eduardo/trofeos.jpeg" alt="" loading="lazy" /><span>04</span><p>2× Mejor Pizza <strong>Sin Gluten</strong></p></article>
+        <article><img src="../assets/carta/pizza-silvestre.png" alt="" loading="lazy" /><span>05</span><p>Participante <strong>La Mejor Pizza</strong></p></article>
+      </div>
     </section>
 
     <section class="menu-directory" id="explora" aria-labelledby="directory-title">
@@ -100,10 +112,10 @@
           <div><p>01 — Fresco</p><h2 id="ensaladas-title">Ensaladas</h2></div>
         </header>
         <div class="dish-list">
-          <article class="dish"><div><h3>Ensalada Maradona</h3><p>1 tomate estilo XL acompañado de stracciatella de burrata, pistacho, parmesano, pesto y albahaca.</p></div><strong>8,50€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/ensalada-de-elite.jpeg" alt="Ensalada de Elite" loading="lazy" decoding="async" /><div><h3>Ensalada de Elite</h3><p>Tres tipos de tomates, burrata, pesto Genovese y vinagre balsámico.</p></div><strong>9,50€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/ensalada-de-cogollos.jpeg" alt="Ensalada de Cogollos" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Ensalada de Cogollos</h3><span class="badge veggie">Vegetariana</span></div><p>Cebolla, tomate, aguacate, nueces, zanahoria y salsa de yogur con un toque de lima.</p></div><strong>6,50€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/ensalada-cesar.webp" alt="Ensalada César" loading="lazy" decoding="async" /><div><h3>Ensalada César</h3><p>Lechugas crujientes con pollo, picatostes dorados, parmesano en lascas y salsa César cremosa.</p></div><strong>9,50€</strong></article>
+          <article class="dish"><div><div class="dish-head"><h3>Ensalada Maradona</h3><strong>8,50€</strong></div><p>1 tomate estilo XL acompañado de stracciatella de burrata, pistacho, parmesano, pesto y albahaca.</p></div></article>
+          <article class="dish has-image" id="plato-ensalada-elite"><img class="dish-thumb" src="../assets/carta/ensalada-de-elite.jpeg" alt="Ensalada de Elite" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Ensalada de Elite</h3><strong>9,50€</strong></div><p>Tres tipos de tomates, burrata, pesto Genovese y vinagre balsámico.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/ensalada-de-cogollos.jpeg" alt="Ensalada de Cogollos" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Ensalada de Cogollos</h3><span class="badge veggie">Vegetariana</span><strong>6,50€</strong></div><p>Cebolla, tomate, aguacate, nueces, zanahoria y salsa de yogur con un toque de lima.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/ensalada-cesar.webp" alt="Ensalada César" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Ensalada César</h3><strong>9,50€</strong></div><p>Lechugas crujientes con pollo, picatostes dorados, parmesano en lascas y salsa César cremosa.</p></div></article>
         </div>
       </section>
 
@@ -112,12 +124,12 @@
           <div><p>02 — Para abrir boca</p><h2 id="entrantes-title">Entrantes</h2></div>
         </header>
         <div class="dish-list">
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/tosta-caramelizada.png" alt="Tosta Caramelizada" loading="lazy" decoding="async" /><div><h3>Tosta Caramelizada</h3><p>Acompañada de queso de cabra, cebolla crujiente, cebolla caramelizada y salsa de mostaza y miel.</p></div><strong>Consultar</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/cazuela-de-provolone-italiano.png" alt="Cazuela de Provolone Italiano" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Cazuela de Provolone Italiano</h3><span class="badge veggie">Vegetariana</span></div><p>Acompañado con tomate natural, orégano y aceites de oliva y ajo.</p></div><strong>10,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/lasagna-bolognese-casera.png" alt="Lasagna Bolognese Casera" loading="lazy" decoding="async" /><div><h3>Lasagna Bolognese Casera</h3><p>Carne picada, cebolla, salsa boloñesa, queso, bechamel y fundido al horno.</p></div><strong>6,50€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pan-de-ajo-con-queso.png" alt="Pan de Ajo con Queso" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Pan de Ajo con Queso</h3><span class="badge veggie">Vegetariana</span></div><p>Pan de ajo horneado con ajo y perejil.</p></div><strong>4,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/patatas-gratinadas-de-la-casa.png" alt="Patatas Gratinadas de la Casa" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Patatas Gratinadas de la Casa</h3><span class="badge veggie">Vegetariana</span></div><p>Patatas gratinadas con salsa de la casa y queso fundido.</p></div><strong>5,50€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pan-baho-2-unidades.png" alt="Pan Baho" loading="lazy" decoding="async" /><div><h3>Pan Baho <small>2 unidades</small></h3></div><strong>8,50€</strong></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/tosta-caramelizada.png" alt="Tosta Caramelizada" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Tosta Caramelizada</h3><strong>Consultar</strong></div><p>Acompañada de queso de cabra, cebolla crujiente, cebolla caramelizada y salsa de mostaza y miel.</p></div></article>
+          <article class="dish has-image" id="plato-provolone"><img class="dish-thumb" src="../assets/carta/cazuela-de-provolone-italiano.png" alt="Cazuela de Provolone Italiano" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Cazuela de Provolone Italiano</h3><span class="badge veggie">Vegetariana</span><strong>10,00€</strong></div><p>Acompañado con tomate natural, orégano y aceites de oliva y ajo.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/lasagna-bolognese-casera.png" alt="Lasagna Bolognese Casera" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Lasagna Bolognese Casera</h3><strong>6,50€</strong></div><p>Carne picada, cebolla, salsa boloñesa, queso, bechamel y fundido al horno.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pan-de-ajo-con-queso.png" alt="Pan de Ajo con Queso" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Pan de Ajo con Queso</h3><span class="badge veggie">Vegetariana</span><strong>4,00€</strong></div><p>Pan de ajo horneado con ajo y perejil.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/patatas-gratinadas-de-la-casa.png" alt="Patatas Gratinadas de la Casa" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Patatas Gratinadas de la Casa</h3><span class="badge veggie">Vegetariana</span><strong>5,50€</strong></div><p>Patatas gratinadas con salsa de la casa y queso fundido.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pan-baho-2-unidades.png" alt="Pan Baho" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Pan Baho <small>2 unidades</small></h3><strong>8,50€</strong></div></div></article>
         </div>
       </section>
 
@@ -129,22 +141,22 @@
             <p>Cuatro platos para recorrer la esencia de Rústica: producto, horno y combinaciones con carácter propio.</p>
           </header>
           <div class="featured-menu-grid">
-            <article class="featured-menu-card">
-              <img src="../assets/carta/ensalada-de-elite.jpeg" alt="Ensalada de Elite" loading="lazy" decoding="async" />
+            <a class="featured-menu-card" href="#plato-ensalada-elite">
+              <img src="../assets/carta/ensalada-de-elite.jpeg" alt="" loading="lazy" decoding="async" />
               <div><span>01 · Fresco</span><div class="featured-menu-card__title"><h3>Ensalada de Elite</h3><strong>9,50€</strong></div><p>Tomates, burrata, pesto Genovese y balsámico.</p></div>
-            </article>
-            <article class="featured-menu-card">
-              <img src="../assets/carta/cazuela-de-provolone-italiano.png" alt="Cazuela de Provolone Italiano" loading="lazy" decoding="async" />
+            </a>
+            <a class="featured-menu-card" href="#plato-provolone">
+              <img src="../assets/carta/cazuela-de-provolone-italiano.png" alt="" loading="lazy" decoding="async" />
               <div><span>02 · Al horno</span><div class="featured-menu-card__title"><h3>Provolone Italiano</h3><strong>10,00€</strong></div><p>Tomate natural, orégano y aceites de oliva y ajo.</p></div>
-            </article>
-            <article class="featured-menu-card">
-              <img src="../assets/carta/pizza-la-mama.jpeg" alt="Pizza La Mama" loading="lazy" decoding="async" />
+            </a>
+            <a class="featured-menu-card" href="#plato-la-mama">
+              <img src="../assets/carta/pizza-la-mama.jpeg" alt="" loading="lazy" decoding="async" />
               <div><span>03 · Cremosa</span><div class="featured-menu-card__title"><h3>La Mama</h3><strong>15,00€</strong></div><p>Parmesano, mortadela trufada, panceta y miel de azahar.</p></div>
-            </article>
-            <article class="featured-menu-card">
-              <img src="../assets/carta/padelino-el-punto-prohibido.jpeg" alt="Padelino El Punto Prohibido" loading="lazy" decoding="async" />
+            </a>
+            <a class="featured-menu-card" href="#plato-punto-prohibido">
+              <img src="../assets/carta/padelino-el-punto-prohibido.jpeg" alt="" loading="lazy" decoding="async" />
               <div><span>04 · Para compartir</span><div class="featured-menu-card__title"><h3>El Punto Prohibido</h3><strong>8,50€</strong></div><p>Salami italiano, cherry, rúcula, albahaca y aceite.</p></div>
-            </article>
+            </a>
           </div>
         </div>
       </section>
@@ -157,22 +169,22 @@
             <p>Cuatro recetas con personalidad propia. Silvestre encabeza la selección después de llegar a una final nacional.</p>
           </header>
           <div class="featured-menu-grid">
-            <article class="featured-menu-card featured-award">
-              <img src="../assets/carta/pizza-silvestre.png" alt="Pizza Silvestre" loading="lazy" decoding="async" />
+            <a class="featured-menu-card featured-award" href="#plato-silvestre">
+              <img src="../assets/carta/pizza-silvestre.png" alt="" loading="lazy" decoding="async" />
               <div><span>Finalista · La Mejor Pizza 2026</span><div class="featured-menu-card__title"><h3>Silvestre</h3><strong>15,00€</strong></div><p>Búfala ahumada, limón, pesto rojo y Pecorino Romano.</p></div>
-            </article>
-            <article class="featured-menu-card">
-              <img src="../assets/carta/pizza-la-mama.jpeg" alt="Pizza La Mama" loading="lazy" decoding="async" />
+            </a>
+            <a class="featured-menu-card" href="#plato-la-mama">
+              <img src="../assets/carta/pizza-la-mama.jpeg" alt="" loading="lazy" decoding="async" />
               <div><span>La favorita cremosa</span><div class="featured-menu-card__title"><h3>La Mama</h3><strong>15,00€</strong></div><p>Parmesano, mortadela trufada, panceta y miel de azahar.</p></div>
-            </article>
-            <article class="featured-menu-card">
-              <img src="../assets/carta/pizza-trufada.jpeg" alt="Pizza Trufada" loading="lazy" decoding="async" />
+            </a>
+            <a class="featured-menu-card" href="#plato-trufada">
+              <img src="../assets/carta/pizza-trufada.jpeg" alt="" loading="lazy" decoding="async" />
               <div><span>Aroma de bosque</span><div class="featured-menu-card__title"><h3>Trufada</h3><strong>15,00€</strong></div><p>Boletus, setas, parmesano, trufa y huevo.</p></div>
-            </article>
-            <article class="featured-menu-card">
-              <img src="../assets/carta/pizza-deluxe.jpeg" alt="Pizza Deluxe" loading="lazy" decoding="async" />
+            </a>
+            <a class="featured-menu-card" href="#plato-deluxe">
+              <img src="../assets/carta/pizza-deluxe.jpeg" alt="" loading="lazy" decoding="async" />
               <div><span>Un punto picante</span><div class="featured-menu-card__title"><h3>Deluxe</h3><strong>13,50€</strong></div><p>San Marzano, carne, champiñones y salami picante.</p></div>
-            </article>
+            </a>
           </div>
         </div>
       </section>
@@ -182,22 +194,22 @@
           <div><p>03 — Dal forno</p><h2 id="pizzas-title">Pizzas</h2><span>Masa de larga fermentación, horneada al estilo napoletano tradicional.</span></div>
         </header>
         <div class="dish-list dish-list-two">
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-deluxe.jpeg" alt="Pizza Deluxe" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Deluxe</h3><span class="badge spicy">Picante</span></div><p>Base de tomate San Marzano, mozzarella fiordilatte, carne picada, champiñones, cebolla, salami picante y pimiento verde.</p></div><strong>13,50€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-la-mama.jpeg" alt="Pizza La Mama" loading="lazy" decoding="async" /><div><h3>La Mama</h3><p>Base de crema de parmesano, mozzarella fiordilatte, mortadela trufada, panceta italiana y miel de azahar.</p></div><strong>15,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-siciliana.png" alt="Pizza Siciliana" loading="lazy" decoding="async" /><div><h3>Siciliana</h3><p>Base de crema bianca, mozzarella fiordilatte, mortadela de Bolonia, rúcula, pesto, burrata y parmesano.</p></div><strong>15,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-aires-de-la-sierra.jpeg" alt="Pizza Aires de la Sierra" loading="lazy" decoding="async" /><div><h3>Aires de la Sierra</h3><p>Base de crema de boletus con tocino de la Sierra, tomate fiochi, parmesano crujiente y berenjena.</p></div><strong>15,50€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-encanto.png" alt="Pizza Encanto" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Encanto</h3><span class="badge veggie">Vegetariana</span></div><p>Base de tomate San Marzano, mozzarella fiordilatte, parmesano, tomate cherry, rúcula, burrata y albahaca.</p></div><strong>15,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-cremosa.jpeg" alt="Pizza Cremosa" loading="lazy" decoding="async" /><div><h3>Cremosa</h3><p>Base de crema, mozzarella fiordilatte, cebolla, champiñones, pollo, bacon y salsa BBQ.</p></div><strong>11,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-caramelizada.png" alt="Pizza Caramelizada" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Caramelizada</h3><span class="badge veggie">Vegetariana</span></div><p>Base de crema, mozzarella fiordilatte, queso de cabra y cebolla caramelizada.</p></div><strong>11,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-margarita.png" alt="Pizza Margarita" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Margarita</h3><span class="badge veggie">Vegetariana</span></div><p>Base de tomate San Marzano, mozzarella fiordilatte, albahaca y parmesano.</p></div><strong>9,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-diavola.png" alt="Pizza Diavola" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Diavola</h3><span class="badge spicy">Picante</span></div><p>Base de tomate San Marzano, salami picante napolitano, mozzarella fiordilatte y albahaca.</p></div><strong>12,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-quattro-k.png" alt="Pizza Quattro K" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Quattro K</h3><span class="badge veggie">Vegetariana</span></div><p>Base bianca con gorgonzola, provola fresca ahumada, pecorino, lascas de parmesano y albahaca.</p></div><strong>10,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-prosciutto-e-funghi.png" alt="Pizza Prosciutto e Funghi" loading="lazy" decoding="async" /><div><h3>Prosciutto e Funghi</h3><p>Base de tomate San Marzano, mozzarella fiordilatte, prosciutto cotto, champiñones frescos y albahaca.</p></div><strong>10,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-la-vera-carbonara.jpeg" alt="Pizza La Vera Carbonara" loading="lazy" decoding="async" /><div><h3>La Vera Carbonara</h3><p>Base bianca de mozzarella fiordilatte, champiñones, guanciale crujiente y un toque de pimienta negra.</p></div><strong>11,00€</strong></article>
-          <article class="dish has-image signature"><img class="dish-thumb" src="../assets/carta/pizza-silvestre.png" alt="Pizza Silvestre" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Silvestre</h3><span class="badge award">Finalista La Mejor Pizza 2026</span></div><p>Base de tomate San Marzano, crema y mozzarella de búfala ahumada, limón, pesto rojo crujiente y Pecorino Romano.</p></div><strong>15,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-trufada.jpeg" alt="Pizza Trufada" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Trufada</h3><span class="badge veggie">Vegetariana</span></div><p>Base de crema de boletus, mozzarella fiordilatte, mix de setas, parmesano, trufa rallada y huevo al estilo rústico.</p></div><strong>15,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-vegetariana.png" alt="Pizza Vegetariana" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Vegetariana</h3><span class="badge veggie">Vegetariana</span></div><p>Base de salsa de tomate San Marzano, mozzarella fiordilatte y una selección de vegetales frescos de temporada.</p></div><strong>11,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-sombra-italiana.png" alt="Pizza Sombra Italiana" loading="lazy" decoding="async" /><div><h3>Sombra Italiana</h3><p>Base bianca, mozzarella fior di latte, queso de cabra, guanciale italiano, cebolla caramelizada, rúcula y miel.</p></div><strong>13,50€</strong></article>
+          <article class="dish has-image" id="plato-deluxe"><img class="dish-thumb" src="../assets/carta/pizza-deluxe.jpeg" alt="Pizza Deluxe" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Deluxe</h3><span class="badge spicy">Picante</span><strong>13,50€</strong></div><p>Base de tomate San Marzano, mozzarella fiordilatte, carne picada, champiñones, cebolla, salami picante y pimiento verde.</p></div></article>
+          <article class="dish has-image" id="plato-la-mama"><img class="dish-thumb" src="../assets/carta/pizza-la-mama.jpeg" alt="Pizza La Mama" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>La Mama</h3><strong>15,00€</strong></div><p>Base de crema de parmesano, mozzarella fiordilatte, mortadela trufada, panceta italiana y miel de azahar.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-siciliana.png" alt="Pizza Siciliana" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Siciliana</h3><strong>15,00€</strong></div><p>Base de crema bianca, mozzarella fiordilatte, mortadela de Bolonia, rúcula, pesto, burrata y parmesano.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-aires-de-la-sierra.jpeg" alt="Pizza Aires de la Sierra" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Aires de la Sierra</h3><strong>15,50€</strong></div><p>Base de crema de boletus con tocino de la Sierra, tomate fiochi, parmesano crujiente y berenjena.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-encanto.png" alt="Pizza Encanto" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Encanto</h3><span class="badge veggie">Vegetariana</span><strong>15,00€</strong></div><p>Base de tomate San Marzano, mozzarella fiordilatte, parmesano, tomate cherry, rúcula, burrata y albahaca.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-cremosa.jpeg" alt="Pizza Cremosa" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Cremosa</h3><strong>11,00€</strong></div><p>Base de crema, mozzarella fiordilatte, cebolla, champiñones, pollo, bacon y salsa BBQ.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-caramelizada.png" alt="Pizza Caramelizada" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Caramelizada</h3><span class="badge veggie">Vegetariana</span><strong>11,00€</strong></div><p>Base de crema, mozzarella fiordilatte, queso de cabra y cebolla caramelizada.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-margarita.png" alt="Pizza Margarita" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Margarita</h3><span class="badge veggie">Vegetariana</span><strong>9,00€</strong></div><p>Base de tomate San Marzano, mozzarella fiordilatte, albahaca y parmesano.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-diavola.png" alt="Pizza Diavola" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Diavola</h3><span class="badge spicy">Picante</span><strong>12,00€</strong></div><p>Base de tomate San Marzano, salami picante napolitano, mozzarella fiordilatte y albahaca.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-quattro-k.png" alt="Pizza Quattro K" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Quattro K</h3><span class="badge veggie">Vegetariana</span><strong>10,00€</strong></div><p>Base bianca con gorgonzola, provola fresca ahumada, pecorino, lascas de parmesano y albahaca.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-prosciutto-e-funghi.png" alt="Pizza Prosciutto e Funghi" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Prosciutto e Funghi</h3><strong>10,00€</strong></div><p>Base de tomate San Marzano, mozzarella fiordilatte, prosciutto cotto, champiñones frescos y albahaca.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-la-vera-carbonara.jpeg" alt="Pizza La Vera Carbonara" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>La Vera Carbonara</h3><strong>11,00€</strong></div><p>Base bianca de mozzarella fiordilatte, champiñones, guanciale crujiente y un toque de pimienta negra.</p></div></article>
+          <article class="dish has-image signature" id="plato-silvestre"><img class="dish-thumb" src="../assets/carta/pizza-silvestre.png" alt="Pizza Silvestre" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Silvestre</h3><span class="badge award">Finalista La Mejor Pizza 2026</span><strong>15,00€</strong></div><p>Base de tomate San Marzano, crema y mozzarella de búfala ahumada, limón, pesto rojo crujiente y Pecorino Romano.</p></div></article>
+          <article class="dish has-image" id="plato-trufada"><img class="dish-thumb" src="../assets/carta/pizza-trufada.jpeg" alt="Pizza Trufada" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Trufada</h3><span class="badge veggie">Vegetariana</span><strong>15,00€</strong></div><p>Base de crema de boletus, mozzarella fiordilatte, mix de setas, parmesano, trufa rallada y huevo al estilo rústico.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-vegetariana.png" alt="Pizza Vegetariana" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Vegetariana</h3><span class="badge veggie">Vegetariana</span><strong>11,00€</strong></div><p>Base de salsa de tomate San Marzano, mozzarella fiordilatte y una selección de vegetales frescos de temporada.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/pizza-sombra-italiana.png" alt="Pizza Sombra Italiana" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Sombra Italiana</h3><strong>13,50€</strong></div><p>Base bianca, mozzarella fior di latte, queso de cabra, guanciale italiano, cebolla caramelizada, rúcula y miel.</p></div></article>
         </div>
       </section>
 
@@ -206,9 +218,9 @@
           <div><p>04 — Ligera y crujiente</p><h2 id="focaccia-title">Focaccia</h2></div>
         </header>
         <div class="dish-list">
-          <article class="dish"><div><h3>Focaccia Ibérica</h3><p>Focaccia artesanal de larga fermentación, rellena de jamón curado italiano, mozzarella fresca, tomate y canónigos, con aceite de oliva virgen extra.</p></div><strong>9,50€</strong></article>
-          <article class="dish"><div><h3>Reginella</h3><p>Focaccia blanca romana, mortadella Bologna I.G.P., stracciatella de burrata, rúcula y pesto Genovese.</p></div><strong>9,50€</strong></article>
-          <article class="dish"><div><div class="dish-title"><h3>Focaccia Piccante</h3><span class="badge spicy">Picante</span></div><p>Masa ligera y crujiente rellena de spianata picante, rúcula fresca, lascas de parmesano y cremosa stracciatella de burrata.</p></div><strong>9,50€</strong></article>
+          <article class="dish"><div><div class="dish-head"><h3>Focaccia Ibérica</h3><strong>9,50€</strong></div><p>Focaccia artesanal de larga fermentación, rellena de jamón curado italiano, mozzarella fresca, tomate y canónigos, con aceite de oliva virgen extra.</p></div></article>
+          <article class="dish"><div><div class="dish-head"><h3>Reginella</h3><strong>9,50€</strong></div><p>Focaccia blanca romana, mortadella Bologna I.G.P., stracciatella de burrata, rúcula y pesto Genovese.</p></div></article>
+          <article class="dish"><div><div class="dish-title"><h3>Focaccia Piccante</h3><span class="badge spicy">Picante</span><strong>9,50€</strong></div><p>Masa ligera y crujiente rellena de spianata picante, rúcula fresca, lascas de parmesano y cremosa stracciatella de burrata.</p></div></article>
         </div>
       </section>
 
@@ -217,9 +229,9 @@
           <div><p>05 — Pequeño formato</p><h2 id="padelino-title">Pizzas al<br>padelino</h2></div>
         </header>
         <div class="dish-list">
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/padelino-clasico.jpeg" alt="Padelino Classico" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Classico</h3><span class="badge veggie">Vegetariana</span></div><p>Nuestro padelino con aceites aromáticos, orégano y sales.</p></div><strong>6,00€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/padelino-ibericos.jpeg" alt="Padelino Ibéricos" loading="lazy" decoding="async" /><div><h3>Ibéricos</h3><p>Rúcula fresca, parmesano D.O.P., jamón ibérico y mozzarella de búfala.</p></div><strong>9,50€</strong></article>
-          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/padelino-el-punto-prohibido.jpeg" alt="Padelino El Punto Prohibido" loading="lazy" decoding="async" /><div><h3>El Punto Prohibido</h3><p>Salami italiano, tomate cherry, rúcula, albahaca y aceite.</p></div><strong>8,50€</strong></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/padelino-clasico.jpeg" alt="Padelino Classico" loading="lazy" decoding="async" /><div><div class="dish-title"><h3>Classico</h3><span class="badge veggie">Vegetariana</span><strong>6,00€</strong></div><p>Nuestro padelino con aceites aromáticos, orégano y sales.</p></div></article>
+          <article class="dish has-image"><img class="dish-thumb" src="../assets/carta/padelino-ibericos.jpeg" alt="Padelino Ibéricos" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>Ibéricos</h3><strong>9,50€</strong></div><p>Rúcula fresca, parmesano D.O.P., jamón ibérico y mozzarella de búfala.</p></div></article>
+          <article class="dish has-image" id="plato-punto-prohibido"><img class="dish-thumb" src="../assets/carta/padelino-el-punto-prohibido.jpeg" alt="Padelino El Punto Prohibido" loading="lazy" decoding="async" /><div><div class="dish-head"><h3>El Punto Prohibido</h3><strong>8,50€</strong></div><p>Salami italiano, tomate cherry, rúcula, albahaca y aceite.</p></div></article>
         </div>
       </section>
 
@@ -256,9 +268,9 @@
           <p class="dessert-script" aria-hidden="true">Un último<br>bocado</p>
         </header>
         <div class="dish-list">
-          <article class="dish"><div><h3>Tiramisú con Pistacho</h3></div><strong>6,50€</strong></article>
-          <article class="dish"><div><h3>Tiramisú Clásico</h3><p>Sabor a café y cacao.</p></div><strong>6,00€</strong></article>
-          <article class="dish"><div><h3>Helados</h3></div><strong>5,60€</strong></article>
+          <article class="dish"><div><div class="dish-head"><h3>Tiramisú con Pistacho</h3><strong>6,50€</strong></div></div></article>
+          <article class="dish"><div><div class="dish-head"><h3>Tiramisú Clásico</h3><strong>6,00€</strong></div><p>Sabor a café y cacao.</p></div></article>
+          <article class="dish"><div><div class="dish-head"><h3>Helados</h3><strong>5,60€</strong></div></div></article>
         </div>
       </section>
     </div>
@@ -305,6 +317,6 @@
   </main>
 
   <script src="../site-chrome.js?v=20260907r"></script>
-  <script src="carta.js?v=20260907f"></script>
+  <script src="carta.js?v=20260908e"></script>
 </body>
 </html>

@@ -34,13 +34,13 @@ let lightboxTrigger = null;
 function openLightbox(image) {
   if (!lightboxMedia.matches || !lightbox || !lightboxImage || !lightboxTitle || !lightboxPrice) return;
 
-  const card = image.closest('article');
+  const card = image.closest('.featured-menu-card, article');
   const title = card?.querySelector('h3')?.textContent.trim() || image.alt;
   const price = card?.querySelector('strong')?.textContent.trim() || '';
 
   lightboxTrigger = image;
   lightboxImage.src = image.currentSrc || image.src;
-  lightboxImage.alt = image.alt;
+  lightboxImage.alt = image.alt || title;
   lightboxTitle.textContent = title;
   lightboxPrice.textContent = price;
   lightboxPrice.hidden = !price;
@@ -66,10 +66,17 @@ function syncLightboxAvailability() {
 }
 
 productImages.forEach(image => {
-  image.addEventListener('click', () => openLightbox(image));
+  image.addEventListener('click', event => {
+    if (!lightboxMedia.matches) return;
+    event.preventDefault();
+    event.stopPropagation();
+    openLightbox(image);
+  });
   image.addEventListener('keydown', event => {
     if (event.key !== 'Enter' && event.key !== ' ') return;
+    if (!lightboxMedia.matches) return;
     event.preventDefault();
+    event.stopPropagation();
     openLightbox(image);
   });
 });

@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20260908b" />
-  <link rel="stylesheet" href="../internas.css?v=20260908b" />
-  <link rel="stylesheet" href="../site-chrome.css?v=20260908b" />
+  <link rel="stylesheet" href="../styles.css?v=20260908e" />
+  <link rel="stylesheet" href="../internas.css?v=20260908s" />
+  <link rel="stylesheet" href="../site-chrome.css?v=20260908q" />
 </head>
 <body class="inner-page">
   <aside class="top-bar" aria-label="Información de contacto">
@@ -28,12 +28,25 @@
       <a href="../eventos-rustica-napoletana/">Eventos</a>
       <a href="../novedades/">Novedades</a>
       <a class="active" href="./">Nosotros</a>
-      <div class="mobile-nav-context">
-        <span class="mobile-nav-logo" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span>
-        <div class="mobile-nav-contact"><a href="tel:+34955498119">955 498 119</a><address>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</address><p>Jueves a Lunes: 20:00-00:00<br>Cerrado mar-mié</p></div>
+      <div class="mobile-nav-panel">
+        <p class="mobile-nav-brand">Rústica Napoletana</p>
+        <div class="mobile-nav-actions">
+          <a class="btn btn-red mobile-nav-reserve" href="tel:+34955498119">Reservar</a>
+          <a class="btn btn-outline mobile-nav-call" href="tel:+34955498119"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg> Llamar</a>
+        </div>
+        <div class="mobile-nav-links">
+          <a href="../carta-rustica-napoletana/">Carta</a>
+          <a href="../eventos-rustica-napoletana/">Eventos</a>
+          <a href="../novedades/">Novedades</a>
+          <a class="active" href="./">Nosotros</a>
+          <a href="../index.html#ubicacion">Contacto</a>
+        </div>
       </div>
     </nav>
-    <a class="btn btn-red btn-small header-reserve" href="tel:+34955498119">Reservar</a>
+    <div class="header-cta">
+      <a class="btn btn-red btn-small header-reserve" href="tel:+34955498119">Reservar</a>
+      <a class="btn btn-outline btn-small header-call" href="tel:+34955498119" aria-label="Llamar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg><span>Llamar</span></a>
+    </div>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="about-main-nav" aria-label="Abrir menú"><span></span><span></span></button>
   </header>
 
@@ -69,33 +82,68 @@
       </div>
     </section>
 
-    <section class="editorial-section" aria-labelledby="awards-title">
+    <section class="editorial-section awards-section" aria-labelledby="awards-title">
       <div class="editorial-heading">
         <div><p class="inner-kicker">Trabajo reconocido</p><h2 id="awards-title">Premios con nombre propio.</h2></div>
         <p>Cada reconocimiento resume horas de fermentación, pruebas frente al horno y una manera personal de unir Italia con la Sierra.</p>
       </div>
+
+      <div class="awards-feature">
+        <figure class="awards-feature__photo">
+          <img src="../assets/eduardo/trofeos.jpeg" alt="Trofeos de Rústica Napoletana en el Campeonato de España de Pizzas Gourmet" loading="lazy" />
+          <figcaption>Campeonato de España de Pizzas Gourmet · Sevilla</figcaption>
+        </figure>
+        <div class="awards-feature__side">
+          <div class="award-marks" aria-label="Sellos de reconocimiento">
+            <img src="../assets/imagenes/50-top-pizza.png" alt="Sello 50 Top Pizza Europa" loading="lazy" />
+            <img src="../assets/imagenes/premios-2.jpg" alt="Sello 50 Top Pizza" loading="lazy" />
+            <img src="../assets/imagenes/premios-1.jpg" alt="Sello Excellent Pizzerias 2026" loading="lazy" />
+          </div>
+          <p class="awards-feature__note">Tres años consecutivos entre las 50 mejores pizzerías de Europa, Guía Repsol 2026 y trofeos de Sevilla Gourmet.</p>
+        </div>
+      </div>
+
       <div class="awards-grid">
-        <article class="award-entry"><span>01</span><h3>Guía Repsol 2026</h3></article>
-        <article class="award-entry"><span>02</span><h3>2º Mejor Pizzero de España 2026</h3></article>
-        <article class="award-entry"><span>03</span><h3>Top 7 Pizzeros de España 2026/27</h3></article>
-        <article class="award-entry"><span>04</span><h3>2× Mejor Pizza Sin Gluten</h3></article>
-        <article class="award-entry"><span>05</span><h3>Participante La Mejor Pizza</h3></article>
+        <article class="award-entry">
+          <span>01</span>
+          <h3>Guía Repsol 2026</h3>
+          <p>Entrada en la guía de referencia de la gastronomía española.</p>
+        </article>
+        <article class="award-entry">
+          <span>02</span>
+          <h3>2º Mejor Pizzero de España 2026</h3>
+          <p>Eduardo Ramírez, entre los mejores oficios del país.</p>
+        </article>
+        <article class="award-entry">
+          <span>03</span>
+          <h3>Top 7 Pizzeros 2026/27</h3>
+          <p>Seleccionado entre los siete mejores pizzeros de España.</p>
+        </article>
+        <article class="award-entry">
+          <span>04</span>
+          <h3>2× Mejor Pizza Sin Gluten</h3>
+          <p>Reconocimiento repetido a la pizza sin gluten de la casa.</p>
+        </article>
+        <article class="award-entry">
+          <span>05</span>
+          <h3>50 Top Pizza Europa</h3>
+          <p>2024, 2025 y 2026 entre las 50 mejores pizzerías de Europa.</p>
+        </article>
       </div>
     </section>
 
-    <section class="editorial-section" aria-labelledby="gallery-title">
+    <section class="editorial-section gallery-section" aria-labelledby="gallery-title">
       <div class="editorial-heading">
         <div><p class="inner-kicker">El oficio, por dentro</p><h2 id="gallery-title">Un vistazo por dentro.</h2></div>
-        <p>El horno, los campeonatos, los premios y el equipo que hacen posible cada servicio.</p>
+        <p>El horno, los campeonatos y el equipo que hacen posible cada servicio.</p>
       </div>
       <div class="photo-grid">
-        <figure class="photo-card"><img src="../assets/eduardo/eduardo-horno.jpeg" alt="Eduardo al horno de leña" loading="lazy" /><figcaption><strong>Eduardo al horno de leña</strong><span>Al pie del horno de leña, controlando el punto exacto de cocción.</span></figcaption></figure>
-        <figure class="photo-card"><img src="../assets/eduardo/eduardo-competicion-1.jpeg" alt="Eduardo presentando su pizza ante el jurado" loading="lazy" /><figcaption><strong>Ante el jurado</strong><span>Presentando su pizza ante el jurado del Campeonato de España de Pizzas Gourmet.</span></figcaption></figure>
-        <figure class="photo-card"><img src="../assets/eduardo/eduardo-competicion-2.jpeg" alt="Eduardo compitiendo en un campeonato de pizzas" loading="lazy" /><figcaption><strong>En competición</strong><span>Compitiendo, receta en mano, en uno de los campeonatos de pizza en los que ha participado.</span></figcaption></figure>
-        <figure class="photo-card"><img src="../assets/eduardo/trofeos.jpeg" alt="Trofeos ganados por Rústica Napoletana" loading="lazy" /><figcaption><strong>Los trofeos</strong><span>Parte de los trofeos conseguidos en competiciones, entre ellos el de Mejor Pizza Sin Gluten.</span></figcaption></figure>
-        <figure class="photo-card"><img src="../assets/eduardo/equipo-cocina.jpeg" alt="El equipo de Rústica Napoletana en la cocina" loading="lazy" /><figcaption><strong>El equipo</strong><span>El equipo de Rústica Napoletana, en la cocina abierta del local — desde 2016.</span></figcaption></figure>
-        <figure class="photo-card"><img src="../assets/eduardo/interior-comedor.jpeg" alt="Interior del comedor de Rústica Napoletana" loading="lazy" /><figcaption><strong>En el comedor</strong><span>Una pizza recién horneada, servida en el comedor del restaurante.</span></figcaption></figure>
-        <figure class="photo-card"><img src="../assets/eduardo/horno-profesional.jpeg" alt="Horno profesional de Rústica Napoletana" loading="lazy" /><figcaption><strong>Nuestro horno</strong><span>Uno de los hornos profesionales con los que trabajamos cada pizza.</span></figcaption></figure>
+        <figure class="photo-card photo-card--wide"><img src="../assets/eduardo/eduardo-horno.jpeg" alt="Eduardo al horno de leña" loading="lazy" /><figcaption><strong>Eduardo al horno de leña</strong><span>Al pie del horno, controlando el punto exacto de cocción.</span></figcaption></figure>
+        <figure class="photo-card"><img src="../assets/eduardo/eduardo-competicion-1.jpeg" alt="Eduardo presentando su pizza ante el jurado" loading="lazy" /><figcaption><strong>Ante el jurado</strong><span>Presentando su pizza en el Campeonato de España de Pizzas Gourmet.</span></figcaption></figure>
+        <figure class="photo-card"><img src="../assets/eduardo/eduardo-competicion-2.jpeg" alt="Eduardo compitiendo en un campeonato de pizzas" loading="lazy" /><figcaption><strong>En competición</strong><span>Receta en mano, en uno de los campeonatos de pizza.</span></figcaption></figure>
+        <figure class="photo-card photo-card--wide"><img src="../assets/eduardo/equipo-cocina.jpeg" alt="El equipo de Rústica Napoletana en la cocina" loading="lazy" /><figcaption><strong>El equipo</strong><span>Cocina abierta del local — desde 2016.</span></figcaption></figure>
+        <figure class="photo-card"><img src="../assets/eduardo/interior-comedor.jpeg" alt="Interior del comedor de Rústica Napoletana" loading="lazy" /><figcaption><strong>En el comedor</strong><span>Pizza recién horneada, servida en sala.</span></figcaption></figure>
+        <figure class="photo-card"><img src="../assets/eduardo/horno-profesional.jpeg" alt="Horno profesional de Rústica Napoletana" loading="lazy" /><figcaption><strong>Nuestro horno</strong><span>Uno de los hornos profesionales de cada servicio.</span></figcaption></figure>
       </div>
     </section>
 

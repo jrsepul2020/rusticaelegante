@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20260908b" />
-  <link rel="stylesheet" href="../internas.css?v=20260908b" />
-  <link rel="stylesheet" href="../site-chrome.css?v=20260908b" />
+  <link rel="stylesheet" href="../styles.css?v=20260908e" />
+  <link rel="stylesheet" href="../internas.css?v=20260908t" />
+  <link rel="stylesheet" href="../site-chrome.css?v=20260908q" />
 </head>
 <body class="inner-page">
   <aside class="top-bar" aria-label="Información de contacto">
@@ -28,80 +28,102 @@
       <a href="../eventos-rustica-napoletana/">Eventos</a>
       <a class="active" href="./">Novedades</a>
       <a href="../nosotros/">Nosotros</a>
-      <div class="mobile-nav-context">
-        <span class="mobile-nav-logo" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span>
-        <div class="mobile-nav-contact"><a href="tel:+34955498119">955 498 119</a><address>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</address><p>Jueves a Lunes: 20:00-00:00<br>Cerrado mar-mié</p></div>
+      <div class="mobile-nav-panel">
+        <p class="mobile-nav-brand">Rústica Napoletana</p>
+        <div class="mobile-nav-actions">
+          <a class="btn btn-red mobile-nav-reserve" href="tel:+34955498119">Reservar</a>
+          <a class="btn btn-outline mobile-nav-call" href="tel:+34955498119"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg> Llamar</a>
+        </div>
+        <div class="mobile-nav-links">
+          <a href="../carta-rustica-napoletana/">Carta</a>
+          <a href="../eventos-rustica-napoletana/">Eventos</a>
+          <a class="active" href="./">Novedades</a>
+          <a href="../nosotros/">Nosotros</a>
+          <a href="../index.html#ubicacion">Contacto</a>
+        </div>
       </div>
     </nav>
-    <a class="btn btn-red btn-small header-reserve" href="tel:+34955498119">Reservar</a>
+    <div class="header-cta">
+      <a class="btn btn-red btn-small header-reserve" href="tel:+34955498119">Reservar</a>
+      <a class="btn btn-outline btn-small header-call" href="tel:+34955498119" aria-label="Llamar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg><span>Llamar</span></a>
+    </div>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="news-main-nav" aria-label="Abrir menú"><span></span><span></span></button>
   </header>
 
   <main>
-    <section class="inner-hero news-hero" aria-labelledby="news-title">
-      <div class="inner-hero-copy">
-        <p class="inner-kicker">Diario de Rústica</p>
-        <h1 id="news-title">Historias con <span>masa y memoria.</span></h1>
-        <p class="inner-hero-lead">Un lugar para hablar de pizzas, de la pizzería, de los premios y de todo lo que ocurre antes de que una masa llegue al horno.</p>
-        <div class="inner-hero-actions"><a class="btn btn-red" href="#articulos">Leer las historias <span>↓</span></a></div>
-      </div>
-      <figure class="inner-hero-media">
+    <section class="news-hero news-hero--editorial" aria-labelledby="news-title">
+      <div class="news-hero__veil" aria-hidden="true"></div>
+      <figure class="news-hero__media">
         <img src="../assets/eduardo/eduardo-horno.jpeg" alt="Eduardo Ramírez trabajando frente al horno de leña" />
-        <figcaption class="hero-caption">El oficio detrás de cada historia</figcaption>
       </figure>
+      <div class="news-hero__copy">
+        <p class="news-hero__label">Diario de Rústica</p>
+        <h1 id="news-title">Historias con masa y memoria.</h1>
+        <p class="news-hero__lead">Pizzas, premios, cocina abierta y todo lo que ocurre antes de que la masa llegue al horno.</p>
+        <a class="btn btn-red news-hero__cta" href="#articulos">Leer las historias <span>↓</span></a>
+      </div>
     </section>
 
-    <section class="editorial-section" id="articulos" aria-labelledby="articles-title">
-      <div class="editorial-heading">
-        <div><p class="inner-kicker">Septiembre 2026</p><h2 id="articles-title">Últimas historias.</h2></div>
-        <p>Tres noticias que hablan del trabajo de Eduardo, del equipo y de una pizza que ha llevado el nombre de Rústica a una final nacional.</p>
-      </div>
-      <div class="news-grid">
-        <article class="news-card">
-          <a class="news-card-image" href="guia-repsol-2026/"><img src="../assets/eduardo/trofeos.jpeg" alt="Trofeos y reconocimientos de Rústica Napoletana" loading="lazy" /></a>
-          <div class="news-card-copy">
-            <div class="news-meta"><span>Premios</span><time datetime="2026-09">Septiembre 2026</time></div>
-            <h3><a href="guia-repsol-2026/">Entramos en la Guía Repsol 2026</a></h3>
-            <p>Rústica Napoletana ya forma parte de uno de los referentes gastronómicos de España.</p>
-            <a class="read-more" href="guia-repsol-2026/" aria-label="Leer Entramos en la Guía Repsol 2026">Leer más <span>→</span></a>
-          </div>
-        </article>
-        <article class="news-card">
-          <a class="news-card-image" href="segundo-mejor-pizzero-espana-2026/"><img src="../assets/eduardo/eduardo-competicion-1.jpeg" alt="Eduardo Ramírez presentando su pizza ante un jurado" loading="lazy" /></a>
-          <div class="news-card-copy">
+    <section class="news-feed" id="articulos" aria-labelledby="articles-title">
+      <header class="news-feed__intro">
+        <h2 id="articles-title">Últimas historias</h2>
+        <p>Tres piezas independientes sobre el trabajo de Eduardo, el equipo y una pizza que ha llevado el nombre de Rústica a una final nacional.</p>
+      </header>
+
+      <article class="news-feature">
+        <a class="news-feature__media" href="guia-repsol-2026/" tabindex="-1" aria-hidden="true">
+          <img src="../assets/eduardo/trofeos.jpeg" alt="" loading="lazy" />
+        </a>
+        <div class="news-feature__body">
+          <div class="news-meta"><span>Destacada</span><time datetime="2026-09">Septiembre 2026</time></div>
+          <h3><a href="guia-repsol-2026/">Entramos en la Guía Repsol 2026</a></h3>
+          <p>Rústica Napoletana ya forma parte de uno de los referentes gastronómicos de España. Un reconocimiento al trabajo lento, al horno de leña y a la masa de larga fermentación.</p>
+          <a class="read-more" href="guia-repsol-2026/">Leer historia <span>→</span></a>
+        </div>
+      </article>
+
+      <div class="news-stack">
+        <article class="news-story">
+          <a class="news-story__media" href="segundo-mejor-pizzero-espana-2026/" tabindex="-1" aria-hidden="true">
+            <img src="../assets/eduardo/eduardo-competicion-1.jpeg" alt="" loading="lazy" />
+          </a>
+          <div class="news-story__body">
             <div class="news-meta"><span>Eduardo Ramírez</span><time datetime="2026-09">Septiembre 2026</time></div>
             <h3><a href="segundo-mejor-pizzero-espana-2026/">2º Mejor Pizzero de España 2026</a></h3>
             <p>Un reconocimiento al oficio, la constancia y una forma muy personal de entender la pizza.</p>
-            <a class="read-more" href="segundo-mejor-pizzero-espana-2026/" aria-label="Leer 2º Mejor Pizzero de España 2026">Leer más <span>→</span></a>
+            <a class="read-more" href="segundo-mejor-pizzero-espana-2026/">Leer historia <span>→</span></a>
           </div>
         </article>
-        <article class="news-card">
-          <a class="news-card-image" href="silvestre-finalista-la-mejor-pizza-2026/"><img src="../assets/carta/pizza-silvestre.png" alt="Pizza Silvestre de Rústica Napoletana" loading="lazy" /></a>
-          <div class="news-card-copy">
+
+        <article class="news-story news-story--dark">
+          <a class="news-story__media" href="silvestre-finalista-la-mejor-pizza-2026/" tabindex="-1" aria-hidden="true">
+            <img src="../assets/carta/pizza-silvestre.png" alt="" loading="lazy" />
+          </a>
+          <div class="news-story__body">
             <div class="news-meta"><span>Pizzas</span><time datetime="2026-09">Septiembre 2026</time></div>
             <h3><a href="silvestre-finalista-la-mejor-pizza-2026/">Silvestre, finalista en La Mejor Pizza 2026</a></h3>
             <p>Producto italiano, matices de la Sierra y una combinación creada para permanecer en la memoria.</p>
-            <a class="read-more" href="silvestre-finalista-la-mejor-pizza-2026/" aria-label="Leer Silvestre, finalista en La Mejor Pizza 2026">Leer más <span>→</span></a>
+            <a class="read-more" href="silvestre-finalista-la-mejor-pizza-2026/">Leer historia <span>→</span></a>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="editorial-section" id="temas" aria-labelledby="topics-title">
-      <div class="editorial-heading">
-        <div><p class="inner-kicker">Cuatro formas de contar Rústica</p><h2 id="topics-title">Lo que encontrarás aquí.</h2></div>
-        <p>Este será el archivo editorial de la casa: contenidos cercanos, útiles y con la misma honestidad con la que trabajamos cada pizza.</p>
+    <section class="news-index" aria-labelledby="topics-title">
+      <div class="news-index__copy">
+        <h2 id="topics-title">Lo que encontrarás aquí</h2>
+        <p>El archivo editorial de la casa: contenido cercano, útil y con la misma honestidad con la que trabajamos cada pizza.</p>
       </div>
-      <div class="topic-grid">
-        <article class="topic-card"><span>01 · Producto</span><h3>Pizzas</h3><p>Ingredientes, procesos, recetas, fermentación y las historias detrás de cada creación.</p></article>
-        <article class="topic-card"><span>02 · La casa</span><h3>La pizzería</h3><p>El equipo, el horno, el comedor y el día a día de Rústica Napoletana.</p></article>
-        <article class="topic-card"><span>03 · Oficio</span><h3>Premios</h3><p>Campeonatos, reconocimientos y todo lo aprendido en el camino.</p></article>
-        <article class="topic-card"><span>04 · Entre fogones</span><h3>Curiosidades</h3><p>Anécdotas y pequeños detalles que normalmente no salen de la cocina.</p></article>
-      </div>
+      <ul class="news-index__list">
+        <li><strong>Pizzas</strong><span>Ingredientes, fermentación y creaciones</span></li>
+        <li><strong>La pizzería</strong><span>Equipo, horno y día a día</span></li>
+        <li><strong>Premios</strong><span>Campeonatos y reconocimientos</span></li>
+        <li><strong>Curiosidades</strong><span>Detalles que no salen de la cocina</span></li>
+      </ul>
     </section>
 
     <section class="cta-panel" aria-labelledby="follow-title">
-      <div><p class="inner-kicker">Más historias de la casa</p><h2 id="follow-title">Síguenos entre servicio y servicio.</h2><p>También compartimos novedades y momentos de la casa en Instagram.</p></div>
+      <div><p class="inner-kicker">Más de la casa</p><h2 id="follow-title">Síguenos entre servicio y servicio.</h2><p>También compartimos novedades y momentos de la casa en Instagram.</p></div>
       <a class="btn" href="https://instagram.com/rusticanapoletana" target="_blank" rel="noopener">Instagram <span>→</span></a>
     </section>
   </main>

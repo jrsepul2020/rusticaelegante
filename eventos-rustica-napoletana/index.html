@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20260908b" />
-  <link rel="stylesheet" href="../internas.css?v=20260908b" />
-  <link rel="stylesheet" href="../site-chrome.css?v=20260908b" />
+  <link rel="stylesheet" href="../styles.css?v=20260908e" />
+  <link rel="stylesheet" href="../internas.css?v=20260908c" />
+  <link rel="stylesheet" href="../site-chrome.css?v=20260908q" />
 </head>
 <body class="inner-page">
   <aside class="top-bar" aria-label="Información de contacto">
@@ -28,12 +28,25 @@
       <a class="active" href="./">Eventos</a>
       <a href="../novedades/">Novedades</a>
       <a href="../nosotros/">Nosotros</a>
-      <div class="mobile-nav-context">
-        <span class="mobile-nav-logo" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span>
-        <div class="mobile-nav-contact"><a href="tel:+34955498119">955 498 119</a><address>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</address><p>Jueves a Lunes: 20:00-00:00<br>Cerrado mar-mié</p></div>
+      <div class="mobile-nav-panel">
+        <p class="mobile-nav-brand">Rústica Napoletana</p>
+        <div class="mobile-nav-actions">
+          <a class="btn btn-red mobile-nav-reserve" href="tel:+34955498119">Reservar</a>
+          <a class="btn btn-outline mobile-nav-call" href="tel:+34955498119"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg> Llamar</a>
+        </div>
+        <div class="mobile-nav-links">
+          <a href="../carta-rustica-napoletana/">Carta</a>
+          <a class="active" href="./">Eventos</a>
+          <a href="../novedades/">Novedades</a>
+          <a href="../nosotros/">Nosotros</a>
+          <a href="../index.html#ubicacion">Contacto</a>
+        </div>
       </div>
     </nav>
-    <a class="btn btn-red btn-small header-reserve" href="tel:+34955498119">Reservar</a>
+    <div class="header-cta">
+      <a class="btn btn-red btn-small header-reserve" href="tel:+34955498119">Reservar</a>
+      <a class="btn btn-outline btn-small header-call" href="tel:+34955498119" aria-label="Llamar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg><span>Llamar</span></a>
+    </div>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="events-main-nav" aria-label="Abrir menú"><span></span><span></span></button>
   </header>
 

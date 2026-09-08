@@ -112,12 +112,12 @@ La carta usa las anclas `#ensaladas`, `#entrantes`, `#pizzas`, `#focaccia`, `#pa
 
 La URL `/carta-rustica-napoletana/` añade:
 
-1. Hero “La mesa está puesta / Nuestra Carta”.
+1. Hero “La mesa está puesta / Nuestra Carta”. En móvil la pizza ocupa la franja superior y degrada hacia el texto; los titulares salen desde esa media altura.
 2. Franja horizontal de reconocimientos.
 3. Directorio de ocho categorías.
-4. Carta editorial completa con platos, descripciones, etiquetas y precios rojos; las categorías impares usan fondos pastel suaves. En móvil las fotografías de cada plato son cuadradas, ocupan el ancho de la ficha sobre el texto y el precio se alinea a la derecha del título.
-5. Franja “Recomendaciones del chef” con cuatro platos, situada entre Entrantes y Pizzas.
-6. Franja “Las pizzas que más nos piden” con cuatro pizzas, situada justo antes de la categoría Pizzas; solo Silvestre se identifica como finalista de La Mejor Pizza 2026.
+4. Carta editorial completa con platos, descripciones, etiquetas y precios rojos; las categorías impares usan fondos pastel suaves. En móvil las fotografías de cada plato son cuadradas, ocupan el ancho de la ficha sobre el texto y el precio se alinea a la derecha del título, con tipografía de precio más grande.
+5. Franja “Recomendaciones del chef” con cuatro platos, situada entre Entrantes y Pizzas. En móvil (hasta 860px) se reduce a lista nombre+precio con ancla al plato completo; en escritorio mantiene foto y descripción.
+6. Franja “Las pizzas que más nos piden” con cuatro pizzas, situada justo antes de la categoría Pizzas; solo Silvestre se identifica como finalista de La Mejor Pizza 2026. Misma reducción móvil a nombre+precio con ancla.
 7. Lightbox para ampliar con ratón o teclado las fotografías de platos y selecciones; se desactiva hasta 540 px para priorizar las imágenes cuadradas de las fichas móviles. Los encabezados de categoría son tipográficos y no duplican fotografías.
 8. Aviso final sobre precios y alérgenos.
 
@@ -126,7 +126,7 @@ La portada ya no usa nombres ni precios ficticios: las categorías, el carrusel 
 Las páginas internas añaden:
 
 - `/eventos-rustica-napoletana/`: celebraciones, tipos de evento, proceso de consulta y CTA; faltan por incorporar capacidades, menús y condiciones cuando el cliente los facilite.
-- `/novedades/`: tres artículos publicados en septiembre de 2026, con imagen destacada, fecha, categoría, texto ampliado y navegación entre historias.
+- `/novedades/`: portada editorial magazine (hero a pantalla, historia destacada + dos piezas independientes, índice temático); cada “Leer historia” abre una página estática dentro de `/novedades/<slug>/`.
 - `/nosotros/`: historia de Eduardo Ramírez, formación, reconocimientos, galería de siete escenas y valores de la casa.
 - Las tres páginas legales comparten una maquetación editorial; titular, NIF/CIF y correo legal siguen marcados como pendientes.
 
@@ -136,7 +136,7 @@ El formulario de newsletter solicita nombre, email y consentimiento. Su botón p
 
 - `site-chrome.js` alterna la clase `menu-open` en `.site-header`, sincroniza `aria-expanded`, cierra con Escape y bloquea el scroll.
 - Al pulsar un enlace del menú, el menú móvil se cierra.
-- En móvil la navegación ocupa todo el ancho disponible e incluye marca, teléfono, dirección y horario.
+- En móvil el menú bocadillo ocupa el ancho completo de la pantalla: marca «Rústica Napoletana», botones Reservar / Llamar en la misma fila (`tel:+34955498119`) y enlaces Carta / Eventos / Novedades / Nosotros / Contacto a 29px separados por líneas finas.
 - `.pizza-motion` tiene entrada, flotación continua y respuesta suave al puntero mediante `requestAnimationFrame`.
 - El carrusel usa scroll horizontal nativo con `scroll-snap`.
 - Los botones avanzan o retroceden el ancho de una tarjeta más el `gap`.
