@@ -42,7 +42,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 
 @keyframes hero-settle{from{transform:scale(1.12)}to{transform:scale(1.035)}}
 
-.honours{background:#090909;color:#fff;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.honours{background:#161616;color:#fff;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
 .honours-title{display:none;margin:0}
 .honours-list{display:grid;grid-template-columns:repeat(5,1fr)}
 .honours article{min-height:124px;padding:24px clamp(18px,2.2vw,38px);display:flex;gap:18px;align-items:center;border-right:1px solid rgba(255,255,255,.12)}
@@ -53,9 +53,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .honours strong{display:block;color:#fff;font-size:12px}
 
 .menu-directory{padding:150px max(32px,calc((100vw - 1600px)/2));display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(70px,10vw,170px);background:var(--menu-cream)}
-.directory-intro .section-kicker{color:var(--menu-red);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
-.directory-intro h2{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(44px,5vw,82px);line-height:1.02;letter-spacing:-.015em;margin:20px 0 0}
-.directory-intro h2 span{display:block;color:var(--menu-red)}
+.directory-intro .directory-title{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(44px,5vw,82px);line-height:1.02;letter-spacing:-.015em;font-weight:600;color:var(--menu-red)}
 .category-directory{border-top:1px solid var(--menu-ink)}
 .category-directory a{min-height:67px;border-bottom:1px solid var(--menu-line);display:flex;align-items:center;gap:24px;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(22px,2vw,34px);transition:padding .25s,color .25s}
 .category-directory a span{font-family:Inter,sans-serif;color:var(--menu-red);font-size:9px;font-weight:800;letter-spacing:.15em}
@@ -209,10 +207,8 @@ body.lightbox-open{overflow:hidden}
   .menu-hero-badges{justify-content:center;gap:16px;margin-top:28px}
   .menu-hero-badges img{width:88px;height:88px}
   .menu-directory{padding:100px 24px;grid-template-columns:1fr;gap:48px}
-  .menu-directory h2{font-size:clamp(44px,11vw,72px)}
   .directory-intro{text-align:center}
-  .directory-intro .section-kicker{display:block;color:var(--menu-red);font-size:clamp(18px,5vw,24px);letter-spacing:.2em;font-weight:800}
-  .directory-intro h2{text-align:center}
+  .directory-intro .directory-title{text-align:center;font-size:clamp(40px,10vw,68px)}
   .category-directory{border-top:0}
   .category-directory a{gap:18px;min-height:72px;border-bottom:0}
   .category-directory a span{font-size:18px;letter-spacing:.08em;font-weight:800}
@@ -280,7 +276,7 @@ body.lightbox-open{overflow:hidden}
   .honours p{font-size:11px;letter-spacing:.05em}
   .honours strong{font-size:11px}
   .menu-directory{padding:78px 20px;gap:36px}
-  .directory-intro .section-kicker{font-size:clamp(16px,4.8vw,22px)}
+  .directory-intro .directory-title{font-size:clamp(36px,9vw,56px)}
   .category-directory a{font-size:25px;min-height:68px}
   .category-directory a span{font-size:20px;letter-spacing:.06em}
   .food-section{width:calc(100% - 32px);padding:82px 0}

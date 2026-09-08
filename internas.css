@@ -113,7 +113,7 @@ body.inner-page{background:var(--paper);color:var(--ink)}
 .value-card h3,.topic-card h3,.celebration-card h3{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(26px,2.2vw,32px);line-height:1.05;margin:28px 0 14px}
 .value-card p,.topic-card p,.celebration-card p{font-size:14px;line-height:1.7;color:#68625c;margin:0}
 
-.cta-panel{width:min(calc(100% - 64px),1600px);margin:0 auto 0;padding:clamp(55px,7vw,110px);background:#050505;color:#fff;display:grid;grid-template-columns:1fr auto;align-items:end;gap:50px;border:1px solid rgba(255,255,255,.12)}
+.cta-panel{width:100%;max-width:none;margin:0;padding:clamp(55px,7vw,110px);box-sizing:border-box;background:#050505;color:#fff;display:grid;grid-template-columns:1fr auto;align-items:end;gap:50px;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
 .cta-panel .inner-kicker{color:var(--red)}
 .cta-panel p{font-size:16px;line-height:1.7;margin:24px 0 0;color:rgba(255,255,255,.78)}
 .cta-panel .btn{background:var(--red);color:#fff}
@@ -720,7 +720,7 @@ body.inner-page{background:var(--paper);color:var(--ink)}
   .values-grid,.topic-grid,.celebration-grid{grid-template-columns:1fr 1fr}
   .value-card:nth-child(2),.celebration-card:nth-child(2),.topic-card:nth-child(2){border-right:0}
   .value-card:nth-child(3),.celebration-card:nth-child(3),.topic-card:nth-child(3){padding-left:0}
-  .cta-panel{width:calc(100% - 32px);grid-template-columns:1fr;padding:55px 28px;align-items:start;margin:0 auto}
+  .cta-panel{width:100%;grid-template-columns:1fr;padding:55px 28px;align-items:start;margin:0}
   .event-feature{grid-template-columns:1fr}
   .event-feature img{height:110vw;max-height:680px}
   .event-feature-copy{min-height:500px}
@@ -754,7 +754,7 @@ body.inner-page{background:var(--paper);color:var(--ink)}
   .editorial-heading h2,.story-copy h2,.cta-panel h2,.empty-state h2{font-size:clamp(36px,10.5vw,52px)}
   .values-grid,.topic-grid,.celebration-grid{grid-template-columns:1fr}
   .value-card,.value-card:not(:first-child),.topic-card,.topic-card:not(:first-child),.celebration-card,.celebration-card:not(:first-child){padding:28px 0;border-right:0}
-  .cta-panel{width:calc(100% - 32px);margin:0 auto;padding:48px 24px}
+  .cta-panel{width:100%;margin:0;padding:48px 24px}
   .news-hero__copy{width:calc(100% - 40px);margin:0 0 48px 20px}
   .news-feed{width:calc(100% - 32px);padding:68px 0}
   .news-feature__body,.news-story__body{padding:24px 20px 28px}
