@@ -51,31 +51,37 @@ Después, abrir `http://localhost:8000`.
 - `carta-rustica-napoletana/carta.css`: dirección editorial, responsive y componentes específicos de la carta.
 - `carta-rustica-napoletana/carta.js`: detección de la categoría visible y lightbox accesible de producto.
 - `eventos-rustica-napoletana/index.html`: página de celebraciones, preparada para ampliar contenido en `/eventos-rustica-napoletana/`.
+- `promociones/index.html`: banners de ofertas en `/promociones/` (`promo1.jpeg`, `promo2.jpeg`).
+- `premios-obtenidos/index.html`: diplomas 50 Top Pizza en `/premios-obtenidos/` (`premio1–3.jpeg`).
 - `novedades/index.html`: portada editorial con el listado de artículos en `/novedades/`.
 - `novedades/*/index.html`: artículos individuales. Actualmente existen Guía Repsol 2026, 2º Mejor Pizzero de España 2026 y Silvestre finalista.
 - `nosotros/index.html`: historia, perfil, premios y galería de Eduardo Ramírez en `/nosotros/`.
-- `internas.css`: sistema visual compartido por Eventos, Novedades y Nosotros.
+- `internas.css`: sistema visual compartido por Eventos, Novedades, Nosotros, Promociones y Premios.
 - `aviso-legal/index.html`: aviso legal con los datos del titular pendientes de completar.
 - `politica-privacidad/index.html`: tratamiento previsto de datos y newsletter.
 - `politica-cookies/index.html`: estado actual del uso de cookies y servicios externos.
 - `README.txt`: instrucciones breves originales.
 - `assets/`: imágenes utilizadas, referencias visuales y material original.
   - En la raíz de `assets/` están las imágenes que actualmente consume la página.
-  - `assets/imagenes/` conserva fotografías y recursos de origen; actualmente no se referencian desde el HTML.
+  - `assets/imagenes/` conserva fotografías y recursos de origen; promociones (`promo1/2.jpeg`) y diplomas (`premio1–3.jpeg`) se usan en `/promociones/` y `/premios-obtenidos/`.
   - `assets/carta/` contiene 28 fotografías de producto. Todas están integradas entre la portada y la carta; las fichas sin fotografía disponible permanecen tipográficas.
   - `assets/eduardo/` contiene ocho fotografías. Todas se usan en Nosotros; comedor y equipo también apoyan la página de Eventos.
 
 ## Arquitectura y flujo
 
-El sitio tiene once rutas HTML:
+El sitio tiene trece rutas HTML principales (más tres artículos y tres legales):
 
 1. `/index.html`: portada; carga `styles.css`, `site-chrome.css`, `site-chrome.js` y `script.js`. En móvil el hero usa la pizza a pantalla completa como fondo bajo el titular; el directorio de categorías muestra cinco vías (sin vinos/bebidas/postres); el carrusel lleva ocho pizzas; la ubicación va en banda oscura para no encadenar dos rojos con la newsletter.
 2. `/carta-rustica-napoletana/index.html`: carta; reutiliza `styles.css`, añade `carta.css`, `site-chrome.css`, `site-chrome.js` y `carta.js`.
-3. `/eventos-rustica-napoletana/index.html`: celebraciones; carga `styles.css`, `internas.css`, `site-chrome.css` y `site-chrome.js`.
-4. `/novedades/index.html`: listado editorial; cada “Leer más” abre una página estática dentro de `/novedades/<slug>/`.
-5. `/nosotros/index.html`: perfil de Eduardo, premios, galería y valores; carga los recursos compartidos de páginas internas.
-6. Tres artículos bajo `/novedades/<slug>/`.
-7. `/aviso-legal/`, `/politica-privacidad/` y `/politica-cookies/`.
+3. `/promociones/index.html`: banners de promociones.
+4. `/eventos-rustica-napoletana/index.html`: celebraciones; carga `styles.css`, `internas.css`, `site-chrome.css` y `site-chrome.js`.
+5. `/novedades/index.html`: listado editorial; cada “Leer más” abre una página estática dentro de `/novedades/<slug>/`.
+6. `/premios-obtenidos/index.html`: diplomas y reconocimientos.
+7. `/nosotros/index.html`: perfil de Eduardo, premios, galería y valores; carga los recursos compartidos de páginas internas.
+8. Tres artículos bajo `/novedades/<slug>/`.
+9. `/aviso-legal/`, `/politica-privacidad/` y `/politica-cookies/`.
+
+La navegación principal incluye: Inicio, Carta, Promociones, Eventos, Novedades, Premios, Nosotros.
 
 Todas las rutas comparten la misma estructura de top bar, `<header class="site-header">`, pre-footer de newsletter y footer.
 
@@ -136,7 +142,7 @@ El formulario de newsletter solicita nombre, email y consentimiento. Su botón p
 
 - `site-chrome.js` alterna la clase `menu-open` en `.site-header`, sincroniza `aria-expanded`, cierra con Escape y bloquea el scroll.
 - Al pulsar un enlace del menú, el menú móvil se cierra.
-- En móvil el menú bocadillo ocupa el ancho completo de la pantalla: marca «Rústica Napoletana», botones Reservar / Llamar en la misma fila (`tel:+34955498119`) y enlaces Carta / Eventos / Novedades / Nosotros / Contacto a 29px separados por líneas finas.
+- En móvil el menú bocadillo ocupa el ancho completo de la pantalla: marca «Rústica Napoletana», botones Reservar / Llamar en la misma fila (`tel:+34955498119`) y enlaces Carta / Promociones / Eventos / Novedades / Premios / Nosotros / Contacto a 29px separados por líneas finas.
 - `.pizza-motion` tiene entrada, flotación continua y respuesta suave al puntero mediante `requestAnimationFrame`.
 - El carrusel usa scroll horizontal nativo con `scroll-snap`.
 - Los botones avanzan o retroceden el ancho de una tarjeta más el `gap`.

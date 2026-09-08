@@ -56,6 +56,33 @@ body.inner-page{background:var(--paper);color:var(--ink)}
 .award-marks img:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(18,17,16,.12)}
 .awards-feature__note{margin:0;max-width:34ch;color:#5f5a54;font-size:15px;line-height:1.7}
 
+.obtained-awards{margin-top:48px;padding:48px 42px;background:#11100f;color:#fff}
+.obtained-awards__title{margin:0 0 28px;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(36px,4vw,56px);line-height:.95;letter-spacing:-.015em;font-weight:600;color:#fff}
+.obtained-awards__more{margin:-8px 0 24px}
+.obtained-awards__more a{color:#ffb4ba;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.obtained-awards__list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.obtained-awards__list article{display:flex;flex-direction:column;gap:14px;padding:8px 18px 8px 0;border-right:1px solid rgba(255,255,255,.14);min-width:0}
+.obtained-awards__list article:last-child{border-right:0;padding-right:0}
+.obtained-awards__list span{font-family:"Cormorant Garamond",Garamond,Georgia,serif;color:var(--red);font-size:clamp(36px,3.2vw,52px);line-height:.85;font-weight:600;letter-spacing:-.02em}
+.obtained-awards__list p{margin:0;font-size:12px;line-height:1.45;text-transform:uppercase;letter-spacing:.1em;color:#aaa39c}
+.obtained-awards__list strong{display:block;margin-top:4px;color:#fff;font-size:13px}
+
+.page-band{padding:clamp(72px,10vw,120px) max(24px,calc((100vw - 1520px)/2));color:#fff}
+.page-band--dark{background:#080808}
+.page-band__inner{max-width:920px}
+.page-band h1{margin:12px 0 0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(48px,6vw,92px);line-height:.95;letter-spacing:-.02em}
+.page-band__lead{margin:28px 0 0;max-width:58ch;color:#c5beb6;font-size:clamp(16px,1.15vw,19px);line-height:1.7}
+
+.promo-banners{display:grid;gap:28px;padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px)}
+.promo-banner{margin:0;overflow:hidden;background:#1a1714;box-shadow:0 18px 48px rgba(0,0,0,.12)}
+.promo-banner img{display:block;width:100%;height:auto;vertical-align:middle}
+
+.awards-certificates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.5vw,32px);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px)}
+.award-certificate{margin:0;background:#fff;border:1px solid var(--rule);box-shadow:0 14px 40px rgba(18,17,16,.08);overflow:hidden}
+.award-certificate img{display:block;width:100%;height:auto}
+.award-certificate figcaption{padding:16px 18px 18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6a655f;border-top:1px solid var(--rule)}
+.award-certificate figcaption strong{color:var(--ink)}
+
 .awards-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--ink)}
 .award-entry{padding:28px 18px 32px 0;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);display:flex;flex-direction:column;min-height:100%}
 .award-entry:last-child{border-right:0}
@@ -657,6 +684,17 @@ body.inner-page{background:var(--paper);color:var(--ink)}
   .award-marks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:none;width:100%}
   .award-marks img{width:100%;max-width:100%;height:auto;aspect-ratio:1;padding:6px;box-sizing:border-box}
   .awards-feature__note{max-width:none}
+  .obtained-awards{margin-top:36px;padding:42px 24px}
+  .obtained-awards__title{margin-bottom:22px;font-size:clamp(36px,9vw,52px)}
+  .obtained-awards__list{grid-template-columns:1fr}
+  .obtained-awards__list article{flex-direction:row;align-items:baseline;gap:22px;padding:18px 0;border-right:0;border-bottom:0}
+  .obtained-awards__list span{font-size:clamp(42px,11vw,58px)}
+  .obtained-awards__list p{font-size:15px;letter-spacing:.08em;align-self:center}
+  .obtained-awards__list strong{font-size:16px}
+  .promo-banners{gap:20px;padding-top:40px;padding-bottom:40px}
+  .awards-certificates{grid-template-columns:1fr;gap:22px;padding-top:40px;padding-bottom:40px}
+  .page-band{padding:72px 24px 64px}
+  .page-band h1{font-size:clamp(44px,12vw,72px)}
   .awards-grid{display:grid;grid-template-columns:1fr;margin-right:0;overflow:visible;border-top:2px solid var(--ink)}
   .award-entry,.award-entry:not(:first-child),.award-entry:last-child{padding:22px 0;border-right:0;border-bottom:1px solid var(--rule)}
   .award-entry h3{margin:14px 0 10px}
@@ -705,6 +743,12 @@ body.inner-page{background:var(--paper);color:var(--ink)}
   .editorial-section{width:calc(100% - 40px);padding:78px 0}
   .story-section{width:calc(100% - 32px);padding:64px 0}
   .awards-section,.gallery-section{padding-top:72px}
+  .obtained-awards{padding:36px 20px}
+  .obtained-awards__title{font-size:clamp(32px,9vw,44px);margin-bottom:18px}
+  .obtained-awards__list article{padding:14px 0;gap:16px}
+  .obtained-awards__list span{font-size:clamp(36px,10vw,48px)}
+  .obtained-awards__list p{font-size:13px}
+  .obtained-awards__list strong{font-size:14px}
   .award-marks{gap:8px}
   .award-marks img{padding:5px}
   .editorial-heading h2,.story-copy h2,.cta-panel h2,.empty-state h2{font-size:clamp(36px,10.5vw,52px)}

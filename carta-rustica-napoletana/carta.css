@@ -29,12 +29,10 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .menu-hero h1{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(60px,7vw,112px);line-height:.92;letter-spacing:-.02em}
 .menu-hero h1 span{display:block;color:var(--menu-red);margin-left:.33em}
 .menu-hero-lead{width:min(600px,100%);font-size:clamp(15px,1.15vw,19px);line-height:1.7;color:#d3ccc4;margin:42px 0 0}
-.menu-hero-meta{display:flex;align-items:center;gap:18px;margin-top:34px}
-.menu-hero-meta>p{margin:0;padding-left:18px;border-left:1px solid rgba(255,255,255,.25);font-size:10px;line-height:1.55;text-transform:uppercase;letter-spacing:.12em;color:#aaa39d}
-.menu-hero-meta strong{color:#fff;font-size:11px}
-.top-pizza-mark{width:62px;height:62px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;gap:4px}
-.top-pizza-mark b{font-family:"Cormorant Garamond",Garamond,Georgia,serif;color:var(--menu-red);font-size:23px}
-.top-pizza-mark span{font-size:6px;font-weight:800;line-height:1.15}
+.menu-hero-badges{display:flex;align-items:center;gap:14px;margin-top:34px}
+.menu-hero-badges img{display:block;width:72px;height:72px;object-fit:cover;border-radius:4px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.menu-hero-meta{display:none}
+.top-pizza-mark{display:none}
 .explore-link{position:absolute;left:0;top:calc(100% + 44px);display:flex;gap:28px;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:.2em;font-weight:800}
 .explore-link span{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.4);border-radius:50%;transition:.25s}
 .explore-link:hover span{background:var(--menu-red);border-color:var(--menu-red)}
@@ -55,6 +53,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .honours strong{display:block;color:#fff;font-size:12px}
 
 .menu-directory{padding:150px max(32px,calc((100vw - 1600px)/2));display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(70px,10vw,170px);background:var(--menu-cream)}
+.directory-intro .section-kicker{color:var(--menu-red);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
 .directory-intro h2{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(44px,5vw,82px);line-height:1.02;letter-spacing:-.015em;margin:20px 0 0}
 .directory-intro h2 span{display:block;color:var(--menu-red)}
 .category-directory{border-top:1px solid var(--menu-ink)}
@@ -203,9 +202,17 @@ body.lightbox-open{overflow:hidden}
   .menu-hero h1 span{margin-left:0}
   .menu-hero-lead{max-width:530px;margin-top:28px}
   .oven-note,.hero-index{display:none}
-  .explore-link{position:relative;left:auto;top:auto;margin-top:28px}
+  .explore-link{position:relative;left:auto;top:auto;margin:32px auto 0;justify-content:center;width:100%;color:var(--menu-red);font-size:15px;letter-spacing:.18em;gap:16px}
+  .explore-link span{border-color:var(--menu-red);color:var(--menu-red);width:44px;height:44px}
+  .explore-link:hover{color:#fff}
+  .explore-link:hover span{background:var(--menu-red);border-color:var(--menu-red);color:#fff}
+  .menu-hero-badges{justify-content:center;gap:16px;margin-top:28px}
+  .menu-hero-badges img{width:88px;height:88px}
   .menu-directory{padding:100px 24px;grid-template-columns:1fr;gap:48px}
   .menu-directory h2{font-size:clamp(44px,11vw,72px)}
+  .directory-intro{text-align:center}
+  .directory-intro .section-kicker{display:block;color:var(--menu-red);font-size:clamp(18px,5vw,24px);letter-spacing:.2em;font-weight:800}
+  .directory-intro h2{text-align:center}
   .category-directory{border-top:0}
   .category-directory a{gap:18px;min-height:72px;border-bottom:0}
   .category-directory a span{font-size:18px;letter-spacing:.08em;font-weight:800}
@@ -222,15 +229,15 @@ body.lightbox-open{overflow:hidden}
   .dish-list-two .dish:nth-child(2){border-top:0}
   .dish-head strong,.dish-title strong,.dish strong{font-size:20px}
   .dish[id]{scroll-margin-top:88px}
-  .honours{padding:48px 24px 28px;border-top:0;border-bottom:0}
-  .honours-title{display:block;margin:0 0 28px;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(36px,9vw,52px);line-height:.95;letter-spacing:-.015em;font-weight:600;color:#fff}
+  .honours{padding:36px 24px 20px;border-top:0;border-bottom:0}
+  .honours-title{display:block;margin:0 0 18px;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(24px,6.5vw,32px);line-height:.95;letter-spacing:-.015em;font-weight:600;color:#fff}
   .honours-list{display:grid;grid-template-columns:1fr;overflow:visible;scroll-snap-type:none}
-  .honours article{display:flex;align-items:baseline;gap:22px;min-height:0;padding:22px 0;border-right:0;border-bottom:0}
+  .honours article{display:flex;align-items:baseline;gap:14px;min-height:0;padding:12px 0;border-right:0;border-bottom:0}
   .honours article:last-child{border-bottom:0}
   .honours img{display:none}
-  .honours span{flex:0 0 auto;font-size:clamp(42px,11vw,58px);line-height:.85;font-weight:600;letter-spacing:-.02em}
-  .honours p{font-size:15px;line-height:1.35;letter-spacing:.08em;align-self:center}
-  .honours strong{font-size:16px;margin-top:4px}
+  .honours span{flex:0 0 auto;font-size:clamp(22px,6vw,28px);line-height:.85;font-weight:600;letter-spacing:-.02em}
+  .honours p{font-size:12px;line-height:1.35;letter-spacing:.06em;align-self:center}
+  .honours strong{font-size:12px;margin-top:2px}
   .featured-menu-section{padding:72px 24px}
   .featured-menu-heading{grid-template-columns:1fr;gap:18px;margin-bottom:28px}
   .featured-menu-heading>span{grid-column:auto}
@@ -263,13 +270,17 @@ body.lightbox-open{overflow:hidden}
   .menu-hero h1{font-size:16vw;line-height:.84}
   .menu-hero-lead{font-size:14px;margin-top:24px}
   .menu-hero-meta{margin-top:24px}
-  .honours{padding:42px 20px 22px}
-  .honours-title{margin-bottom:22px;font-size:clamp(34px,10vw,48px)}
-  .honours article{padding:20px 0;gap:18px}
-  .honours span{font-size:clamp(48px,14vw,64px)}
-  .honours p{font-size:14px;letter-spacing:.06em}
-  .honours strong{font-size:15px}
+  .menu-hero-badges{margin-top:24px;gap:14px}
+  .menu-hero-badges img{width:76px;height:76px}
+  .explore-link{font-size:16px;margin-top:28px}
+  .honours{padding:28px 20px 16px}
+  .honours-title{margin-bottom:14px;font-size:clamp(22px,6vw,28px)}
+  .honours article{padding:10px 0;gap:12px}
+  .honours span{font-size:clamp(20px,5.5vw,26px)}
+  .honours p{font-size:11px;letter-spacing:.05em}
+  .honours strong{font-size:11px}
   .menu-directory{padding:78px 20px;gap:36px}
+  .directory-intro .section-kicker{font-size:clamp(16px,4.8vw,22px)}
   .category-directory a{font-size:25px;min-height:68px}
   .category-directory a span{font-size:20px;letter-spacing:.06em}
   .food-section{width:calc(100% - 32px);padding:82px 0}
