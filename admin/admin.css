@@ -149,6 +149,103 @@ textarea{min-height:110px;resize:vertical}
 .photo-actions label.btn{cursor:pointer;margin:0}
 .photo-actions input[type=file]{display:none}
 .saving-dot{font-size:12px;color:var(--ok)}
+
+/* —— Login elegante —— */
+body.login-page{
+  min-height:100vh;
+  background:#050505;
+  overflow-x:hidden;
+}
+.login-stage{
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 55% at 18% 12%,rgba(239,20,35,.28),transparent 58%),
+    radial-gradient(ellipse 55% 45% at 88% 78%,rgba(20,148,71,.12),transparent 55%),
+    linear-gradient(165deg,#050505 0%,#0d0b0b 48%,#120a0a 100%);
+}
+.login-stage__glow{
+  position:absolute;inset:auto -10% -20% -10%;height:55%;
+  background:radial-gradient(ellipse at center,rgba(239,20,35,.18),transparent 70%);
+  filter:blur(40px);
+}
+.login-stage__grain{
+  position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.login-wrap{
+  position:relative;z-index:1;
+  min-height:100vh;display:grid;place-items:center;
+  padding:clamp(24px,5vw,48px) 16px calc(32px + var(--safe-bottom));
+}
+.login-panel{
+  width:min(440px,100%);
+  padding:clamp(28px,5vw,40px) clamp(22px,4vw,36px) clamp(24px,4vw,32px);
+  background:linear-gradient(180deg,rgba(20,20,20,.92),rgba(10,10,10,.96));
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter:blur(10px);
+}
+.login-brand{
+  display:flex;align-items:center;gap:14px;
+  text-decoration:none;color:inherit;margin-bottom:28px;
+}
+.login-brand__mark{
+  flex:0 0 auto;width:58px;height:58px;border-radius:50%;
+  background:var(--red);color:#050505;
+  display:grid;place-content:center;text-align:center;
+  font-family:var(--display);font-weight:700;font-size:13px;line-height:.92;
+  letter-spacing:.02em;box-shadow:0 10px 28px rgba(239,20,35,.35);
+}
+.login-brand__mark span{display:block}
+.login-brand__copy{display:grid;gap:4px;min-width:0}
+.login-brand__copy strong{
+  font-family:var(--display);font-size:clamp(22px,5vw,28px);font-weight:700;line-height:1;
+}
+.login-brand__copy small{
+  color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+}
+.login-kicker{
+  margin:0 0 10px;color:var(--red);font-size:11px;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;
+}
+.login-panel h1{
+  margin:0 0 10px;font-family:var(--display);
+  font-size:clamp(40px,9vw,56px);line-height:.95;letter-spacing:-.02em;
+}
+.login-lead{
+  margin:0 0 26px;color:#b8b2aa;font-size:15px;line-height:1.55;
+}
+.login-form{display:grid;gap:4px}
+.login-field{display:grid;gap:8px;margin-bottom:14px}
+.login-field span{
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;
+}
+.login-field input{
+  width:100%;min-height:52px;padding:14px 16px;
+  border:1px solid rgba(255,255,255,.14);border-radius:12px;
+  background:#080808;color:var(--text);font-size:16px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.login-field input::placeholder{color:#5c5853}
+.login-field input:focus{
+  outline:0;border-color:rgba(239,20,35,.7);
+  box-shadow:0 0 0 3px rgba(239,20,35,.18);
+}
+.login-submit{
+  width:100%;min-height:52px;margin-top:6px;border-radius:999px;
+  font-size:13px;letter-spacing:.1em;
+}
+.login-submit span{font-size:16px;line-height:1}
+.login-panel .status{margin:14px 0 0;min-height:1.2em;text-align:center}
+.login-foot{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+  margin:28px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);
+}
+.login-foot a{
+  color:#8f8a84;font-size:12px;letter-spacing:.04em;text-decoration:none;
+}
+.login-foot a:hover{color:#fff}
+
 @media(min-width:860px){
   .admin-main{padding:28px 20px 60px}
   .modal-backdrop{align-items:center;padding:24px}
@@ -158,6 +255,7 @@ textarea{min-height:110px;resize:vertical}
   .dish-card__actions{grid-template-columns:repeat(3,auto);justify-content:end}
   .promo-admin-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .promo-admin-card{grid-template-columns:1fr}
+  .login-panel{padding:44px 42px 36px}
 }
 @media(max-width:859px){
   .toolbar .btn-desktop-new{display:none}

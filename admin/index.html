@@ -2,50 +2,64 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#050505" />
   <title>Admin · Rústica Napoletana</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/admin.css?v=20260910login" />
 </head>
-<body>
-  <div class="admin-shell">
-    <header class="admin-top">
-      <div class="admin-brand">
-        <div>
-          <strong>Rústica Admin</strong>
-          <span>Gestión de carta</span>
-        </div>
-      </div>
-      <div class="admin-actions">
-        <a class="btn btn-ghost" href="../carta-rustica-napoletana/">Ver carta</a>
-      </div>
-    </header>
-    <main class="admin-main">
-      <section class="login-card" aria-labelledby="login-title">
-        <h1 id="login-title">Entrar</h1>
-        <p class="lead">Panel para carta y promociones. Requiere usuario de Supabase Auth.</p>
-        <form id="login-form">
-          <label>Email<input id="email" type="email" autocomplete="username" required /></label>
-          <label>Contraseña<input id="password" type="password" autocomplete="current-password" required /></label>
-          <button class="btn" type="submit">Acceder</button>
-          <p class="status" id="login-status" role="status"></p>
-        </form>
-      </section>
-    </main>
+<body class="login-page">
+  <div class="login-stage" aria-hidden="true">
+    <div class="login-stage__glow"></div>
+    <div class="login-stage__grain"></div>
   </div>
 
+  <main class="login-wrap">
+    <section class="login-panel" aria-labelledby="login-title">
+      <a class="login-brand" href="/" aria-label="Rústica Napoletana">
+        <span class="login-brand__mark" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span>
+        <span class="login-brand__copy">
+          <strong>Rústica Napoletana</strong>
+          <small>Panel de gestión</small>
+        </span>
+      </a>
+
+      <p class="login-kicker">Acceso privado</p>
+      <h1 id="login-title">Entra al horno.</h1>
+      <p class="login-lead">Gestiona la carta y las promociones con tu cuenta de Rústica.</p>
+
+      <form id="login-form" class="login-form">
+        <label class="login-field">
+          <span>Email</span>
+          <input id="email" type="email" autocomplete="username" required placeholder="tu@email.com" />
+        </label>
+        <label class="login-field">
+          <span>Contraseña</span>
+          <input id="password" type="password" autocomplete="current-password" required placeholder="••••••••" />
+        </label>
+        <button class="btn login-submit" type="submit">Acceder <span aria-hidden="true">→</span></button>
+        <p class="status" id="login-status" role="status"></p>
+      </form>
+
+      <p class="login-foot">
+        <a href="/">← Volver a la web</a>
+        <a href="/carta-rustica-napoletana/">Ver carta pública</a>
+      </p>
+    </section>
+  </main>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="../js/supabase-config.js"></script>
-  <script src="../js/menu-api.js"></script>
+  <script src="/js/supabase-config.js?v=20260910a"></script>
+  <script src="/js/menu-api.js?v=20260910a"></script>
   <script>
     (async function () {
       const status = document.getElementById("login-status");
       const form = document.getElementById("login-form");
 
-      if (!RusticaMenuApi.hasConfig()) {
+      if (!window.RusticaMenuApi || !RusticaMenuApi.hasConfig()) {
         status.className = "status error";
         status.textContent = "Falta configurar js/supabase-config.js (url y anonKey).";
         form.querySelector("button").disabled = true;
@@ -63,7 +77,7 @@
 
       const { data: { session } } = await client.auth.getSession();
       if (session) {
-        location.replace("carta.html");
+        location.replace("/admin/carta.html");
         return;
       }
 
@@ -79,7 +93,7 @@
           status.textContent = error.message;
           return;
         }
-        location.replace("carta.html");
+        location.replace("/admin/carta.html");
       });
     })();
   </script>
