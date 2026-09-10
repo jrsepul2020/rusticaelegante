@@ -428,9 +428,16 @@ body.menu-page{
   .promos-section{width:min(calc(100% - 32px),var(--max,1760px))}
   .promo-home{padding:40px 0 48px}
   .promo-home__intro{margin-bottom:18px}
-  .promo-grid{gap:8px}
+  .promo-grid{
+    grid-template-columns:1fr;
+    grid-template-rows:none;
+    grid-auto-flow:row;
+    gap:18px;
+  }
   .promo-card__details{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .promo-card__btn{min-height:34px;padding:0 10px;font-size:10px}
+  /* Inicio móvil: solo la primera promoción */
+  .promo-home .promo-grid .promo-card:nth-child(n+2){display:none}
 }
 
 /* Instagram · LightWidget (6 desktop / 3 tablet-móvil vía recorte de 1ª fila) */
@@ -1453,7 +1460,13 @@ body.menu-page{
 
   .hero-mobile__copy h1 span{display:block}
   .hero-mobile__copy h1 .accent{color:var(--site-red)}
-  .hero-mobile__copy .eyebrow{margin-bottom:22px}
+  .hero-mobile__copy .eyebrow{
+    margin-bottom:22px;
+    max-width:22rem;
+    letter-spacing:.1em;
+    line-height:1.45;
+    text-wrap:balance;
+  }
   .hero-mobile__copy .hero-lead{
     max-width:34ch!important;
     margin:28px 0 0;
