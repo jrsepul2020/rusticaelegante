@@ -27,9 +27,12 @@ const lightboxImage = lightbox?.querySelector('img');
 const lightboxTitle = lightbox?.querySelector('figcaption span');
 const lightboxPrice = lightbox?.querySelector('figcaption strong');
 const lightboxClose = lightbox?.querySelector('.product-lightbox-close');
-const productImages = document.querySelectorAll('.food-section img, .featured-menu-card img');
 const lightboxMedia = window.matchMedia('(min-width: 541px)');
 let lightboxTrigger = null;
+
+function lightboxImages() {
+  return document.querySelectorAll('.food-section img, .featured-menu-card img');
+}
 
 function openLightbox(image) {
   if (!lightboxMedia.matches || !lightbox || !lightboxImage || !lightboxTitle || !lightboxPrice) return;
@@ -50,7 +53,7 @@ function openLightbox(image) {
 }
 
 function syncLightboxAvailability() {
-  productImages.forEach(image => {
+  lightboxImages().forEach(image => {
     if (lightboxMedia.matches) {
       image.tabIndex = 0;
       image.setAttribute('role', 'button');
@@ -65,23 +68,26 @@ function syncLightboxAvailability() {
   if (!lightboxMedia.matches && lightbox?.open) lightbox.close();
 }
 
-productImages.forEach(image => {
-  image.addEventListener('click', event => {
-    if (!lightboxMedia.matches) return;
-    event.preventDefault();
-    event.stopPropagation();
-    openLightbox(image);
-  });
-  image.addEventListener('keydown', event => {
-    if (event.key !== 'Enter' && event.key !== ' ') return;
-    if (!lightboxMedia.matches) return;
-    event.preventDefault();
-    event.stopPropagation();
-    openLightbox(image);
-  });
+document.addEventListener('click', event => {
+  const image = event.target.closest('.food-section img, .featured-menu-card img');
+  if (!image || !lightboxMedia.matches) return;
+  event.preventDefault();
+  event.stopPropagation();
+  openLightbox(image);
 });
+
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Enter' && event.key !== ' ') return;
+  const image = event.target.closest?.('.food-section img, .featured-menu-card img');
+  if (!image || !lightboxMedia.matches) return;
+  event.preventDefault();
+  event.stopPropagation();
+  openLightbox(image);
+});
+
 syncLightboxAvailability();
 lightboxMedia.addEventListener('change', syncLightboxAvailability);
+document.addEventListener('rustica:menu-rendered', syncLightboxAvailability);
 
 lightboxClose?.addEventListener('click', () => lightbox?.close());
 lightbox?.addEventListener('click', event => {

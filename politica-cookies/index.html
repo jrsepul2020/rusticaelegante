@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=20260908e" />
   <link rel="stylesheet" href="../internas.css?v=20260908aa" />
-  <link rel="stylesheet" href="../site-chrome.css?v=20260908y" />
+  <link rel="stylesheet" href="../site-chrome.css?v=20260910flame" />
 </head>
 <body class="inner-page legal-page">
   <aside class="top-bar" aria-label="Información de contacto"><div class="top-bar__inner"><span>Jueves a Lunes: 20:00-00:00 · Cerrado mar-mié</span></div></aside>
@@ -60,7 +60,7 @@
         </section>
         <section>
           <h2>Servicios externos</h2>
-          <p>Las tipografías se solicitan a Google Fonts, por lo que el navegador realiza una conexión técnica con los servidores de ese proveedor. El formulario alojado de Mailrelay todavía no está conectado; antes de activarlo se revisarán sus recursos, cookies y requisitos de consentimiento.</p>
+          <p>Las tipografías se solicitan a Google Fonts, por lo que el navegador realiza una conexión técnica con los servidores de ese proveedor. En la portada se carga un widget de Instagram (LightWidget) que puede establecer cookies o conexiones con terceros al mostrar las publicaciones. El formulario alojado de Mailrelay todavía no está conectado; antes de activarlo se revisarán sus recursos, cookies y requisitos de consentimiento.</p>
         </section>
         <section>
           <h2>Qué son las cookies</h2>
@@ -87,13 +87,27 @@
     <form class="newsletter-form" data-mailrelay-pending><div class="newsletter-form__fields"><label class="newsletter-field"><span>Nombre</span><input name="name" type="text" autocomplete="name" required /></label><label class="newsletter-field"><span>Email</span><input name="email" type="email" autocomplete="email" required /></label><button type="button" disabled title="Pendiente de conectar con Mailrelay">Apuntarme</button></div><label class="newsletter-consent"><input name="privacy" type="checkbox" required /><span>Acepto la <a href="../politica-privacidad/">política de privacidad</a> y el envío de comunicaciones de Rústica Napoletana.</span></label><p class="newsletter-status">Formulario preparado · conexión con Mailrelay pendiente</p></form>
   </section>
   <footer class="site-footer">
+    <div class="site-footer__embers" aria-hidden="true"></div>
     <div class="site-footer__grid">
       <div class="site-footer__identity"><a class="site-footer__brand" href="#top"><span class="site-footer__mark" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span><span class="site-footer__wordmark"><span>Rústica</span><span>Napoletana</span></span></a><p class="site-footer__claim">Pizza napolitana, horno de leña y producto italiano en Cazalla de la Sierra.</p></div>
-      <nav aria-label="Categorías de la carta"><p class="site-footer__title">La carta</p><div class="site-footer__links"><a href="../carta-rustica-napoletana/#ensaladas">Ensaladas</a><a href="../carta-rustica-napoletana/#entrantes">Entrantes</a><a href="../carta-rustica-napoletana/#pizzas">Pizzas</a><a href="../carta-rustica-napoletana/#focaccia">Focaccia</a><a href="../carta-rustica-napoletana/#padelino">Padelino</a></div></nav>
-      <div><p class="site-footer__title">Contacto</p><div class="site-footer__contact"><a class="site-footer__phone" href="tel:+34955498119">955 498 119</a><address>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</address><p class="site-footer__schedule"><strong>Horario</strong>Jueves a Lunes: 20:00-00:00<br>Cerrado martes y miércoles</p></div></div>
+      <nav aria-label="Categorías de la carta"><p class="site-footer__title">La carta</p><div class="site-footer__links">
+          <a href="../carta-rustica-napoletana/#ensaladas">Ensaladas <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="../carta-rustica-napoletana/#entrantes">Entrantes <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="../carta-rustica-napoletana/#pizzas">Pizzas <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="../carta-rustica-napoletana/#focaccia">Focaccia <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="../carta-rustica-napoletana/#padelino">Padelino <span class="footer-arrow" aria-hidden="true">→</span></a>
+        </div></nav>
+      <div><p class="site-footer__title">Contacto</p><div class="site-footer__contact">
+          <a class="site-footer__phone" href="tel:+34955498119"><svg class="footer-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg><span>955 498 119</span></a>
+          <address class="site-footer__address"><svg class="footer-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c-3.9 0-7 3.1-7 7 0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg><span>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</span></address>
+          <a class="btn btn-outline site-footer__maps" href="https://www.google.com/maps/search/?api=1&query=C%2F+Egido+13%2C+Cazalla+de+la+Sierra%2C+Sevilla" target="_blank" rel="noopener">Cómo llegar <span>→</span></a>
+          <p class="site-footer__schedule"><svg class="footer-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6.25l5.25 3.12.75-1.23-4.5-2.67V7z"/></svg><span><strong>Horario</strong>Jueves a Lunes: 20:00-00:00<br>Cerrado martes y miércoles</span></p>
+        </div></div>
     </div>
     <div class="site-footer__bottom"><span>© 2026 Rústica Napoletana</span><span>Cazalla de la Sierra · Sevilla</span><span class="site-footer__legal"><a href="../aviso-legal/">Aviso legal</a><a href="../politica-privacidad/">Privacidad</a><a href="./">Cookies</a></span><a href="#top">Volver arriba ↑</a></div>
   </footer>
-  <script src="../site-chrome.js?v=20260907r"></script>
+    <script src="../js/supabase-config.js?v=20260910a"></script>
+  <script src="../js/newsletter.js?v=20260910a"></script>
+<script src="../site-chrome.js?v=20260907r"></script>
 </body>
 </html>

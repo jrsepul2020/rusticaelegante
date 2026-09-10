@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=20260908e" />
-  <link rel="stylesheet" href="site-chrome.css?v=20260908y" />
+  <link rel="stylesheet" href="site-chrome.css?v=20260910flame" />
 </head>
 <body>
   <aside class="top-bar" aria-label="Información de contacto">
@@ -122,52 +122,14 @@
       </section>
 
       <section class="promos-section home-band home-paper" id="promociones" aria-labelledby="promo-list-title">
-        <div class="promo-list">
-          <div class="promo-list__intro">
+        <div class="promo-home">
+          <div class="promo-home__intro">
             <span class="section-kicker">Promociones</span>
-            <h2 id="promo-list-title">Tres motivos para venir esta semana.</h2>
+            <h2 id="promo-list-title">Promociones vigentes.</h2>
+            <a class="promo-home__all" href="promociones/">Ver todas <span>→</span></a>
           </div>
-          <ol class="promo-list__grid">
-            <li>
-              <figure class="promo-list__media">
-                <img src="assets/carta/pizza-margarita.png" alt="Pizza Margarita" />
-              </figure>
-              <div class="promo-list__body">
-                <span>01</span>
-                <div>
-                  <h3>Menú mediodía</h3>
-                  <p>Pizza + bebida antes de las 15:00.</p>
-                </div>
-                <strong>Desde 12 €</strong>
-              </div>
-            </li>
-            <li>
-              <figure class="promo-list__media">
-                <img src="assets/carta/padelino-clasico.jpeg" alt="Padelino clásico" />
-              </figure>
-              <div class="promo-list__body">
-                <span>02</span>
-                <div>
-                  <h3>2×1 en padelinos</h3>
-                  <p>Los jueves al abrir, dos por el precio de uno.</p>
-                </div>
-                <strong>2×1</strong>
-              </div>
-            </li>
-            <li>
-              <figure class="promo-list__media">
-                <img src="assets/eduardo/interior-comedor.jpeg" alt="Comedor de Rústica Napoletana" />
-              </figure>
-              <div class="promo-list__body">
-                <span>03</span>
-                <div>
-                  <h3>Cumpleaños en la mesa</h3>
-                  <p>Postre de la casa si avisas al reservar.</p>
-                </div>
-                <strong>Detalle</strong>
-              </div>
-            </li>
-          </ol>
+          <p class="promo-load-status" data-promo-status hidden>Cargando promociones…</p>
+          <div class="promo-grid" data-promo-grid data-depth="0"></div>
         </div>
       </section>
 
@@ -354,9 +316,30 @@
         </div>
       </section>
 
-      <section class="location-section home-band home-dark" id="ubicacion">
-        <div><span class="section-kicker">Cazalla de la Sierra</span><h2>Reserva mesa. Enciende el horno.</h2></div>
-        <div class="location-actions"><a class="btn btn-red" href="tel:+34955498119">Reservar</a><a class="btn btn-outline" href="tel:+34955498119">955 498 119</a></div>
+      <section class="instagram-feed home-band home-paper" id="instagram" aria-labelledby="instagram-title">
+        <div class="instagram-feed__inner">
+          <header class="instagram-feed__head">
+            <div>
+              <span class="section-kicker">Redes</span>
+              <h2 id="instagram-title">Síguenos en Instagram</h2>
+              <p>El horno, la masa y la mesa entre servicio y servicio.</p>
+            </div>
+            <a class="btn btn-red" href="https://instagram.com/rusticanapoletana" target="_blank" rel="noopener">Síguenos en Instagram <span>→</span></a>
+          </header>
+          <div class="instagram-feed__widget" data-ig-count-desktop="6" data-ig-count-compact="3">
+            <!-- LightWidget free: usa // (no https) en el iframe. En producción HTTPS hace falta plan de pago o otro proveedor. -->
+            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js" defer></script>
+            <iframe
+              src="//lightwidget.com/widgets/2721fedd533656418cdccb4ddf22a253.html"
+              loading="lazy"
+              title="Últimas publicaciones de Instagram de Rústica Napoletana"
+              scrolling="no"
+              allowtransparency="true"
+              class="lightwidget-widget"
+              style="width:100%;border:0;overflow:hidden;"
+            ></iframe>
+          </div>
+        </div>
       </section>
     </main>
   </div>
@@ -372,7 +355,22 @@
       <p class="newsletter-status">Formulario preparado · conexión con Mailrelay pendiente</p>
     </form>
   </section>
+
+  <section class="reserve-strip" id="ubicacion" aria-labelledby="reserve-strip-title">
+    <div class="reserve-strip__inner">
+      <div>
+        <p class="reserve-strip__kicker">Cazalla de la Sierra</p>
+        <h2 id="reserve-strip-title">Reserva mesa. Enciende el horno.</h2>
+      </div>
+      <div class="reserve-strip__actions">
+        <a class="btn btn-black" href="tel:+34955498119">Reservar</a>
+        <a class="btn btn-outline" href="tel:+34955498119">955 498 119</a>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
+    <div class="site-footer__embers" aria-hidden="true"></div>
     <div class="site-footer__grid">
       <div class="site-footer__identity">
         <a class="site-footer__brand" href="#top"><span class="site-footer__mark" aria-hidden="true"><span>RÚS</span><span>TI</span><span>CA</span></span><span class="site-footer__wordmark"><span>Rústica</span><span>Napoletana</span></span></a>
@@ -381,21 +379,34 @@
       <nav aria-label="Categorías de la carta">
         <p class="site-footer__title">La carta</p>
         <div class="site-footer__links">
-          <a href="carta-rustica-napoletana/#ensaladas">Ensaladas</a><a href="carta-rustica-napoletana/#entrantes">Entrantes</a><a href="carta-rustica-napoletana/#pizzas">Pizzas</a><a href="carta-rustica-napoletana/#focaccia">Focaccia</a><a href="carta-rustica-napoletana/#padelino">Padelino</a>
+          <a href="carta-rustica-napoletana/#ensaladas">Ensaladas <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="carta-rustica-napoletana/#entrantes">Entrantes <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="carta-rustica-napoletana/#pizzas">Pizzas <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="carta-rustica-napoletana/#focaccia">Focaccia <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="carta-rustica-napoletana/#padelino">Padelino <span class="footer-arrow" aria-hidden="true">→</span></a>
         </div>
       </nav>
       <div>
         <p class="site-footer__title">Contacto</p>
         <div class="site-footer__contact">
-          <a class="site-footer__phone" href="tel:+34955498119">955 498 119</a>
-          <address>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</address>
-          <p class="site-footer__schedule"><strong>Horario</strong>Jueves a Lunes: 20:00-00:00<br>Cerrado martes y miércoles</p>
+          <a class="site-footer__phone" href="tel:+34955498119"><svg class="footer-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg><span>955 498 119</span></a>
+          <address class="site-footer__address"><svg class="footer-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c-3.9 0-7 3.1-7 7 0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg><span>C/ Egido 13<br>Cazalla de la Sierra, Sevilla</span></address>
+          <a class="btn btn-outline site-footer__maps" href="https://www.google.com/maps/search/?api=1&query=C%2F+Egido+13%2C+Cazalla+de+la+Sierra%2C+Sevilla" target="_blank" rel="noopener">Cómo llegar <span>→</span></a>
+          <p class="site-footer__schedule"><svg class="footer-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6.25l5.25 3.12.75-1.23-4.5-2.67V7z"/></svg><span><strong>Horario</strong>Jueves a Lunes: 20:00-00:00<br>Cerrado martes y miércoles</span></p>
         </div>
       </div>
     </div>
     <div class="site-footer__bottom"><span>© 2026 Rústica Napoletana</span><span>Cazalla de la Sierra · Sevilla</span><span class="site-footer__legal"><a href="aviso-legal/">Aviso legal</a><a href="politica-privacidad/">Privacidad</a><a href="politica-cookies/">Cookies</a></span><a href="#top">Volver arriba ↑</a></div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js?v=20260910a"></script>
+  <script src="js/newsletter.js?v=20260910a"></script>
+  <script src="js/menu-api.js?v=20260910a"></script>
+  <script src="js/promos-api.js?v=20260910a"></script>
+  <script src="js/promos-fallback.js?v=20260910a"></script>
+  <script src="js/promos-render.js?v=20260910b"></script>
   <script src="site-chrome.js?v=20260907r"></script>
   <script src="script.js?v=20260907u"></script>
+  <script>RusticaPromosRender.loadAndRender();</script>
 </body>
 </html>

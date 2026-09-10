@@ -1,0 +1,701 @@
+{
+  "categories": [
+    {
+      "slug": "ensaladas",
+      "name": "Ensaladas",
+      "eyebrow": "01 — Fresco",
+      "section_note": null,
+      "pastel_class": "pastel-sage",
+      "layout": "standard",
+      "items": [
+        {
+          "name": "Ensalada Maradona",
+          "name_note": null,
+          "description": "1 tomate estilo XL acompañado de stracciatella de burrata, pistacho, parmesano, pesto y albahaca.",
+          "price_label": "8,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Ensalada de Elite",
+          "name_note": null,
+          "description": "Tres tipos de tomates, burrata, pesto Genovese y vinagre balsámico.",
+          "price_label": "9,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/ensalada-de-elite.jpeg",
+          "anchor_id": "plato-ensalada-elite",
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Ensalada de Cogollos",
+          "name_note": null,
+          "description": "Cebolla, tomate, aguacate, nueces, zanahoria y salsa de yogur con un toque de lima.",
+          "price_label": "6,50€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/ensalada-de-cogollos.jpeg",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Ensalada César",
+          "name_note": null,
+          "description": "Lechugas crujientes con pollo, picatostes dorados, parmesano en lascas y salsa César cremosa.",
+          "price_label": "9,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/ensalada-cesar.webp",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        }
+      ]
+    },
+    {
+      "slug": "entrantes",
+      "name": "Entrantes",
+      "eyebrow": "02 — Para abrir boca",
+      "section_note": null,
+      "pastel_class": null,
+      "layout": "standard",
+      "items": [
+        {
+          "name": "Tosta Caramelizada",
+          "name_note": null,
+          "description": "Acompañada de queso de cabra, cebolla crujiente, cebolla caramelizada y salsa de mostaza y miel.",
+          "price_label": "Consultar",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/tosta-caramelizada.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Cazuela de Provolone Italiano",
+          "name_note": null,
+          "description": "Acompañado con tomate natural, orégano y aceites de oliva y ajo.",
+          "price_label": "10,00€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/cazuela-de-provolone-italiano.png",
+          "anchor_id": "plato-provolone",
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Lasagna Bolognese Casera",
+          "name_note": null,
+          "description": "Carne picada, cebolla, salsa boloñesa, queso, bechamel y fundido al horno.",
+          "price_label": "6,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/lasagna-bolognese-casera.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Pan de Ajo con Queso",
+          "name_note": null,
+          "description": "Pan de ajo horneado con ajo y perejil.",
+          "price_label": "4,00€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/pan-de-ajo-con-queso.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Patatas Gratinadas de la Casa",
+          "name_note": null,
+          "description": "Patatas gratinadas con salsa de la casa y queso fundido.",
+          "price_label": "5,50€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/patatas-gratinadas-de-la-casa.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Pan Baho",
+          "name_note": "2 unidades",
+          "description": null,
+          "price_label": "8,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/pan-baho-2-unidades.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        }
+      ]
+    },
+    {
+      "slug": "pizzas",
+      "name": "Pizzas",
+      "eyebrow": "03 — Dal forno",
+      "section_note": "Masa de larga fermentación, horneada al estilo napoletano tradicional.",
+      "pastel_class": "pastel-blush",
+      "layout": "two_col",
+      "items": [
+        {
+          "name": "Deluxe",
+          "name_note": null,
+          "description": "Base de tomate San Marzano, mozzarella fiordilatte, carne picada, champiñones, cebolla, salami picante y pimiento verde.",
+          "price_label": "13,50€",
+          "badge": "spicy",
+          "badge_label": "Picante",
+          "image_path": "assets/carta/pizza-deluxe.jpeg",
+          "anchor_id": "plato-deluxe",
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "La Mama",
+          "name_note": null,
+          "description": "Base de crema de parmesano, mozzarella fiordilatte, mortadela trufada, panceta italiana y miel de azahar.",
+          "price_label": "15,00€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/pizza-la-mama.jpeg",
+          "anchor_id": "plato-la-mama",
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Siciliana",
+          "name_note": null,
+          "description": "Base de crema bianca, mozzarella fiordilatte, mortadela de Bolonia, rúcula, pesto, burrata y parmesano.",
+          "price_label": "15,00€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/pizza-siciliana.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Aires de la Sierra",
+          "name_note": null,
+          "description": "Base de crema de boletus con tocino de la Sierra, tomate fiochi, parmesano crujiente y berenjena.",
+          "price_label": "15,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/pizza-aires-de-la-sierra.jpeg",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Encanto",
+          "name_note": null,
+          "description": "Base de tomate San Marzano, mozzarella fiordilatte, parmesano, tomate cherry, rúcula, burrata y albahaca.",
+          "price_label": "15,00€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/pizza-encanto.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Cremosa",
+          "name_note": null,
+          "description": "Base de crema, mozzarella fiordilatte, cebolla, champiñones, pollo, bacon y salsa BBQ.",
+          "price_label": "11,00€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/pizza-cremosa.jpeg",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Caramelizada",
+          "name_note": null,
+          "description": "Base de crema, mozzarella fiordilatte, queso de cabra y cebolla caramelizada.",
+          "price_label": "11,00€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/pizza-caramelizada.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Margarita",
+          "name_note": null,
+          "description": "Base de tomate San Marzano, mozzarella fiordilatte, albahaca y parmesano.",
+          "price_label": "9,00€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/pizza-margarita.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Diavola",
+          "name_note": null,
+          "description": "Base de tomate San Marzano, salami picante napolitano, mozzarella fiordilatte y albahaca.",
+          "price_label": "12,00€",
+          "badge": "spicy",
+          "badge_label": "Picante",
+          "image_path": "assets/carta/pizza-diavola.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Quattro K",
+          "name_note": null,
+          "description": "Base bianca con gorgonzola, provola fresca ahumada, pecorino, lascas de parmesano y albahaca.",
+          "price_label": "10,00€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/pizza-quattro-k.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Prosciutto e Funghi",
+          "name_note": null,
+          "description": "Base de tomate San Marzano, mozzarella fiordilatte, prosciutto cotto, champiñones frescos y albahaca.",
+          "price_label": "10,00€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/pizza-prosciutto-e-funghi.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "La Vera Carbonara",
+          "name_note": null,
+          "description": "Base bianca de mozzarella fiordilatte, champiñones, guanciale crujiente y un toque de pimienta negra.",
+          "price_label": "11,00€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/pizza-la-vera-carbonara.jpeg",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Silvestre",
+          "name_note": null,
+          "description": "Base de tomate San Marzano, crema y mozzarella de búfala ahumada, limón, pesto rojo crujiente y Pecorino Romano.",
+          "price_label": "15,00€",
+          "badge": "award",
+          "badge_label": "Finalista La Mejor Pizza 2026",
+          "image_path": "assets/carta/pizza-silvestre.png",
+          "anchor_id": "plato-silvestre",
+          "is_signature": true,
+          "is_simple": false
+        },
+        {
+          "name": "Trufada",
+          "name_note": null,
+          "description": "Base de crema de boletus, mozzarella fiordilatte, mix de setas, parmesano, trufa rallada y huevo al estilo rústico.",
+          "price_label": "15,00€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/pizza-trufada.jpeg",
+          "anchor_id": "plato-trufada",
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Vegetariana",
+          "name_note": null,
+          "description": "Base de salsa de tomate San Marzano, mozzarella fiordilatte y una selección de vegetales frescos de temporada.",
+          "price_label": "11,00€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/pizza-vegetariana.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Sombra Italiana",
+          "name_note": null,
+          "description": "Base bianca, mozzarella fior di latte, queso de cabra, guanciale italiano, cebolla caramelizada, rúcula y miel.",
+          "price_label": "13,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/pizza-sombra-italiana.png",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        }
+      ]
+    },
+    {
+      "slug": "focaccia",
+      "name": "Focaccia",
+      "eyebrow": "04 — Ligera y crujiente",
+      "section_note": null,
+      "pastel_class": null,
+      "layout": "standard",
+      "items": [
+        {
+          "name": "Focaccia Ibérica",
+          "name_note": null,
+          "description": "Focaccia artesanal de larga fermentación, rellena de jamón curado italiano, mozzarella fresca, tomate y canónigos, con aceite de oliva virgen extra.",
+          "price_label": "9,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Reginella",
+          "name_note": null,
+          "description": "Focaccia blanca romana, mortadella Bologna I.G.P., stracciatella de burrata, rúcula y pesto Genovese.",
+          "price_label": "9,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Focaccia Piccante",
+          "name_note": null,
+          "description": "Masa ligera y crujiente rellena de spianata picante, rúcula fresca, lascas de parmesano y cremosa stracciatella de burrata.",
+          "price_label": "9,50€",
+          "badge": "spicy",
+          "badge_label": "Picante",
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        }
+      ]
+    },
+    {
+      "slug": "padelino",
+      "name": "Pizzas alpadelino",
+      "eyebrow": "05 — Pequeño formato",
+      "section_note": null,
+      "pastel_class": "pastel-butter",
+      "layout": "standard",
+      "items": [
+        {
+          "name": "Classico",
+          "name_note": null,
+          "description": "Nuestro padelino con aceites aromáticos, orégano y sales.",
+          "price_label": "6,00€",
+          "badge": "veggie",
+          "badge_label": "Vegetariana",
+          "image_path": "assets/carta/padelino-clasico.jpeg",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Ibéricos",
+          "name_note": null,
+          "description": "Rúcula fresca, parmesano D.O.P., jamón ibérico y mozzarella de búfala.",
+          "price_label": "9,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/padelino-ibericos.jpeg",
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "El Punto Prohibido",
+          "name_note": null,
+          "description": "Salami italiano, tomate cherry, rúcula, albahaca y aceite.",
+          "price_label": "8,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": "assets/carta/padelino-el-punto-prohibido.jpeg",
+          "anchor_id": "plato-punto-prohibido",
+          "is_signature": false,
+          "is_simple": false
+        }
+      ]
+    },
+    {
+      "slug": "vinos",
+      "name": "Vinos de la Zona",
+      "eyebrow": "06 — De aquí cerca",
+      "section_note": "Copa de vino de bodegas de la Sierra Norte.",
+      "pastel_class": null,
+      "layout": "simple",
+      "items": [
+        {
+          "name": "Pinchapera",
+          "name_note": null,
+          "description": null,
+          "price_label": "3,60€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Rioja Protos",
+          "name_note": null,
+          "description": null,
+          "price_label": "3,60€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Zaranda",
+          "name_note": null,
+          "description": null,
+          "price_label": "3,60€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Abulaga",
+          "name_note": null,
+          "description": null,
+          "price_label": "3,00€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Marqués de Irún",
+          "name_note": null,
+          "description": null,
+          "price_label": "3,60€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Mirlo",
+          "name_note": null,
+          "description": null,
+          "price_label": "3,60€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        }
+      ]
+    },
+    {
+      "slug": "bebidas",
+      "name": "Bebidas",
+      "eyebrow": "07 — Para brindar",
+      "section_note": null,
+      "pastel_class": "pastel-sky",
+      "layout": "simple",
+      "items": [
+        {
+          "name": "Agua y Refrescos",
+          "name_note": "Coca-Cola / Zero",
+          "description": null,
+          "price_label": "1,90€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Agua Mineral",
+          "name_note": "500ml",
+          "description": null,
+          "price_label": "1,20€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Nestea",
+          "name_note": null,
+          "description": null,
+          "price_label": "2,00€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Tercio Estrella Galicia",
+          "name_note": null,
+          "description": null,
+          "price_label": "2,00€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Cerveza Pequeña",
+          "name_note": null,
+          "description": null,
+          "price_label": "1,40€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Cerveza en Vaso de Sidra",
+          "name_note": null,
+          "description": null,
+          "price_label": "2,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        },
+        {
+          "name": "Cerveza Cortada",
+          "name_note": null,
+          "description": null,
+          "price_label": "1,80€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": true
+        }
+      ]
+    },
+    {
+      "slug": "postres",
+      "name": "Postres",
+      "eyebrow": "08 — La dolce vita",
+      "section_note": null,
+      "pastel_class": null,
+      "layout": "dessert",
+      "items": [
+        {
+          "name": "Tiramisú con Pistacho",
+          "name_note": null,
+          "description": null,
+          "price_label": "6,50€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Tiramisú Clásico",
+          "name_note": null,
+          "description": "Sabor a café y cacao.",
+          "price_label": "6,00€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        },
+        {
+          "name": "Helados",
+          "name_note": null,
+          "description": null,
+          "price_label": "5,60€",
+          "badge": null,
+          "badge_label": null,
+          "image_path": null,
+          "anchor_id": null,
+          "is_signature": false,
+          "is_simple": false
+        }
+      ]
+    }
+  ],
+  "featured": {
+    "plato-ensalada-elite": {
+      "chef": true,
+      "kicker": "01 · Fresco",
+      "blurb": "Tomates, burrata, pesto Genovese y balsámico."
+    },
+    "plato-provolone": {
+      "chef": true,
+      "kicker": "02 · Al horno",
+      "blurb": "Tomate natural, orégano y aceites de oliva y ajo.",
+      "display_name": "Provolone Italiano"
+    },
+    "plato-la-mama": {
+      "chef": true,
+      "popular": true,
+      "kicker_chef": "03 · Cremosa",
+      "blurb_chef": "Parmesano, mortadela trufada, panceta y miel de azahar.",
+      "kicker_popular": "La favorita cremosa",
+      "blurb_popular": "Parmesano, mortadela trufada, panceta y miel de azahar."
+    },
+    "plato-punto-prohibido": {
+      "chef": true,
+      "kicker": "04 · Para compartir",
+      "blurb": "Salami italiano, cherry, rúcula, albahaca y aceite."
+    },
+    "plato-silvestre": {
+      "popular": true,
+      "kicker": "Finalista · La Mejor Pizza 2026",
+      "blurb": "Búfala ahumada, limón, pesto rojo y Pecorino Romano."
+    },
+    "plato-trufada": {
+      "popular": true,
+      "kicker": "Aroma de bosque",
+      "blurb": "Boletus, setas, parmesano, trufa y huevo."
+    },
+    "plato-deluxe": {
+      "popular": true,
+      "kicker": "Un punto picante",
+      "blurb": "San Marzano, carne, champiñones y salami picante."
+    }
+  }
+}

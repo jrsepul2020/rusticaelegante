@@ -22,11 +22,14 @@ Antes de sincronizar datos o rediseñar, confirmar con el usuario si se está tr
 ## Estado técnico
 
 - Sitio estático: HTML, CSS y JavaScript nativos.
-- No usa framework, bundler, gestor de paquetes, variables de entorno ni backend.
+- La **carta** se renderiza en el cliente desde datos (Supabase si está configurado; si no, `js/menu-fallback.js`).
+- Panel de administración en `/admin/` (login Supabase Auth + CRUD de carta y promociones).
+- No usa framework, bundler ni gestor de paquetes.
 - No hay proceso de compilación, lint ni tests automatizados.
 - El directorio es un repositorio Git conectado a GitHub.
 - Idioma y mercado: español (`lang="es"`), España; precios en euros.
 - Fuente externa: Google Fonts (`Inter` y `Cormorant Garamond`).
+- Dependencia CDN opcional: `@supabase/supabase-js@2` en carta y admin.
 
 ## Cómo ejecutar
 
@@ -50,8 +53,16 @@ Después, abrir `http://localhost:8000`.
 - `carta-rustica-napoletana/index.html`: página independiente de la carta real, accesible en `/carta-rustica-napoletana/`.
 - `carta-rustica-napoletana/carta.css`: dirección editorial, responsive y componentes específicos de la carta.
 - `carta-rustica-napoletana/carta.js`: detección de la categoría visible y lightbox accesible de producto.
+- `admin/`: panel (`index.html` login, `carta.html`, `promociones.html`).
+- `js/supabase-config.js`: URL y anon key de Supabase (vacío por defecto).
+- `js/supabase-config.example.js`: plantilla de configuración.
+- `js/menu-api.js`, `js/menu-render.js`, `js/menu-fallback.js`: cliente, render de carta y datos locales de respaldo.
+- `js/promos-api.js`, `js/promos-render.js`, `js/promos-fallback.js`: cliente y render de promociones.
+- `supabase/schema.sql` y `supabase/seed.sql`: esquema RLS + seed de la carta actual.
+- `supabase/promotions.sql`: tabla de 3 promociones + seed inicial.
+- `data/menu.json`: fuente intermedia usada para generar seed/fallback.
 - `eventos-rustica-napoletana/index.html`: página de celebraciones, preparada para ampliar contenido en `/eventos-rustica-napoletana/`.
-- `promociones/index.html`: banners de ofertas en `/promociones/` (`promo1.jpeg`, `promo2.jpeg`).
+- `promociones/index.html`: promociones dinámicas en 3 columnas en `/promociones/`.
 - `premios-obtenidos/index.html`: diplomas 50 Top Pizza en `/premios-obtenidos/` (`premio1–3.jpeg`).
 - `novedades/index.html`: portada editorial con el listado de artículos en `/novedades/`.
 - `novedades/*/index.html`: artículos individuales. Actualmente existen Guía Repsol 2026, 2º Mejor Pizzero de España 2026 y Silvestre finalista.
@@ -71,13 +82,14 @@ Después, abrir `http://localhost:8000`.
 
 El sitio tiene trece rutas HTML principales (más tres artículos y tres legales):
 
-1. `/index.html`: portada; carga `styles.css`, `site-chrome.css`, `site-chrome.js` y `script.js`. En móvil el hero usa la pizza a pantalla completa como fondo bajo el titular; el directorio de categorías muestra cinco vías (sin vinos/bebidas/postres); el carrusel lleva ocho pizzas; la ubicación va en banda oscura para no encadenar dos rojos con la newsletter.
-2. `/carta-rustica-napoletana/index.html`: carta; reutiliza `styles.css`, añade `carta.css`, `site-chrome.css`, `site-chrome.js` y `carta.js`.
-3. `/promociones/index.html`: banners de promociones.
-4. `/eventos-rustica-napoletana/index.html`: celebraciones; carga `styles.css`, `internas.css`, `site-chrome.css` y `site-chrome.js`.
-5. `/novedades/index.html`: listado editorial; cada “Leer más” abre una página estática dentro de `/novedades/<slug>/`.
-6. `/premios-obtenidos/index.html`: diplomas y reconocimientos.
-7. `/nosotros/index.html`: perfil de Eduardo, premios, galería y valores; carga los recursos compartidos de páginas internas.
+1. `/index.html`: portada; carga `styles.css`, `site-chrome.css`, `site-chrome.js` y `script.js`. En móvil el hero usa la pizza a pantalla completa como fondo bajo el titular; el directorio de categorías muestra cinco vías (sin vinos/bebidas/postres); el carrusel lleva ocho pizzas; bajo el hero van las 3 promociones vigentes; antes del CTA de reserva hay un bloque Instagram (LightWidget); franja `#FDC333` fina de reserva justo encima del footer; footer con fondo animado de horno.
+2. `/carta-rustica-napoletana/index.html`: carta dinámica; carga `styles.css`, `carta.css`, `site-chrome.css`, `site-chrome.js`, scripts de menú (`menu-api`, `menu-fallback`, `menu-render`) y `carta.js`.
+3. `/admin/`: login, CRUD de carta y promociones (protegido por Supabase Auth).
+4. `/promociones/index.html`: hasta 3 promociones en rejilla de 3 columnas.
+5. `/eventos-rustica-napoletana/index.html`: celebraciones; carga `styles.css`, `internas.css`, `site-chrome.css` y `site-chrome.js`.
+6. `/novedades/index.html`: listado editorial; cada “Leer más” abre una página estática dentro de `/novedades/<slug>/`.
+7. `/premios-obtenidos/index.html`: diplomas y reconocimientos.
+8. `/nosotros/index.html`: perfil de Eduardo, premios, galería y valores; carga los recursos compartidos de páginas internas.
 8. Tres artículos bajo `/novedades/<slug>/`.
 9. `/aviso-legal/`, `/politica-privacidad/` y `/politica-cookies/`.
 
@@ -136,7 +148,7 @@ Las páginas internas añaden:
 - `/nosotros/`: historia de Eduardo Ramírez, formación, reconocimientos, galería de siete escenas y valores de la casa.
 - Las tres páginas legales comparten una maquetación editorial; titular, NIF/CIF y correo legal siguen marcados como pendientes.
 
-El formulario de newsletter solicita nombre, email y consentimiento. Su botón permanece desactivado y no transmite datos. Para activarlo hay que sustituir el scaffold por el formulario HTML alojado que genere Mailrelay, conservando el enlace a `/politica-privacidad/`; no deben introducirse claves API en JavaScript.
+El formulario de newsletter pide nombre, email y consentimiento. El front llama a la Edge Function `newsletter-subscribe`, que usa la API de Mailrelay con la clave en **Secrets** de Supabase (nunca en JavaScript). Cuenta: `rusticanapoletana.ipzmarketing.com`, grupo `2`. Ver `supabase/functions/newsletter-subscribe/README.md`.
 
 ## Comportamiento JavaScript
 
@@ -192,6 +204,38 @@ Las animaciones respetan `prefers-reduced-motion`.
 - Probar al menos en anchos aproximados de 1440, 860 y 390 píxeles.
 - Evitar convertir textos o precios de muestra en datos aparentemente definitivos sin aprobación.
 
+## Panel admin y carta dinámica (Supabase)
+
+### Arranque del proyecto
+
+1. Crear un proyecto en [Supabase](https://supabase.com).
+2. En SQL Editor, ejecutar en orden:
+   - `supabase/schema.sql`
+   - `supabase/seed.sql`
+   - `supabase/promotions.sql` (3 huecos de promociones)
+3. Authentication → Users → crear un usuario (email/contraseña) para el panel.
+4. Project Settings → API: copiar **Project URL** y **anon public** key.
+5. Pegarlos en `js/supabase-config.js` (no uses la `service_role` key en el front).
+6. (Fotos) Ejecutar también `supabase/storage.sql` o crear el bucket público `menu` en Storage y políticas de lectura pública + escritura autenticada.
+7. Si el admin muestra **0 platos**, ejecuta `supabase/fix-admin-rls.sql` y, si hace falta, vuelve a lanzar `supabase/seed.sql`.
+8. (Newsletter) En Secrets de Edge Functions: `MAILRELAY_API_KEY`. Desplegar: `supabase functions deploy newsletter-subscribe`.
+
+### Uso
+
+- Carta pública: `/carta-rustica-napoletana/` (lee platos `published = true`).
+- Promociones públicas: `/promociones/` (hasta 3 slots en rejilla de 3 columnas; sin Supabase usa `js/promos-fallback.js`).
+- Admin: `/admin/` → login → `/admin/carta.html` o `/admin/promociones.html`.
+  - Carta: busca + filtro por categoría; edición en línea; «Más» para foto/detalles.
+  - Promociones: 3 fichas fijas (título, foto, detalles, texto y enlace de botón).
+  - Fotos: se suben al bucket Storage `menu` (platos y carpeta `promos/`).
+- Sin configurar Supabase, la carta usa `js/menu-fallback.js` (contenido actual embebido).
+
+### Datos
+
+Tablas: `menu_categories`, `menu_items`, `promotions`. RLS: lectura anónima de publicados/activos; escritura solo autenticados.
+
+Fase siguiente prevista: novedades.
+
 ## Contenido que requiere validación
 
 La propia página indica que platos, descripciones y precios de la carta son de demostración. Antes de publicar deben confirmarse:
@@ -212,10 +256,12 @@ La propia página indica que platos, descripciones y precios de la carta son de 
 - El autoplay del carrusel no incluye indicadores de posición ni anuncio de cambios para lectores de pantalla.
 - La navegación marca “Inicio” como activa de forma fija; no refleja la sección visible.
 - Las páginas legales existen, pero no deben considerarse definitivas hasta completar los datos del titular y validarlas profesionalmente.
-- La newsletter no envía datos hasta incorporar el código alojado de Mailrelay y revisar su configuración de doble opt-in.
+- La newsletter envía altas vía Edge Function a Mailrelay; requiere secret `MAILRELAY_API_KEY` y la función desplegada.
 - No hay mapa ni banner de cookies; actualmente no se cargan cookies propias de analítica o publicidad.
 - Las reservas se realizan mediante llamada y no existe confirmación dentro del sitio.
 - Hay recursos sin usar y archivos `.DS_Store` dentro de `assets/`.
+- Hasta configurar Supabase, los cambios de carta vía admin no están posibles; la web pública usa el fallback local.
+- El panel admin no gestiona aún categorías nuevas (sí platos, fotos en Storage, filtros y edición en línea).
 
 ## Verificación manual recomendada
 
@@ -228,3 +274,4 @@ Después de cada cambio:
 5. Activar `prefers-reduced-motion` y confirmar que se deshabilitan movimientos continuos.
 6. Revisar desbordamientos, legibilidad y recortes de imágenes en escritorio, tablet y móvil.
 7. Confirmar que los datos comerciales visibles siguen siendo coherentes en todas sus apariciones.
+8. Si Supabase está configurado: editar un precio en `/admin/carta.html` y comprobar el cambio en la carta pública.

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#050505" />
+  <title>Promociones · Admin Rústica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <header class="admin-top">
+      <div class="admin-brand">
+        <div>
+          <strong>Rústica Admin</strong>
+          <span id="user-email">Promociones</span>
+        </div>
+      </div>
+      <div class="admin-actions">
+        <nav class="admin-nav" aria-label="Secciones admin">
+          <a href="carta.html">Carta</a>
+          <a class="is-active" href="promociones.html">Promociones</a>
+        </nav>
+        <a class="btn btn-ghost btn-sm" href="../promociones/" target="_blank" rel="noopener">Ver página</a>
+        <button class="btn btn-ghost btn-sm" type="button" id="logout-btn">Salir</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="panel-card">
+        <div class="toolbar">
+          <div>
+            <h1>Promociones</h1>
+            <p class="lead">Hasta 3 promociones. Se muestran en `/promociones/` en tres columnas.</p>
+          </div>
+        </div>
+        <p class="status" id="list-status" role="status"></p>
+        <div class="promo-admin-grid" id="promo-admin-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="promo-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="promo-modal-title">
+      <div class="modal-head">
+        <h2 id="promo-modal-title">Promoción</h2>
+        <button class="btn btn-ghost btn-sm" type="button" id="promo-cancel">Cerrar</button>
+      </div>
+      <p class="lead" id="promo-modal-lead">Slot 1</p>
+      <form id="promo-form">
+        <input type="hidden" id="promo-id" />
+        <input type="hidden" id="promo-slot" />
+
+        <div class="photo-box">
+          <div class="photo-preview is-empty" id="promo-photo-preview">Sin foto</div>
+          <div class="photo-actions">
+            <label class="btn btn-ghost">
+              Añadir / cambiar
+              <input id="promo-photo-file" type="file" accept="image/*" />
+            </label>
+            <button class="btn btn-danger" type="button" id="promo-remove-photo">Quitar foto</button>
+          </div>
+          <label>Ruta / URL
+            <input id="promo-image" type="text" placeholder="assets/imagenes/… o URL de Storage" />
+          </label>
+        </div>
+
+        <label>Título
+          <input id="promo-title" type="text" required />
+        </label>
+        <label>Detalles
+          <textarea id="promo-details" rows="4" placeholder="Texto de la promoción"></textarea>
+        </label>
+        <div class="row">
+          <label>Texto del botón
+            <input id="promo-button-label" type="text" placeholder="Reservar" />
+          </label>
+          <label>Enlace del botón
+            <input id="promo-button-url" type="text" placeholder="tel:+34955498119" />
+          </label>
+        </div>
+        <label class="check"><input id="promo-published" type="checkbox" checked /> Publicada en la web</label>
+
+        <p class="status" id="promo-form-status" role="status"></p>
+        <div class="modal-actions">
+          <button class="btn btn-ghost" type="button" id="promo-cancel-2">Cancelar</button>
+          <button class="btn btn-wide" type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js?v=20260910a"></script>
+  <script src="../js/menu-api.js?v=20260910a"></script>
+  <script src="../js/promos-api.js?v=20260910a"></script>
+  <script src="promos.js?v=20260910a"></script>
+</body>
+</html>

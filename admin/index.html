@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Admin · Rústica Napoletana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <header class="admin-top">
+      <div class="admin-brand">
+        <div>
+          <strong>Rústica Admin</strong>
+          <span>Gestión de carta</span>
+        </div>
+      </div>
+      <div class="admin-actions">
+        <a class="btn btn-ghost" href="../carta-rustica-napoletana/">Ver carta</a>
+      </div>
+    </header>
+    <main class="admin-main">
+      <section class="login-card" aria-labelledby="login-title">
+        <h1 id="login-title">Entrar</h1>
+        <p class="lead">Panel para carta y promociones. Requiere usuario de Supabase Auth.</p>
+        <form id="login-form">
+          <label>Email<input id="email" type="email" autocomplete="username" required /></label>
+          <label>Contraseña<input id="password" type="password" autocomplete="current-password" required /></label>
+          <button class="btn" type="submit">Acceder</button>
+          <p class="status" id="login-status" role="status"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/menu-api.js"></script>
+  <script>
+    (async function () {
+      const status = document.getElementById("login-status");
+      const form = document.getElementById("login-form");
+
+      if (!RusticaMenuApi.hasConfig()) {
+        status.className = "status error";
+        status.textContent = "Falta configurar js/supabase-config.js (url y anonKey).";
+        form.querySelector("button").disabled = true;
+        return;
+      }
+
+      let client;
+      try {
+        client = RusticaMenuApi.createClient();
+      } catch (err) {
+        status.className = "status error";
+        status.textContent = err.message;
+        return;
+      }
+
+      const { data: { session } } = await client.auth.getSession();
+      if (session) {
+        location.replace("carta.html");
+        return;
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        status.className = "status";
+        status.textContent = "Entrando…";
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const { error } = await client.auth.signInWithPassword({ email, password });
+        if (error) {
+          status.className = "status error";
+          status.textContent = error.message;
+          return;
+        }
+        location.replace("carta.html");
+      });
+    })();
+  </script>
+</body>
+</html>

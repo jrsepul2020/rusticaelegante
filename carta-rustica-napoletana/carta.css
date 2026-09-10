@@ -62,6 +62,9 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .category-directory a:hover::after{transform:translate(4px,4px)}
 
 .menu-content{background:var(--menu-paper);overflow-x:clip}
+.menu-load-status{margin:0;padding:24px max(32px,calc((100vw - 1600px)/2)) 0;color:#6a655f;font-size:13px;letter-spacing:.04em}
+.menu-load-status.error{color:var(--menu-red)}
+.menu-empty{margin:0;padding:24px 0;color:#6a655f}
 .food-section{width:min(calc(100% - 64px),1600px);margin:0 auto;padding:140px 0;border-top:1px solid var(--menu-line)}
 .category-pastel{position:relative;isolation:isolate}
 .category-pastel::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:var(--category-pastel)}

@@ -8,3 +8,6 @@ Thumbs.db
 .idea/
 *.swp
 *~
+.env
+.env.*
+js/supabase-config.local.js
