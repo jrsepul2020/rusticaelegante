@@ -63,7 +63,7 @@ Después, abrir `http://localhost:8000`.
 - `data/menu.json`: fuente intermedia usada para generar seed/fallback.
 - `eventos-rustica-napoletana/index.html`: página de celebraciones, preparada para ampliar contenido en `/eventos-rustica-napoletana/`.
 - `promociones/index.html`: promociones dinámicas en 3 columnas en `/promociones/`.
-- `premios-obtenidos/index.html`: diplomas 50 Top Pizza en `/premios-obtenidos/` (`premio1–3.jpeg`).
+- `premios-obtenidos/index.html`: diplomas en `/premios-obtenidos/` (`premio-solete-guia-repsol.jpeg`, `premio-2-mejor-pizza-espana.jpeg`, `premio1–3.jpeg`).
 - `novedades/index.html`: portada editorial con el listado de artículos en `/novedades/`.
 - `novedades/*/index.html`: artículos individuales. Actualmente existen Guía Repsol 2026, 2º Mejor Pizzero de España 2026 y Silvestre finalista.
 - `nosotros/index.html`: historia, perfil, premios y galería de Eduardo Ramírez en `/nosotros/`.
@@ -74,9 +74,11 @@ Después, abrir `http://localhost:8000`.
 - `README.txt`: instrucciones breves originales.
 - `assets/`: imágenes utilizadas, referencias visuales y material original.
   - En la raíz de `assets/` están las imágenes que actualmente consume la página.
-  - `assets/imagenes/` conserva fotografías y recursos de origen; promociones (`promo1/2.jpeg`) y diplomas (`premio1–3.jpeg`) se usan en `/promociones/` y `/premios-obtenidos/`.
+  - `assets/imagenes/` conserva fotografías y recursos de origen; promociones (`promo1/2.jpeg`) y diplomas (`premio-solete-guia-repsol.jpeg`, `premio-2-mejor-pizza-espana.jpeg`, `premio1–3.jpeg`) se usan en `/promociones/` y `/premios-obtenidos/`.
   - `assets/carta/` contiene 28 fotografías de producto. Todas están integradas entre la portada y la carta; las fichas sin fotografía disponible permanecen tipográficas.
-  - `assets/eduardo/` contiene ocho fotografías. Todas se usan en Nosotros; comedor y equipo también apoyan la página de Eventos.
+  - `assets/eduardo/` contiene ocho fotografías. Todas se usan en Nosotros.
+  - `assets/eventos/` contiene fotos de mesas de celebración usadas en `/eventos-rustica-napoletana/`.
+  - La pizza del hero de inicio es `assets/pizza-hero.jpg`.
 
 ## Arquitectura y flujo
 

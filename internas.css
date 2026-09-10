@@ -51,7 +51,7 @@ body.inner-page{background:var(--paper);color:var(--ink)}
 .awards-feature__photo img{display:block;width:100%;height:min(560px,58vw);object-fit:cover;filter:saturate(.88) contrast(1.04)}
 .awards-feature__photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 22px;background:linear-gradient(transparent,rgba(5,5,5,.82));color:#f5f2ee;font-size:10px;letter-spacing:.12em;text-transform:uppercase;line-height:1.5}
 .awards-feature__side{display:flex;flex-direction:column;justify-content:center;gap:28px;padding:clamp(20px,2.5vw,36px);background:rgba(255,255,255,.42);border:1px solid var(--rule);min-width:0;overflow:visible}
-.award-marks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:center;width:100%;min-width:0}
+.award-marks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:center;width:100%;min-width:0}
 .award-marks img{display:block;width:100%;max-width:100%;min-width:0;aspect-ratio:1;height:auto;object-fit:contain;background:#fff;padding:8px;border:1px solid var(--rule);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
 .award-marks img:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(18,17,16,.12)}
 .awards-feature__note{margin:0;max-width:34ch;color:#5f5a54;font-size:15px;line-height:1.7}
@@ -77,9 +77,9 @@ body.inner-page{background:var(--paper);color:var(--ink)}
 .promo-banner{margin:0;overflow:hidden;background:#1a1714;box-shadow:0 18px 48px rgba(0,0,0,.12)}
 .promo-banner img{display:block;width:100%;height:auto;vertical-align:middle}
 
-.awards-certificates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.5vw,32px);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px)}
+.awards-certificates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.5vw,32px);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);max-width:1100px}
 .award-certificate{margin:0;background:#fff;border:1px solid var(--rule);box-shadow:0 14px 40px rgba(18,17,16,.08);overflow:hidden}
-.award-certificate img{display:block;width:100%;height:auto}
+.award-certificate img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;background:#f7f5f2;padding:clamp(10px,2vw,22px);box-sizing:border-box}
 .award-certificate figcaption{padding:16px 18px 18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6a655f;border-top:1px solid var(--rule)}
 .award-certificate figcaption strong{color:var(--ink)}
 
@@ -694,7 +694,8 @@ body.inner-page{background:var(--paper);color:var(--ink)}
 .news-card-copy{padding:28px;display:flex;flex-direction:column;flex:1}
 .news-card h3{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(26px,2.3vw,38px);line-height:.96;margin:40px 0 20px}
 .news-card p{color:#68625c;font-size:13px;line-height:1.7;margin:0 0 35px}
-.events-hero .inner-hero-media img{object-position:center 46%}
+.events-hero .inner-hero-media img{object-position:center 40%}
+.event-feature img{object-position:center 35%}
 
 /* Eventos: menos reglas; separar bloques y tarjetas, sin dobles */
 body.events-page .editorial-section{border-top:1px solid var(--rule)}
@@ -755,7 +756,7 @@ body.events-page .cta-panel{border-top:0}
   .awards-feature{grid-template-columns:1fr;gap:24px;margin-bottom:42px}
   .awards-feature__photo img{height:min(480px,72vw)}
   .awards-feature__side{padding:20px 16px;overflow:visible}
-  .award-marks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:none;width:100%}
+  .award-marks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:none;width:100%}
   .award-marks img{width:100%;max-width:100%;height:auto;aspect-ratio:1;padding:6px;box-sizing:border-box}
   .awards-feature__note{max-width:none}
   .obtained-awards{margin-top:36px;padding:42px 24px}
