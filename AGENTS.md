@@ -84,7 +84,7 @@ Después, abrir `http://localhost:8000`.
 
 El sitio tiene trece rutas HTML principales (más tres artículos y tres legales):
 
-1. `/index.html`: portada; carga `styles.css`, `site-chrome.css`, `site-chrome.js` y `script.js`. En móvil el hero usa la pizza a pantalla completa como fondo bajo el titular; el directorio de categorías muestra cinco vías (sin vinos/bebidas/postres); el carrusel lleva ocho pizzas; bajo el hero van las 3 promociones vigentes; antes del CTA de reserva hay un bloque Instagram (LightWidget); franja `#FDC333` fina de reserva justo encima del footer; footer con fondo animado de horno.
+1. `/index.html`: portada; carga `styles.css`, `site-chrome.css`, `site-chrome.js` y `script.js`. En móvil el hero usa la pizza a pantalla completa como fondo bajo el titular; el directorio de categorías muestra cinco vías (sin vinos/bebidas/postres); el carrusel lleva ocho pizzas; bajo el hero van las 3 promociones vigentes; antes del CTA de reserva hay un bloque Instagram (galería propia con enlace a `@rusticanapoletana`); franja `#FDC333` fina de reserva justo encima del footer; footer con fondo animado de horno.
 2. `/carta-rustica-napoletana/index.html`: carta dinámica; carga `styles.css`, `carta.css`, `site-chrome.css`, `site-chrome.js`, scripts de menú (`menu-api`, `menu-fallback`, `menu-render`) y `carta.js`.
 3. `/admin/`: login, CRUD de carta y promociones (protegido por Supabase Auth).
 4. `/promociones/index.html`: hasta 3 promociones en rejilla de 3 columnas.

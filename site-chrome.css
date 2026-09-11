@@ -440,7 +440,7 @@ body.menu-page{
   .promo-home .promo-grid .promo-card:nth-child(n+2){display:none}
 }
 
-/* Instagram · LightWidget (6 desktop / 3 tablet-móvil vía recorte de 1ª fila) */
+/* Instagram · galería propia (HTTPS-safe; sin LightWidget) */
 .instagram-feed{
   width:min(calc(100% - 64px),var(--max,1760px));
   margin:0 auto;
@@ -469,34 +469,58 @@ body.menu-page{
   font-size:15px;
   line-height:1.55;
 }
-.instagram-feed__widget{
-  position:relative;
-  overflow:hidden;
-  background:transparent;
+.instagram-grid{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:clamp(8px,1.2vw,14px);
 }
-.instagram-feed__widget .lightwidget-widget{
+.instagram-grid a{
+  display:block;
+  position:relative;
+  aspect-ratio:1;
+  overflow:hidden;
+  background:#1a1714;
+  text-decoration:none;
+}
+.instagram-grid img{
   display:block;
   width:100%;
-  border:0;
-  overflow:hidden;
-  background:transparent;
+  height:100%;
+  object-fit:cover;
+  transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .4s;
+  filter:saturate(.9);
 }
+.instagram-grid a::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(5,5,5,.35));
+  opacity:0;
+  transition:opacity .35s;
+}
+.instagram-grid a:hover img,
+.instagram-grid a:focus-visible img{
+  transform:scale(1.04);
+  filter:saturate(1);
+}
+.instagram-grid a:hover::after,
+.instagram-grid a:focus-visible::after{opacity:1}
+.instagram-grid a:focus-visible{outline:2px solid var(--site-red,#ef1423);outline-offset:3px}
 @media(max-width:1240px){
   .instagram-feed{
     width:min(calc(100% - 32px),var(--max,1760px));
   }
   .instagram-feed__inner{padding:48px 0 56px}
   .instagram-feed__head{margin-bottom:22px}
-  /* LightWidget en iframe: se asume rejilla 3×2; recortamos a 1 fila (3 posts) */
-  .instagram-feed__widget{
-    max-height:min(34vw,280px);
-  }
+  .instagram-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .instagram-grid li:nth-child(n+4){display:none}
 }
 @media(max-width:540px){
-  .instagram-feed__widget{
-    max-height:min(32vw,210px);
-  }
   .instagram-feed__head .btn{width:100%}
+  .instagram-grid{gap:8px}
 }
 
 .menu-intro-cta{
