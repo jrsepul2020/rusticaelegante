@@ -440,6 +440,69 @@ body.menu-page{
   .promo-home .promo-grid .promo-card:nth-child(n+2){display:none}
 }
 
+/* Hero · todos los premios */
+.awards.awards--full{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:16px;
+  margin-top:48px;
+  max-width:100%;
+}
+.awards--full .awards__track{
+  display:flex;
+  flex-wrap:nowrap;
+  gap:10px;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  padding:4px 2px 10px;
+  margin:0 -2px;
+}
+.awards--full .award-card{
+  flex:0 0 auto;
+  width:72px;
+  height:108px;
+}
+.awards--full .award-card b{
+  width:44px;
+  height:48px;
+  font-size:10px;
+}
+.award-card--gold b{
+  background:linear-gradient(145deg,#f0c14b,#c9921a);
+  color:#1a1205;
+}
+.award-card--gold small{color:#c9921a}
+.awards__more{
+  align-self:flex-start;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#f5f2ee;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:1px solid rgba(245,242,238,.35);
+  padding-bottom:4px;
+}
+.awards__more:hover{color:var(--site-red,#ef1423);border-bottom-color:var(--site-red,#ef1423)}
+
+@media(min-width:1241px){
+  .awards--full .awards__track{
+    flex-wrap:wrap;
+    overflow:visible;
+    padding-bottom:0;
+  }
+}
+
+@media(max-width:860px){
+  .awards.awards--full{margin-top:36px;gap:14px}
+  .awards--full .award-card{width:62px;height:94px}
+}
+
 /* Instagram · galería propia (HTTPS-safe; sin LightWidget) */
 .instagram-feed{
   width:min(calc(100% - 64px),var(--max,1760px));
@@ -1500,6 +1563,16 @@ body.menu-page{
   }
   .hero-mobile__copy .hero-cta{margin-top:28px;flex-wrap:wrap}
   .hero-mobile__copy .awards{margin-top:28px}
+  .hero-mobile__copy .awards--full{
+    margin-left:-16px;
+    margin-right:-16px;
+    width:calc(100% + 32px);
+    padding:0 16px;
+  }
+  .hero-mobile__copy .awards__track{
+    margin:0 -16px;
+    padding:4px 16px 8px;
+  }
 
   .site-header.menu-open .mobile-nav-panel{
     padding:32px 16px 40px;
