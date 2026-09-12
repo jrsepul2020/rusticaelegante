@@ -26,6 +26,12 @@
     };
   }
 
+  function thanksUrl() {
+    const configured = document.body?.dataset?.newsletterThanks;
+    if (configured) return configured;
+    return "/gracias-newsletter/";
+  }
+
   async function submitForm(form) {
     const btn = form.querySelector('button[type="submit"], button:not([type])');
     const nameInput = form.querySelector('[name="name"]');
@@ -71,10 +77,13 @@
       if (!res.ok || !data.ok) {
         throw new Error(data.error || "No se pudo completar el alta.");
       }
-      setStatus(form, "ok", data.message || "¡Gracias! Te has apuntado correctamente.");
-      form.reset();
+      global.location.assign(thanksUrl());
     } catch (err) {
-      setStatus(form, "error", err.message || "Error al enviar. Inténtalo de nuevo.");
+      const raw = String(err && err.message ? err.message : err || "");
+      const friendly = /failed to fetch|networkerror|load failed/i.test(raw)
+        ? "No se pudo conectar con el servidor. Inténtalo de nuevo en unos minutos."
+        : raw || "Error al enviar. Inténtalo de nuevo.";
+      setStatus(form, "error", friendly);
     } finally {
       if (btn) btn.disabled = false;
     }
@@ -97,9 +106,11 @@
     }
 
     const status = statusEl(form);
-    if (status && /Mailrelay pendiente|conexión con Mailrelay pendiente/i.test(status.textContent || "")) {
-      status.textContent = "";
-      status.hidden = true;
+    if (status) {
+      if (/Mailrelay pendiente|conexión con Mailrelay pendiente/i.test(status.textContent || "")) {
+        status.textContent = "";
+      }
+      if (!status.textContent.trim()) status.hidden = true;
     }
 
     form.addEventListener("submit", (event) => {

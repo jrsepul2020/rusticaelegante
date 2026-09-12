@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=20260908e" />
-  <link rel="stylesheet" href="site-chrome.css?v=20260911batch" />
+  <link rel="stylesheet" href="site-chrome.css?v=20260912nl" />
 </head>
 <body>
   <aside class="top-bar" aria-label="Información de contacto">
@@ -381,15 +381,28 @@
     </main>
   </div>
   <section class="newsletter-prefooter" aria-labelledby="newsletter-title">
-    <div><p class="newsletter-prefooter__eyebrow">Mesa, fuego y noticias</p><h2 id="newsletter-title">Lo último de Rústica, en tu bandeja.</h2></div>
-    <form class="newsletter-form" data-mailrelay-pending>
+    <div class="newsletter-prefooter__copy">
+      <p class="newsletter-prefooter__eyebrow">Mantente informado</p>
+      <h2 id="newsletter-title">Conoce antes las pizzas nuevas, ofertas y promociones.</h2>
+      <p class="newsletter-prefooter__lead">Apúntate y te avisamos cuando haya platos nuevos, noches especiales y promociones de mesa. Sin ruido: solo lo que merece abrir el correo.</p>
+    </div>
+    <form class="newsletter-form" data-newsletter="mailrelay">
       <div class="newsletter-form__fields">
-        <label class="newsletter-field"><span>Nombre</span><input name="name" type="text" autocomplete="name" required /></label>
-        <label class="newsletter-field"><span>Email</span><input name="email" type="email" autocomplete="email" required /></label>
-        <button type="button" disabled title="Pendiente de conectar con Mailrelay">Apuntarme</button>
+        <div class="newsletter-field">
+          <label class="newsletter-field__label" for="newsletter-name">Nombre</label>
+          <input id="newsletter-name" name="name" type="text" autocomplete="name" required placeholder="Tu nombre" />
+        </div>
+        <div class="newsletter-field">
+          <label class="newsletter-field__label" for="newsletter-email">Email</label>
+          <input id="newsletter-email" name="email" type="email" autocomplete="email" required placeholder="tu@email.com" />
+        </div>
+        <button type="submit">Apuntarme</button>
       </div>
-      <label class="newsletter-consent"><input name="privacy" type="checkbox" required /><span>Acepto la <a href="politica-privacidad/">política de privacidad</a> y el envío de comunicaciones de Rústica Napoletana.</span></label>
-      <p class="newsletter-status">Formulario preparado · conexión con Mailrelay pendiente</p>
+      <label class="newsletter-consent">
+        <input name="privacy" type="checkbox" required />
+        <span>Acepto la <a href="politica-privacidad/">política de privacidad</a> y el envío de comunicaciones de Rústica Napoletana.</span>
+      </label>
+      <p class="newsletter-status" hidden></p>
     </form>
   </section>
 
@@ -437,7 +450,7 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-config.js?v=20260910a"></script>
-  <script src="js/newsletter.js?v=20260910a"></script>
+  <script src="js/newsletter.js?v=20260912nl"></script>
   <script src="js/menu-api.js?v=20260910a"></script>
   <script src="js/promos-api.js?v=20260910a"></script>
   <script src="js/promos-fallback.js?v=20260910a"></script>

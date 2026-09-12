@@ -13,7 +13,8 @@
     { "source": "/premios-obtenidos", "destination": "/premios-obtenidos/", "permanent": true },
     { "source": "/aviso-legal", "destination": "/aviso-legal/", "permanent": true },
     { "source": "/politica-privacidad", "destination": "/politica-privacidad/", "permanent": true },
-    { "source": "/politica-cookies", "destination": "/politica-cookies/", "permanent": true }
+    { "source": "/politica-cookies", "destination": "/politica-cookies/", "permanent": true },
+    { "source": "/gracias-newsletter", "destination": "/gracias-newsletter/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/admin/", "destination": "/admin/index.html" },
@@ -28,6 +29,7 @@
     { "source": "/premios-obtenidos/", "destination": "/premios-obtenidos/index.html" },
     { "source": "/aviso-legal/", "destination": "/aviso-legal/index.html" },
     { "source": "/politica-privacidad/", "destination": "/politica-privacidad/index.html" },
-    { "source": "/politica-cookies/", "destination": "/politica-cookies/index.html" }
+    { "source": "/politica-cookies/", "destination": "/politica-cookies/index.html" },
+    { "source": "/gracias-newsletter/", "destination": "/gracias-newsletter/index.html" }
   ]
 }

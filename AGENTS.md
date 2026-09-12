@@ -94,6 +94,7 @@ El sitio tiene trece rutas HTML principales (más tres artículos y tres legales
 8. `/nosotros/index.html`: perfil de Eduardo, premios, galería y valores; carga los recursos compartidos de páginas internas.
 8. Tres artículos bajo `/novedades/<slug>/`.
 9. `/aviso-legal/`, `/politica-privacidad/` y `/politica-cookies/`.
+10. `/gracias-newsletter/`: confirmación tras suscribirse (revisar correo / doble opt-in).
 
 La navegación principal incluye: Inicio, Carta, Promociones, Eventos, Novedades, Premios, Nosotros.
 
@@ -127,7 +128,7 @@ La carta usa las anclas `#ensaladas`, `#entrantes`, `#pizzas`, `#focaccia`, `#pa
 6. Selección resumida de la carta real.
 7. Avance de “Sobre nosotros” con enlace a `/nosotros/`.
 8. CTA final de ubicación/reserva.
-9. Pre-footer rojo con el formulario preparado para Mailrelay.
+9. Pre-footer rojo de newsletter (copy persuasivo + formulario). Tras un alta correcta, redirección a `/gracias-newsletter/` con avisos de confirmación por email.
 10. Footer compartido con marca en gran formato, degradado tricolor tenue, categorías, contacto y enlaces legales.
 
 La URL `/carta-rustica-napoletana/` añade:
@@ -150,7 +151,7 @@ Las páginas internas añaden:
 - `/nosotros/`: historia de Eduardo Ramírez, formación, reconocimientos, galería de siete escenas y valores de la casa.
 - Las tres páginas legales comparten una maquetación editorial; titular, NIF/CIF y correo legal siguen marcados como pendientes.
 
-El formulario de newsletter pide nombre, email y consentimiento. El front llama a la Edge Function `newsletter-subscribe`, que usa la API de Mailrelay con la clave en **Secrets** de Supabase (nunca en JavaScript). Cuenta: `rusticanapoletana.ipzmarketing.com`, grupo `2`. Ver `supabase/functions/newsletter-subscribe/README.md`.
+El formulario de newsletter pide nombre, email y consentimiento. El front llama a la Edge Function `newsletter-subscribe`, que usa la API de Mailrelay con la clave en **Secrets** de Supabase (nunca en JavaScript). Tras el alta, redirige a `/gracias-newsletter/`. Cuenta: `rusticanapoletana.ipzmarketing.com`, grupo `2`. Ver `supabase/functions/newsletter-subscribe/README.md`.
 
 ## Comportamiento JavaScript
 

@@ -713,93 +713,178 @@ body.menu-page{
   display:grid;
   grid-template-columns:minmax(280px,.72fr) minmax(620px,1.28fr);
   gap:clamp(45px,7vw,120px);
-  align-items:end;
+  align-items:start;
   border-top:1px solid rgba(255,255,255,.24);
 }
 
 .newsletter-prefooter__eyebrow{
   margin:0 0 14px;
-  font-size:9px;
+  font-size:11px;
   font-weight:800;
-  letter-spacing:.22em;
+  letter-spacing:.18em;
   text-transform:uppercase;
 }
 
 .newsletter-prefooter h2{
-  max-width:620px;
+  max-width:640px;
   margin:0;
   font-family:"Cormorant Garamond",Garamond,Georgia,serif;
   font-size:clamp(36px,4.2vw,68px);
   line-height:.94;
   letter-spacing:-.015em;
-  
 }
 
-.newsletter-form{display:grid;gap:18px}
+.newsletter-prefooter__lead{
+  max-width:520px;
+  margin:18px 0 0;
+  color:rgba(255,255,255,.92);
+  font:500 clamp(16px,1.2vw,19px)/1.55 Inter,sans-serif;
+}
+
+.newsletter-form{display:grid;gap:22px;padding-top:6px}
 .newsletter-form__fields{
   display:grid;
   grid-template-columns:minmax(160px,.7fr) minmax(240px,1fr) auto;
-  gap:10px;
+  gap:14px 12px;
+  align-items:end;
 }
 
 .newsletter-field{
-  min-height:58px;
-  padding:9px 17px 7px;
   display:grid;
-  align-content:center;
-  gap:4px;
-  background:#fff;
-  color:#050505;
-  border:1px solid #fff;
+  gap:10px;
+  min-width:0;
+  color:#fff;
+  background:transparent;
+  border:0;
+  padding:0;
 }
 
-.newsletter-field span{
-  font-size:8px;
-  font-weight:800;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:#77716b;
+.newsletter-field__label{
+  margin:0;
+  font:700 16px/1.2 Inter,sans-serif;
+  letter-spacing:0;
+  text-transform:none;
+  color:#fff;
 }
 
 .newsletter-field input{
   width:100%;
   min-width:0;
-  padding:0;
-  border:0;
+  min-height:58px;
+  padding:14px 16px;
+  border:1px solid #fff;
   outline:0;
-  background:transparent;
+  background:#fff;
   color:#050505;
-  font:600 14px Inter,sans-serif;
+  font:600 16px/1.2 Inter,sans-serif;
+  box-sizing:border-box;
 }
 
-.newsletter-field:focus-within{outline:2px solid #050505;outline-offset:-2px}
+.newsletter-field input::placeholder{color:#8a847d;font-weight:500}
+.newsletter-field input:focus{outline:2px solid #050505;outline-offset:2px}
 .newsletter-form button{
   min-height:58px;
-  padding:0 26px;
+  padding:0 28px;
   border:1px solid #000;
   background:#000;
   color:#fff;
-  font:800 10px Inter,sans-serif;
+  font:800 12px Inter,sans-serif;
   letter-spacing:.1em;
   text-transform:uppercase;
+  align-self:end;
 }
 
 .newsletter-form button:disabled{cursor:not-allowed;opacity:.72}
 .newsletter-consent{
   display:flex;
   align-items:flex-start;
-  gap:10px;
-  font-size:10px;
-  line-height:1.55;
+  gap:14px;
+  font:500 15px/1.5 Inter,sans-serif;
+  color:rgba(255,255,255,.95);
 }
 
-.newsletter-consent input{margin:2px 0 0;accent-color:#050505}
-.newsletter-consent a{text-decoration:underline;text-underline-offset:3px}
-.newsletter-status{margin:0;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.newsletter-status.is-ok{color:#0d5c2e}
-.newsletter-status.is-error{color:#7a1218}
+.newsletter-consent input{
+  width:22px;
+  height:22px;
+  margin:2px 0 0;
+  flex:0 0 auto;
+  accent-color:#050505;
+}
+.newsletter-consent a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.newsletter-status{margin:0;font-size:14px;font-weight:600;letter-spacing:0;text-transform:none;line-height:1.45}
+.newsletter-status.is-ok{color:#dff7e8}
+.newsletter-status.is-error{color:#ffe0e2}
 .news-follow__status.is-ok{color:#0d5c2e}
 .news-follow__status.is-error{color:#ffb4b8}
+
+.thanks-main{
+  background:var(--site-paper);
+  color:#111;
+  min-height:58vh;
+}
+.thanks-panel{
+  width:min(760px,calc(100% - 64px));
+  margin:0 auto;
+  padding:clamp(70px,9vw,140px) 0 clamp(80px,10vw,160px);
+}
+.thanks-panel__eyebrow{
+  margin:0 0 16px;
+  font:800 11px/1 Inter,sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--site-red);
+}
+.thanks-panel h1{
+  margin:0 0 18px;
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(42px,5.5vw,72px);
+  line-height:.95;
+  letter-spacing:-.02em;
+}
+.thanks-panel__lead{
+  margin:0 0 28px;
+  max-width:34em;
+  font:500 clamp(18px,1.35vw,22px)/1.55 Inter,sans-serif;
+  color:#333;
+}
+.thanks-steps{
+  margin:0 0 36px;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:14px;
+}
+.thanks-steps li{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px;
+  align-items:start;
+  padding:16px 18px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  font:500 16px/1.5 Inter,sans-serif;
+  color:#222;
+}
+.thanks-steps strong{
+  display:inline-grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:var(--site-red);
+  color:#fff;
+  font:800 12px/1 Inter,sans-serif;
+}
+.thanks-panel__note{
+  margin:0 0 32px;
+  font:500 15px/1.55 Inter,sans-serif;
+  color:#555;
+}
+.thanks-panel__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
 
 .legal-main{background:var(--site-paper);color:#111}
 .legal-hero{
@@ -1673,8 +1758,9 @@ body.menu-page{
 
   .home-paper .category-grid{grid-template-columns:1fr}
   .home-paper .category-large,.home-paper .category-card{grid-column:auto;min-height:280px}
-  .newsletter-form__fields{grid-template-columns:1fr}
-  .newsletter-form button{grid-column:auto}
+  .thanks-panel{width:calc(100% - 40px);padding:70px 0 90px}
+  .thanks-panel__actions{flex-direction:column}
+  .thanks-panel__actions .btn{width:100%;justify-content:center}
   .legal-content{width:calc(100% - 40px)}
   .legal-data{grid-template-columns:1fr}
 }
@@ -1685,8 +1771,12 @@ body p.mobile-nav-brand{font-size:45px!important}
 body .mobile-nav-meta p{font-size:13px!important;line-height:1.45!important;color:#c8c2bb!important}
 body p.inner-kicker{font-size:10px!important}
 body p.menu-eyebrow{font-size:11px!important}
-body p.newsletter-prefooter__eyebrow{font-size:9px!important}
-body p.newsletter-status{font-size:9px!important}
+body p.newsletter-prefooter__eyebrow{font-size:11px!important;letter-spacing:.18em!important}
+body p.newsletter-prefooter__lead{font-size:clamp(16px,1.2vw,19px)!important;line-height:1.55!important;font-weight:500!important}
+body p.newsletter-status{font-size:14px!important;letter-spacing:0!important;text-transform:none!important;font-weight:600!important}
+body p.thanks-panel__eyebrow{font-size:11px!important;letter-spacing:.18em!important}
+body p.thanks-panel__lead{font-size:clamp(18px,1.35vw,22px)!important;line-height:1.55!important}
+body p.thanks-panel__note{font-size:15px!important;line-height:1.55!important}
 body p.site-footer__title{font-size:clamp(28px,2.4vw,36px)!important;line-height:1!important;letter-spacing:-.01em!important;text-transform:none!important;font-weight:600!important;color:#fff!important}
 body p.site-footer__claim{font-size:14px!important;line-height:1.75!important}
 body p.site-footer__schedule{font-size:13px!important;line-height:1.6!important;color:#c4beb7!important}
