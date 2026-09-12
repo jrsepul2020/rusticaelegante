@@ -375,7 +375,7 @@ body.menu-page{
 .promo-card{
   margin:0;
   display:grid;
-  grid-template-rows:auto 1fr;
+  grid-template-rows:auto auto 1fr;
   background:#fff;
   color:#11100f;
   box-shadow:0 18px 48px rgba(0,0,0,.12);
@@ -397,6 +397,22 @@ body.menu-page{
   height:100%;
   object-fit:cover;
 }
+.promo-card__btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  margin:0;
+  min-height:56px;
+  padding:14px 18px;
+  border-radius:0;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:clamp(15px,1.4vw,20px);
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.promo-card__btn span{font-size:1.1em}
 .promo-card__body{
   display:grid;
   gap:12px;
@@ -416,13 +432,6 @@ body.menu-page{
   font-size:clamp(11px,1.05vw,14px);
   line-height:1.5;
 }
-.promo-card__btn{
-  justify-self:start;
-  margin-top:2px;
-  min-height:38px;
-  padding:0 12px;
-  font-size:11px;
-}
 
 @media(max-width:860px){
   .promos-section{width:min(calc(100% - 32px),var(--max,1760px))}
@@ -435,7 +444,7 @@ body.menu-page{
     gap:18px;
   }
   .promo-card__details{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .promo-card__btn{min-height:34px;padding:0 10px;font-size:10px}
+  .promo-card__btn{min-height:52px;font-size:15px}
   /* Inicio móvil: solo la primera promoción */
   .promo-home .promo-grid .promo-card:nth-child(n+2){display:none}
 }
@@ -448,6 +457,21 @@ body.menu-page{
   gap:16px;
   margin-top:48px;
   max-width:100%;
+}
+.awards__claim{
+  margin:0;
+  color:#f5f2ee;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:clamp(12px,1.05vw,14px);
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.category-featured span{
+  color:#FDC333;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 }
 .awards--full .awards__track{
   display:flex;

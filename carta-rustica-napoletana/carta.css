@@ -65,7 +65,10 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .menu-load-status{margin:0;padding:24px max(32px,calc((100vw - 1600px)/2)) 0;color:#6a655f;font-size:13px;letter-spacing:.04em}
 .menu-load-status.error{color:var(--menu-red)}
 .menu-empty{margin:0;padding:24px 0;color:#6a655f}
-.food-section{width:min(calc(100% - 64px),1600px);margin:0 auto;padding:140px 0;border-top:1px solid var(--menu-line)}
+.food-section{width:min(calc(100% - 64px),1600px);margin:0 auto;padding:140px 0;border-top:1px solid var(--menu-line);scroll-margin-top:110px}
+.food-section .food-heading h2,
+.food-section .compact-heading h2,
+.food-section .pizza-heading h2{scroll-margin-top:110px}
 .category-pastel{position:relative;isolation:isolate}
 .category-pastel::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:var(--category-pastel)}
 .pastel-sage{--category-pastel:#edf0e8}
@@ -114,15 +117,15 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .dish-list-two .dish:nth-child(2){border-top:0}
 .dish-list-two .signature{margin:0 -12px;padding-left:12px;padding-right:12px}
 
-.featured-menu-section{padding:130px max(32px,calc((100vw - 1600px)/2));color:#fff;background:#111}
-.featured-menu-section.chef-selection{background:linear-gradient(160deg,#1a1512 0%,#0d0d0d 55%,#14110f 100%)}
-.featured-menu-section.popular-pizzas{background:linear-gradient(160deg,#c8101c 0%,#ef1423 42%,#a50f1a 100%)}
+.featured-menu-section{padding:130px max(32px,calc((100vw - 1600px)/2));color:#fff;background:#050505}
+.featured-menu-section.chef-selection{background:#050505}
+.featured-menu-section.popular-pizzas{background:#050505}
 .featured-menu-inner{max-width:1600px;margin:0 auto}
 .featured-menu-heading{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:60px;align-items:end;margin-bottom:65px}
 .featured-menu-heading>span{grid-column:1/-1;display:inline-flex;align-items:center;width:fit-content;padding:8px 12px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
 .chef-selection .featured-menu-heading>span{border-color:rgba(239,20,35,.55);background:rgba(239,20,35,.18);color:#ffd5d8}
-.popular-pizzas .featured-menu-heading>span{border-color:rgba(255,255,255,.45);background:rgba(0,0,0,.18);color:#fff}
-.featured-menu-heading h2{margin:0;font-family:Inter,Arial,sans-serif;font-size:clamp(42px,5.2vw,76px);line-height:1.02;letter-spacing:-.03em;font-weight:800}
+.popular-pizzas .featured-menu-heading>span{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.1);color:#fff}
+.featured-menu-heading h2{margin:0;font-family:Inter,Arial,sans-serif;font-size:clamp(42px,5.2vw,76px);line-height:1.02;letter-spacing:-.03em;font-weight:800;color:#fff}
 .featured-menu-heading p{max-width:580px;margin:0;color:#bbb4ad;line-height:1.6}
 .popular-pizzas .featured-menu-heading p{color:rgba(255,255,255,.88)}
 .featured-menu-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
@@ -136,6 +139,20 @@ a.featured-menu-card{display:block;text-decoration:none;color:inherit}
 .featured-menu-card h3{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(24px,2vw,34px);line-height:.95}
 .featured-menu-card p{margin:0;color:#4f4a45;line-height:1.55}
 .featured-menu-card strong{flex:0 0 auto;color:var(--menu-red);font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:800;letter-spacing:.02em;line-height:1.2;white-space:nowrap}
+.popular-pizzas .featured-menu-card{background:#11100f;color:#fff;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.popular-pizzas .featured-menu-card>div{background:linear-gradient(180deg,#171514 0%,#0f0e0d 100%)}
+.popular-pizzas .featured-menu-card__title{align-items:baseline;gap:16px;margin:0 0 12px}
+.popular-pizzas .featured-menu-card h3{color:#fff;flex:1 1 auto;min-width:0;padding-right:8px}
+.popular-pizzas .featured-menu-card p{color:rgba(255,255,255,.72)}
+.popular-pizzas .featured-menu-card strong{
+  color:#fff;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:clamp(18px,1.6vw,22px);
+  font-weight:800;
+  font-style:normal;
+  letter-spacing:.01em;
+  margin-left:auto;
+}
 .featured-award{box-shadow:0 18px 40px rgba(0,0,0,.28),inset 0 0 0 4px #111}
 .featured-award>div>span{background:#111}
 .dish[id]{scroll-margin-top:96px}
@@ -241,17 +258,28 @@ body.lightbox-open{overflow:hidden}
   .featured-menu-heading{grid-template-columns:1fr;gap:18px;margin-bottom:28px}
   .featured-menu-heading>span{grid-column:auto}
   .featured-menu-heading p{display:none}
-  .featured-menu-heading h2{font-family:Inter,Arial,sans-serif;font-weight:800;font-style:normal;letter-spacing:-.03em;font-size:clamp(36px,9vw,52px)}
+  .featured-menu-heading h2{font-family:Inter,Arial,sans-serif;font-weight:800;font-style:normal;letter-spacing:-.03em;font-size:clamp(36px,9vw,52px);color:#fff}
   .featured-menu-grid{grid-template-columns:1fr;gap:0}
   .featured-menu-card,.featured-award{background:transparent;box-shadow:none;overflow:visible;border-bottom:1px solid rgba(255,255,255,.22)}
   .featured-menu-card:last-child{border-bottom:0}
   .featured-menu-card img,.featured-menu-card>div>span,.featured-menu-card p{display:none}
   .featured-menu-card>div{padding:18px 0;min-height:0;background:transparent}
   .featured-menu-card__title{align-items:baseline;gap:16px;margin:0}
-  .featured-menu-card h3{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(26px,6.5vw,34px);color:#fff;line-height:1.05;font-weight:600}
-  .featured-menu-card strong{font-size:20px;color:#fff}
+  .featured-menu-card h3{font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(26px,6.5vw,34px);color:#fff;line-height:1.05;font-weight:600;flex:1 1 auto;min-width:0;padding-right:12px}
+  .featured-menu-card strong{
+    font-family:Inter,Arial,Helvetica,sans-serif;
+    font-size:20px;
+    font-weight:800;
+    font-style:normal;
+    color:#fff;
+    margin-left:auto;
+    white-space:nowrap;
+  }
   .chef-selection .featured-menu-card strong{color:#ffb4ba}
-  .popular-pizzas .featured-menu-card strong{color:#fff}
+  .popular-pizzas .featured-menu-card,
+  .popular-pizzas .featured-award{background:transparent;box-shadow:none}
+  .popular-pizzas .featured-menu-card>div{background:transparent}
+  .popular-pizzas .featured-menu-card strong{color:#fff;font-size:22px}
   .featured-menu-card:hover img{transform:none;filter:none}
   .drinks-grid{width:calc(100% - 40px);grid-template-columns:1fr;gap:0;border-top:0}
   .drinks-grid .category-pastel::before{left:50%;right:auto;width:100vw;transform:translateX(-50%)}

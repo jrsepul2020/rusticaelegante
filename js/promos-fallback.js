@@ -6,7 +6,7 @@ window.RUSTICA_PROMOS_FALLBACK = [
     image_path: "assets/imagenes/promo1.jpeg",
     details: "Consulta condiciones al reservar. Las ofertas pueden variar según disponibilidad.",
     button_label: "Reservar",
-    button_url: "tel:+34955498119",
+    button_url: "tel:+34611829414",
     published: true
   },
   {
@@ -16,7 +16,7 @@ window.RUSTICA_PROMOS_FALLBACK = [
     image_path: "assets/imagenes/promo2.jpeg",
     details: "Pregúntanos por la promoción vigente cuando llames para reservar tu mesa.",
     button_label: "Llamar",
-    button_url: "tel:+34955498119",
+    button_url: "tel:+34611829414",
     published: true
   },
   {

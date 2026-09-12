@@ -50,10 +50,10 @@
 
     return `<article class="promo-card${hasContent ? "" : " is-empty"}" data-slot="${promo.slot}">
       ${media}
+      ${btn}
       <div class="promo-card__body">
         ${title}
         ${details}
-        ${btn}
       </div>
     </article>`;
   }

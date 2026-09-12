@@ -12,7 +12,7 @@ Existe un brief relacionado en `../RUSTICANAPOLETANA/CLAUDE.md`, pero describe u
 
 Diferencias verificadas:
 
-- El contacto ya se sincronizó por indicación del usuario con el teléfono `955 498 119`; las reservas y consultas se realizan por llamada.
+- El contacto ya se sincronizó por indicación del usuario con el teléfono `611 829 414`; las reservas y consultas se realizan por llamada.
 - Este demo combina una base oscura con superficies editoriales claras `#f2f0ed` y usa Inter/Cormorant Garamond; el brief define una base crema general y una única tipografía Poppins.
 - Este demo muestra reconocimientos “50 Top Pizza Europa”; el brief enumera Guía Repsol 2026, 2º Mejor Pizzero de España 2026 y otros premios.
 - Este demo es una landing estática; el brief plantea más secciones y un futuro panel con Supabase.
@@ -78,7 +78,7 @@ Después, abrir `http://localhost:8000`.
   - `assets/carta/` contiene 28 fotografías de producto. Todas están integradas entre la portada y la carta; las fichas sin fotografía disponible permanecen tipográficas.
   - `assets/eduardo/` contiene ocho fotografías. Todas se usan en Nosotros.
   - `assets/eventos/` contiene fotos de mesas de celebración usadas en `/eventos-rustica-napoletana/`.
-  - La pizza del hero de inicio es `assets/pizza-hero.jpg`.
+  - La pizza del hero de inicio es `assets/aires-de-la-sierra-pizza-premiada-2.jpg`.
 
 ## Arquitectura y flujo
 
@@ -101,8 +101,8 @@ Todas las rutas comparten la misma estructura de top bar, `<header class="site-h
 
 No existe estado persistente ni intercambio de datos. Las conversiones salen del sitio mediante llamadas:
 
-- Teléfono: `tel:+34955498119`.
-- Número visible: `955 498 119`.
+- Teléfono: `tel:+34611829414`.
+- Número visible: `611 829 414`.
 - Dirección: C/ Egido 13, Cazalla de la Sierra, Sevilla.
 - Horario: jueves a lunes, 20:00-00:00; cerrado martes y miércoles.
 
@@ -156,7 +156,7 @@ El formulario de newsletter pide nombre, email y consentimiento. El front llama 
 
 - `site-chrome.js` alterna la clase `menu-open` en `.site-header`, sincroniza `aria-expanded`, cierra con Escape y bloquea el scroll.
 - Al pulsar un enlace del menú, el menú móvil se cierra.
-- En móvil el menú bocadillo ocupa el ancho completo de la pantalla: marca «Rústica Napoletana», botones Reservar / Llamar en la misma fila (`tel:+34955498119`) y enlaces Carta / Promociones / Eventos / Novedades / Premios / Nosotros / Contacto a 29px separados por líneas finas.
+- En móvil el menú bocadillo ocupa el ancho completo de la pantalla: marca «Rústica Napoletana», botones Reservar / Llamar en la misma fila (`tel:+34611829414`) y enlaces Carta / Promociones / Eventos / Novedades / Premios / Nosotros / Contacto a 29px separados por líneas finas.
 - `.pizza-motion` tiene entrada, flotación continua y respuesta suave al puntero mediante `requestAnimationFrame`.
 - El carrusel usa scroll horizontal nativo con `scroll-snap`.
 - Los botones avanzan o retroceden el ancho de una tarjeta más el `gap`.

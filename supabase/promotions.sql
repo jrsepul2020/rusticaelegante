@@ -60,7 +60,7 @@ values
     'assets/imagenes/promo1.jpeg',
     'Consulta condiciones al reservar. Las ofertas pueden variar según disponibilidad.',
     'Reservar',
-    'tel:+34955498119',
+    'tel:+34611829414',
     true
   ),
   (
@@ -69,7 +69,7 @@ values
     'assets/imagenes/promo2.jpeg',
     'Pregúntanos por la promoción vigente cuando llames para reservar tu mesa.',
     'Llamar',
-    'tel:+34955498119',
+    'tel:+34611829414',
     true
   ),
   (
