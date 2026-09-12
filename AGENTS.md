@@ -76,7 +76,7 @@ Después, abrir `http://localhost:8000`.
   - En la raíz de `assets/` están las imágenes que actualmente consume la página.
   - `assets/imagenes/` conserva fotografías y recursos de origen; promociones (`promo1/2.jpeg`) y diplomas (`premio-solete-guia-repsol.jpeg`, `premio-2-mejor-pizza-espana.jpeg`, `premio1–3.jpeg`) se usan en `/promociones/` y `/premios-obtenidos/`.
   - `assets/carta/` contiene 28 fotografías de producto. Todas están integradas entre la portada y la carta; las fichas sin fotografía disponible permanecen tipográficas.
-  - `assets/eduardo/` contiene ocho fotografías. Todas se usan en Nosotros.
+  - `assets/eduardo/` contiene siete fotografías. Todas se usan en Nosotros.
   - `assets/eventos/` contiene fotos de mesas de celebración usadas en `/eventos-rustica-napoletana/`.
   - La pizza del hero de inicio es `assets/aires-de-la-sierra-pizza-premiada-2.jpg`.
 
@@ -116,7 +116,7 @@ La navegación interna usa anclas:
 - `#ubicacion`
 - `#reservar`
 
-La carta usa las anclas `#ensaladas`, `#entrantes`, `#pizzas`, `#focaccia`, `#padelino`, `#vinos`, `#bebidas` y `#postres`.
+La carta usa las anclas `#ensaladas-title`, `#entrantes-title`, `#pizzas-title`, `#focaccia-title`, `#padelino-title`, `#vinos-title`, `#bebidas-title` y `#postres-title`.
 
 ## Secciones de la página
 
@@ -151,13 +151,13 @@ Las páginas internas añaden:
 - `/nosotros/`: historia de Eduardo Ramírez, formación, reconocimientos, galería de siete escenas y valores de la casa.
 - Las tres páginas legales comparten una maquetación editorial; titular, NIF/CIF y correo legal siguen marcados como pendientes.
 
-El formulario de newsletter pide nombre, email y consentimiento. El front llama a la Edge Function `newsletter-subscribe`, que usa la API de Mailrelay con la clave en **Secrets** de Supabase (nunca en JavaScript). Tras el alta, redirige a `/gracias-newsletter/`. Cuenta: `rusticanapoletana.ipzmarketing.com`, grupo `2`. Ver `supabase/functions/newsletter-subscribe/README.md`.
+El formulario de newsletter pide nombre, email y consentimiento. El front llama a la Edge Function `newsletter-subscribe`, que crea el contacto en Mailrelay como `inactive` y dispara `resend_confirmation_email` (doble opt-in). Tras el alta, redirige a `/gracias-newsletter/`. Cuenta: `rusticanapoletana.ipzmarketing.com`, grupo `2`. Ver `supabase/functions/newsletter-subscribe/README.md`.
 
 ## Comportamiento JavaScript
 
 - `site-chrome.js` alterna la clase `menu-open` en `.site-header`, sincroniza `aria-expanded`, cierra con Escape y bloquea el scroll.
 - Al pulsar un enlace del menú, el menú móvil se cierra.
-- En móvil el menú bocadillo ocupa el ancho completo de la pantalla: marca «Rústica Napoletana», botones Reservar / Llamar en la misma fila (`tel:+34611829414`) y enlaces Carta / Promociones / Eventos / Novedades / Premios / Nosotros / Contacto a 29px separados por líneas finas.
+- En móvil el menú bocadillo ocupa el ancho completo de la pantalla: marca «Rústica Napoletana», botones Reservar / Llamar en la misma fila (`tel:+34611829414`) y enlaces Inicio / Carta / Promociones / Eventos / Novedades / Premios / Nosotros a 29px separados por líneas finas.
 - `.pizza-motion` tiene entrada, flotación continua y respuesta suave al puntero mediante `requestAnimationFrame`.
 - El carrusel usa scroll horizontal nativo con `scroll-snap`.
 - Los botones avanzan o retroceden el ancho de una tarjeta más el `gap`.

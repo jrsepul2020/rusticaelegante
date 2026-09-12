@@ -54,12 +54,39 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 
 .menu-directory{padding:150px max(32px,calc((100vw - 1600px)/2));display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(70px,10vw,170px);background:var(--menu-cream)}
 .directory-intro .directory-title{margin:0;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(44px,5vw,82px);line-height:1.02;letter-spacing:-.015em;font-weight:600;color:var(--menu-red)}
-.category-directory{border-top:1px solid var(--menu-ink)}
-.category-directory a{min-height:67px;border-bottom:1px solid var(--menu-line);display:flex;align-items:center;gap:24px;font-family:"Cormorant Garamond",Garamond,Georgia,serif;font-size:clamp(22px,2vw,34px);transition:padding .25s,color .25s}
-.category-directory a span{font-family:Inter,sans-serif;color:var(--menu-red);font-size:9px;font-weight:800;letter-spacing:.15em}
-.category-directory a::after{content:"↘";margin-left:auto;font-size:17px;transition:transform .25s}
+.category-directory{border-top:0}
+.category-directory a{
+  box-sizing:border-box;
+  min-height:72px;
+  padding:0;
+  border-top:1px solid var(--menu-ink);
+  display:grid;
+  grid-template-columns:3.25rem minmax(0,1fr) auto;
+  align-items:center;
+  column-gap:20px;
+  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-size:clamp(22px,2vw,34px);
+  line-height:1.1;
+  transition:padding .25s,color .25s;
+}
+.category-directory a:last-child{border-bottom:1px solid var(--menu-ink)}
+.category-directory .cat-num{
+  font-family:Inter,Arial,sans-serif!important;
+  color:var(--menu-red);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.12em;
+  line-height:1;
+  white-space:nowrap;
+}
+.category-directory .cat-name{
+  font:inherit;
+  min-width:0;
+}
+.category-directory a::after{content:"↘";font-family:Inter,Arial,sans-serif;font-size:17px;transition:transform .25s}
 .category-directory a:hover,.category-directory a.is-active{color:var(--menu-red);padding-left:12px}
 .category-directory a:hover::after{transform:translate(4px,4px)}
+.dish-thumb--placeholder{object-fit:cover;filter:none}
 
 .menu-content{background:var(--menu-paper);overflow-x:clip}
 .menu-load-status{margin:0;padding:24px max(32px,calc((100vw - 1600px)/2)) 0;color:#6a655f;font-size:13px;letter-spacing:.04em}
@@ -68,7 +95,7 @@ body.menu-page{background:var(--menu-cream);color:var(--menu-ink)}
 .food-section{width:min(calc(100% - 64px),1600px);margin:0 auto;padding:140px 0;border-top:1px solid var(--menu-line);scroll-margin-top:110px}
 .food-section .food-heading h2,
 .food-section .compact-heading h2,
-.food-section .pizza-heading h2{scroll-margin-top:110px}
+.food-section .pizza-heading h2{scroll-margin-top:calc(var(--topbar-height, 46px) + 96px)}
 .category-pastel{position:relative;isolation:isolate}
 .category-pastel::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:var(--category-pastel)}
 .pastel-sage{--category-pastel:#edf0e8}
@@ -230,8 +257,16 @@ body.lightbox-open{overflow:hidden}
   .directory-intro{text-align:center}
   .directory-intro .directory-title{text-align:center;font-size:clamp(40px,10vw,68px)}
   .category-directory{border-top:0}
-  .category-directory a{gap:18px;min-height:72px;border-bottom:0}
-  .category-directory a span{font-size:18px;letter-spacing:.08em;font-weight:800}
+  .category-directory a{
+    gap:0;
+    column-gap:18px;
+    min-height:72px;
+    border-top:1px solid var(--menu-line);
+    border-bottom:0;
+    grid-template-columns:3.5rem minmax(0,1fr) auto;
+  }
+  .category-directory a:last-child{border-bottom:1px solid var(--menu-line)}
+  .category-directory .cat-num{font-size:14px;letter-spacing:.08em;font-weight:800}
   .food-section{width:calc(100% - 40px);padding:100px 0;border-top:0}
   .food-heading,.food-heading.image-left,.pizza-heading{grid-template-columns:1fr;gap:40px;margin-bottom:50px}
   .food-heading.image-left img{order:2}
@@ -308,8 +343,8 @@ body.lightbox-open{overflow:hidden}
   .honours strong{font-size:11px}
   .menu-directory{padding:78px 20px;gap:36px}
   .directory-intro .directory-title{font-size:clamp(36px,9vw,56px)}
-  .category-directory a{font-size:25px;min-height:68px}
-  .category-directory a span{font-size:20px;letter-spacing:.06em}
+  .category-directory a{font-size:25px;min-height:70px}
+  .category-directory .cat-num{font-size:15px;letter-spacing:.06em}
   .food-section{width:calc(100% - 32px);padding:82px 0}
   .food-heading h2{font-size:14vw}
   .food-heading img,.pizza-heading img{height:75vw}

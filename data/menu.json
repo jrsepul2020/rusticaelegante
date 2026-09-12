@@ -15,8 +15,8 @@
           "price_label": "8,50€",
           "badge": null,
           "badge_label": null,
-          "image_path": null,
-          "anchor_id": null,
+          "image_path": "assets/carta/placeholder-ensalada-maradona.svg",
+          "anchor_id": "plato-ensalada-maradona",
           "is_signature": false,
           "is_simple": false
         },

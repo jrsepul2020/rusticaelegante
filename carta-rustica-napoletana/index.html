@@ -10,13 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=20260908e" />
-  <link rel="stylesheet" href="carta.css?v=20260911layout" />
-  <link rel="stylesheet" href="../site-chrome.css?v=20260912nl" />
+  <link rel="stylesheet" href="carta.css?v=20260912c" />
+  <link rel="stylesheet" href="../site-chrome.css?v=20260912d" />
 </head>
 <body class="menu-page">
   <aside class="top-bar" aria-label="Información de contacto">
     <div class="top-bar__inner">
-      <span>Jueves a Lunes: 20:00-00:00 · Cerrado mar-mié</span>
+      <span>Jueves a Lunes; 20h a 00h · Cerrado martes y miércoles</span>
     </div>
   </aside>
   <header class="site-header" id="top">
@@ -44,13 +44,13 @@
           <a class="btn btn-outline mobile-nav-call" href="tel:+34611829414"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.7 3.3 3.3 4.9 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.7 3.7.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.7.1.4 0 .8-.3 1.1l-2.1 2.2Z"/></svg> Llamar</a>
         </div>
         <div class="mobile-nav-links">
+          <a href="../index.html">Inicio</a>
           <a class="active" href="./">Carta</a>
           <a href="../promociones/">Promociones</a>
           <a href="../eventos-rustica-napoletana/">Eventos</a>
           <a href="../novedades/">Novedades</a>
           <a href="../premios-obtenidos/">Premios</a>
           <a href="../nosotros/">Nosotros</a>
-          <a href="../index.html#ubicacion">Contacto</a>
         </div>
       </div>
     </nav>
@@ -96,14 +96,14 @@
         <h2 id="directory-title" class="directory-title">Explora la carta</h2>
       </div>
       <nav class="category-directory" aria-label="Categorías de la carta">
-        <a href="#ensaladas"><span>01</span>Ensaladas</a>
-        <a href="#entrantes"><span>02</span>Entrantes</a>
-        <a href="#pizzas"><span>03</span>Pizzas</a>
-        <a href="#focaccia"><span>04</span>Focaccia</a>
-        <a href="#padelino"><span>05</span>Pizzas al padelino</a>
-        <a href="#vinos"><span>06</span>Vinos de la Zona</a>
-        <a href="#bebidas"><span>07</span>Bebidas</a>
-        <a href="#postres"><span>08</span>Postres</a>
+        <a href="#ensaladas-title"><span class="cat-num">01</span><span class="cat-name">Ensaladas</span></a>
+        <a href="#entrantes-title"><span class="cat-num">02</span><span class="cat-name">Entrantes</span></a>
+        <a href="#pizzas-title"><span class="cat-num">03</span><span class="cat-name">Pizzas</span></a>
+        <a href="#focaccia-title"><span class="cat-num">04</span><span class="cat-name">Focaccia</span></a>
+        <a href="#padelino-title"><span class="cat-num">05</span><span class="cat-name">Pizzas al padelino</span></a>
+        <a href="#vinos-title"><span class="cat-num">06</span><span class="cat-name">Vinos de la Zona</span></a>
+        <a href="#bebidas-title"><span class="cat-num">07</span><span class="cat-name">Bebidas</span></a>
+        <a href="#postres-title"><span class="cat-num">08</span><span class="cat-name">Postres</span></a>
       </nav>
     </section>
 
@@ -239,11 +239,11 @@
         <nav aria-label="Categorías de la carta">
           <p class="site-footer__title">La carta</p>
           <div class="site-footer__links">
-          <a href="../carta-rustica-napoletana/#ensaladas">Ensaladas <span class="footer-arrow" aria-hidden="true">→</span></a>
-          <a href="../carta-rustica-napoletana/#entrantes">Entrantes <span class="footer-arrow" aria-hidden="true">→</span></a>
-          <a href="../carta-rustica-napoletana/#pizzas">Pizzas <span class="footer-arrow" aria-hidden="true">→</span></a>
-          <a href="../carta-rustica-napoletana/#focaccia">Focaccia <span class="footer-arrow" aria-hidden="true">→</span></a>
-          <a href="../carta-rustica-napoletana/#padelino">Padelino <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="../carta-rustica-napoletana/#ensaladas-title">Ensaladas <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="../carta-rustica-napoletana/#entrantes-title">Entrantes <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="../carta-rustica-napoletana/#pizzas-title">Pizzas <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="../carta-rustica-napoletana/#focaccia-title">Focaccia <span class="footer-arrow" aria-hidden="true">→</span></a>
+          <a href="../carta-rustica-napoletana/#padelino-title">Padelino <span class="footer-arrow" aria-hidden="true">→</span></a>
         </div>
         </nav>
         <div>
@@ -264,10 +264,10 @@
   <script src="../js/supabase-config.js?v=20260910a"></script>
   <script src="../js/newsletter.js?v=20260912nl"></script>
   <script src="../js/menu-api.js?v=20260910a"></script>
-  <script src="../js/menu-fallback.js?v=20260911layout"></script>
-  <script src="../js/menu-render.js?v=20260911layout"></script>
+  <script src="../js/menu-fallback.js?v=20260912b"></script>
+  <script src="../js/menu-render.js?v=20260912b"></script>
   <script src="../site-chrome.js?v=20260907r"></script>
-  <script src="carta.js?v=20260909a"></script>
+  <script src="carta.js?v=20260912c"></script>
   <script>RusticaMenuRender.loadAndRender();</script>
 </body>
 </html>

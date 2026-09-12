@@ -1,7 +1,12 @@
 const categoryLinks = [...document.querySelectorAll('.category-directory a')];
-const sections = categoryLinks
-  .map(link => document.querySelector(link.getAttribute('href')))
-  .filter(Boolean);
+
+function sectionFromLink(link) {
+  const target = document.querySelector(link.getAttribute('href'));
+  if (!target) return null;
+  return target.closest('.food-section') || target;
+}
+
+const sections = categoryLinks.map(sectionFromLink).filter(Boolean);
 
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
@@ -12,7 +17,7 @@ if ('IntersectionObserver' in window) {
     if (!visible) return;
 
     categoryLinks.forEach(link => {
-      link.classList.toggle('is-active', link.hash === `#${visible.target.id}`);
+      link.classList.toggle('is-active', sectionFromLink(link) === visible.target);
     });
   }, {
     rootMargin: '-20% 0px -60%',
@@ -21,6 +26,19 @@ if ('IntersectionObserver' in window) {
 
   sections.forEach(section => observer.observe(section));
 }
+
+function scrollToHash(behavior = 'auto') {
+  const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior, block: 'start' });
+}
+
+window.addEventListener('load', () => scrollToHash('auto'));
+document.addEventListener('rustica:menu-rendered', () => {
+  requestAnimationFrame(() => scrollToHash('auto'));
+});
 
 const lightbox = document.querySelector('.product-lightbox');
 const lightboxImage = lightbox?.querySelector('img');
@@ -31,13 +49,13 @@ const lightboxMedia = window.matchMedia('(min-width: 541px)');
 let lightboxTrigger = null;
 
 function lightboxImages() {
-  return document.querySelectorAll('.food-section img, .featured-menu-card img');
+  return document.querySelectorAll('.food-section img');
 }
 
 function openLightbox(image) {
   if (!lightboxMedia.matches || !lightbox || !lightboxImage || !lightboxTitle || !lightboxPrice) return;
 
-  const card = image.closest('.featured-menu-card, article');
+  const card = image.closest('article');
   const title = card?.querySelector('h3')?.textContent.trim() || image.alt;
   const price = card?.querySelector('strong')?.textContent.trim() || '';
 
@@ -69,7 +87,7 @@ function syncLightboxAvailability() {
 }
 
 document.addEventListener('click', event => {
-  const image = event.target.closest('.food-section img, .featured-menu-card img');
+  const image = event.target.closest('.food-section img');
   if (!image || !lightboxMedia.matches) return;
   event.preventDefault();
   event.stopPropagation();
@@ -78,7 +96,7 @@ document.addEventListener('click', event => {
 
 document.addEventListener('keydown', event => {
   if (event.key !== 'Enter' && event.key !== ' ') return;
-  const image = event.target.closest?.('.food-section img, .featured-menu-card img');
+  const image = event.target.closest?.('.food-section img');
   if (!image || !lightboxMedia.matches) return;
   event.preventDefault();
   event.stopPropagation();

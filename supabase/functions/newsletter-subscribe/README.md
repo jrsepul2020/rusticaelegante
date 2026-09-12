@@ -4,7 +4,7 @@
 
 - Panel: https://rusticanapoletana.ipzmarketing.com/
 - Grupo / lista: `2`
-- Endpoint usado: `POST /api/v1/subscribers/sync`
+- Flujo: `POST /api/v1/subscribers/sync` con `status: "inactive"` + `POST /api/v1/subscribers/{id}/resend_confirmation_email`
 
 ## 1. Secret (obligatorio)
 
@@ -25,6 +25,8 @@ supabase secrets set MAILRELAY_GROUP_ID="2"
 
 ## 2. Desplegar la función
 
+Tras cambiar el código, vuelve a desplegar (CLI o pegando el `index.ts` en el editor de Edge Functions):
+
 ```bash
 supabase functions deploy newsletter-subscribe
 ```
@@ -37,6 +39,17 @@ El sitio ya carga `js/newsletter.js` y llama a:
 
 con la anon key (solo autoriza la llamada; Mailrelay usa el secret del servidor).
 
-## 4. Doble opt-in
+## 4. Doble opt-in y correos
 
-Configura en Mailrelay si los nuevos contactos deben confirmar por email. La función no fuerza `status` para respetar esa política de la cuenta.
+Mailrelay **no** envía el correo de confirmación solo por crear el suscriptor. La función:
+
+1. Crea/actualiza el contacto como `inactive`
+2. Llama a `resend_confirmation_email` para disparar el email
+
+Comprueba en Mailrelay:
+
+- **Configuración → Remitentes**: el sender por defecto debe estar **confirmado**
+- Plantilla de confirmación de suscripción activa
+- Bandeja de spam del suscriptor
+
+Aviso al admin: las notificaciones internas (“nuevo suscriptor”) se activan en el panel de Mailrelay (ajustes/notificaciones), no las envía esta función.

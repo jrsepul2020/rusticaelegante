@@ -7,19 +7,45 @@
       .replace(/"/g, "&quot;");
   }
 
+  function slugify(value) {
+    return String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  function itemAnchor(item) {
+    if (item?.anchor_id) return String(item.anchor_id);
+    const slug = slugify(item?.name);
+    return slug ? `plato-${slug}` : "";
+  }
+
+  function dishImageHtml(item) {
+    let path = item.image_path;
+    if (!path && /maradona/i.test(item.name || "")) {
+      path = "assets/carta/placeholder-ensalada-maradona.svg";
+    }
+    if (!path) return "";
+    const isPlaceholder = /placeholder/i.test(path);
+    const alt = isPlaceholder ? `${item.name} · foto próximamente` : item.name;
+    const cls = isPlaceholder ? "dish-thumb dish-thumb--placeholder" : "dish-thumb";
+    return `<img class="${cls}" src="${escapeHtml(RusticaMenuApi.assetUrl(path))}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />`;
+  }
+
   function dishHtml(item) {
-    const img = item.image_path
-      ? `<img class="dish-thumb" src="${escapeHtml(RusticaMenuApi.assetUrl(item.image_path))}" alt="${escapeHtml(item.name)}" loading="lazy" decoding="async" />`
-      : "";
+    const img = dishImageHtml(item);
     const nameNote = item.name_note ? ` <small>${escapeHtml(item.name_note)}</small>` : "";
     const badge = item.badge
       ? `<span class="badge ${escapeHtml(item.badge)}">${escapeHtml(item.badge_label || item.badge)}</span>`
       : "";
     const titleWrap = badge ? "dish-title" : "dish-head";
     const desc = item.description ? `<p>${escapeHtml(item.description)}</p>` : "";
-    const idAttr = item.anchor_id ? ` id="${escapeHtml(item.anchor_id)}"` : "";
+    const anchor = itemAnchor(item);
+    const idAttr = anchor ? ` id="${escapeHtml(anchor)}"` : "";
     const classes = ["dish"];
-    if (item.image_path) classes.push("has-image");
+    if (img) classes.push("has-image");
     if (item.is_simple) classes.push("simple");
     if (item.is_signature) classes.push("signature");
 
@@ -31,9 +57,14 @@
   }
 
   function featuredCardHtml(item, mode) {
-    const href = item.anchor_id ? `#${escapeHtml(item.anchor_id)}` : "#";
-    const img = item.image_path
-      ? `<img src="${escapeHtml(RusticaMenuApi.assetUrl(item.image_path))}" alt="" loading="lazy" decoding="async" />`
+    const anchor = itemAnchor(item);
+    const href = anchor ? `#${escapeHtml(anchor)}` : "#";
+    let path = item.image_path;
+    if (!path && /maradona/i.test(item.name || "")) {
+      path = "assets/carta/placeholder-ensalada-maradona.svg";
+    }
+    const img = path
+      ? `<img src="${escapeHtml(RusticaMenuApi.assetUrl(path))}" alt="" loading="lazy" decoding="async" />`
       : "";
     const kicker = mode === "popular"
       ? (item.featured_popular_kicker || item.featured_kicker || "")

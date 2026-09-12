@@ -24,6 +24,15 @@ function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function subscriberId(payload: unknown): number | null {
+  if (!payload || typeof payload !== "object") return null;
+  const root = payload as Record<string, unknown>;
+  const data = root.data && typeof root.data === "object" ? (root.data as Record<string, unknown>) : root;
+  const id = data.id;
+  const n = typeof id === "number" ? id : Number(id);
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: CORS });
@@ -61,18 +70,21 @@ serve(async (req) => {
     return json(400, { ok: false, error: "Email no válido" });
   }
 
+  const headers = {
+    "Content-Type": "application/json",
+    "X-AUTH-TOKEN": apiKey
+  };
+
   try {
+    // inactive + resend_confirmation_email = doble opt-in (Mailrelay no envía el correo solo con sync)
     const upstream = await fetch(`${baseUrl}/api/v1/subscribers/sync`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-AUTH-TOKEN": apiKey
-      },
+      headers,
       body: JSON.stringify({
         email,
         name,
         group_ids: [groupId],
-        // Deja que Mailrelay gestione el estado / doble opt-in de la cuenta
+        status: "inactive",
         restore_if_deleted: true
       })
     });
@@ -86,16 +98,38 @@ serve(async (req) => {
     }
 
     if (!upstream.ok) {
-      console.error("Mailrelay error", upstream.status, data);
+      console.error("Mailrelay sync error", upstream.status, data);
       return json(502, {
         ok: false,
         error: "No se pudo completar el alta. Inténtalo de nuevo."
       });
     }
 
+    const id = subscriberId(data);
+    if (id) {
+      const confirm = await fetch(`${baseUrl}/api/v1/subscribers/${id}/resend_confirmation_email`, {
+        method: "POST",
+        headers
+      });
+      if (!confirm.ok) {
+        const confirmText = await confirm.text();
+        console.error("Mailrelay confirmation error", confirm.status, confirmText);
+        return json(502, {
+          ok: false,
+          error: "Alta creada, pero no se pudo enviar el correo de confirmación."
+        });
+      }
+    } else {
+      console.error("Mailrelay sync sin id de suscriptor", data);
+      return json(502, {
+        ok: false,
+        error: "Alta creada, pero no se pudo enviar el correo de confirmación."
+      });
+    }
+
     return json(200, {
       ok: true,
-      message: "¡Listo! Revisa tu correo si Mailrelay pide confirmación."
+      message: "¡Listo! Revisa tu correo y confirma la suscripción."
     });
   } catch (err) {
     console.error(err);
