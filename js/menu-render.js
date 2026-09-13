@@ -125,21 +125,66 @@
     document.dispatchEvent(new CustomEvent("rustica:menu-rendered"));
   }
 
+  function homeItemHtml(item) {
+    const anchor = itemAnchor(item);
+    const href = anchor
+      ? `carta-rustica-napoletana/#${escapeHtml(anchor)}`
+      : "carta-rustica-napoletana/";
+    const nameNote = item.name_note
+      ? ` <small>${escapeHtml(item.name_note)}</small>`
+      : "";
+    const featured = item.is_signature || item.featured_popular || item.featured_chef
+      ? " featured"
+      : "";
+    return `<a class="menu-item menu-item--compact${featured}" href="${href}"><h4>${escapeHtml(item.name)}${nameNote}</h4><strong>${escapeHtml(item.price_label || "")}</strong></a>`;
+  }
+
+  function renderHomeMenu(data) {
+    const root = document.querySelector("[data-home-menu]");
+    if (!root) return;
+
+    const { categories, items } = data;
+    const byCategory = new Map();
+    items.forEach((item) => {
+      if (!byCategory.has(item.category_id)) byCategory.set(item.category_id, []);
+      byCategory.get(item.category_id).push(item);
+    });
+
+    const cats = (categories || [])
+      .slice()
+      .filter((c) => c.active !== false)
+      .sort((a, b) => (a.sort_order || 0) - (b.sort_order || 0));
+
+    root.innerHTML = cats
+      .map((category, index) => {
+        const catItems = (byCategory.get(category.id) || [])
+          .slice()
+          .sort((a, b) => a.sort_order - b.sort_order);
+        if (!catItems.length) return "";
+        const num = String(index + 1).padStart(2, "0");
+        return `<div class="menu-group">
+          <div class="menu-group-title"><span>${num}</span><h3>${escapeHtml(category.name)}</h3></div>
+          ${catItems.map(homeItemHtml).join("")}
+        </div>`;
+      })
+      .join("");
+  }
+
+  async function fetchMenuData() {
+    if (RusticaMenuApi.hasConfig()) {
+      const client = RusticaMenuApi.createClient();
+      return RusticaMenuApi.fetchPublishedMenu(client);
+    }
+    if (global.RUSTICA_MENU_FALLBACK) return global.RUSTICA_MENU_FALLBACK;
+    throw new Error("Sin datos de carta");
+  }
+
   async function loadAndRender() {
     const status = document.getElementById("menu-load-status");
     global.RUSTICA_ASSET_PREFIX = "../";
 
     try {
-      let data = null;
-      if (RusticaMenuApi.hasConfig()) {
-        const client = RusticaMenuApi.createClient();
-        data = await RusticaMenuApi.fetchPublishedMenu(client);
-      } else if (global.RUSTICA_MENU_FALLBACK) {
-        data = global.RUSTICA_MENU_FALLBACK;
-      } else {
-        throw new Error("Sin datos de carta");
-      }
-
+      const data = await fetchMenuData();
       if (!data?.categories?.length || !data?.items?.length) {
         throw new Error("La carta está vacía");
       }
@@ -161,5 +206,32 @@
     }
   }
 
-  global.RusticaMenuRender = { loadAndRender, renderMenu };
+  async function loadAndRenderHome() {
+    const status = document.getElementById("home-menu-status");
+    global.RUSTICA_ASSET_PREFIX = "";
+
+    try {
+      const data = await fetchMenuData();
+      if (!data?.categories?.length || !data?.items?.length) {
+        throw new Error("La carta está vacía");
+      }
+      renderHomeMenu(data);
+      if (status) status.hidden = true;
+    } catch (err) {
+      if (global.RUSTICA_MENU_FALLBACK) {
+        renderHomeMenu(global.RUSTICA_MENU_FALLBACK);
+        if (status) {
+          status.hidden = false;
+          status.textContent = "No se pudo conectar con Supabase. Mostrando carta local.";
+        }
+      } else if (status) {
+        status.hidden = false;
+        status.className = "menu-load-status error";
+        status.textContent = "Carta temporalmente no disponible.";
+      }
+      console.error(err);
+    }
+  }
+
+  global.RusticaMenuRender = { loadAndRender, loadAndRenderHome, renderMenu, renderHomeMenu };
 })(window);

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="Foto pr�ximamente">
+  <rect width="800" height="800" fill="#e8e2d8"/>
+  <rect x="48" y="48" width="704" height="704" fill="none" stroke="#c4bbb0" stroke-width="2"/>
+  <circle cx="400" cy="340" r="118" fill="none" stroke="#b7aea3" stroke-width="3"/>
+  <path d="M278 340c0-67 54-122 122-122s122 55 122 122" fill="none" stroke="#b7aea3" stroke-width="3"/>
+  <text x="400" y="520" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#6f675f">Foto pr�ximamente</text>
+  <text x="400" y="560" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#8a8279">Ensalada Maradona</text>
+</svg>
