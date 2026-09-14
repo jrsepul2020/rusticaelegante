@@ -100,7 +100,9 @@
       if (!list) return;
       const catItems = (byCategory.get(category.id) || []).slice().sort((a, b) => a.sort_order - b.sort_order);
       list.className =
-        category.layout === "two_col" || ["entrantes", "focaccia", "padelino", "pizzas"].includes(category.slug)
+        category.layout === "two_col" ||
+        category.layout === "dessert" ||
+        ["ensaladas", "entrantes", "focaccia", "padelino", "pizzas", "postres"].includes(category.slug)
           ? "dish-list dish-list-two"
           : "dish-list";
       list.innerHTML = catItems.map(dishHtml).join("") || `<p class="menu-empty">Sin platos en esta categoría.</p>`;

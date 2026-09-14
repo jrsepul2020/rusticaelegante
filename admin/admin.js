@@ -11,6 +11,15 @@
   const photoPreview = document.getElementById("photo-preview");
   const photoFile = document.getElementById("item-photo-file");
   const removePhotoBtn = document.getElementById("remove-photo-btn");
+  const photoPreviewBtn = document.getElementById("photo-preview-btn");
+  const listPhotoFile = document.getElementById("list-photo-file");
+  const photoSheet = document.getElementById("photo-sheet");
+  const chefFields = document.getElementById("chef-fields");
+  const popularFields = document.getElementById("popular-fields");
+  const itemChef = document.getElementById("item-chef");
+  const itemPopular = document.getElementById("item-popular");
+
+  let photoTargetId = null;
 
   if (!RusticaMenuApi.hasConfig()) {
     listStatus.className = "status error";
@@ -148,7 +157,10 @@
         return `
           <article class="dish-card" data-id="${item.id}">
             <div class="dish-card__top">
-              ${thumb}
+              <button type="button" class="dish-card__photo" data-photo="${item.id}" aria-label="Cambiar o eliminar foto">
+                ${thumb}
+                <span class="dish-card__photo-hint">Foto</span>
+              </button>
               <div class="dish-card__body">
                 <input class="inline-field inline-name" data-inline="name" value="${escapeHtml(item.name)}" aria-label="Nombre" />
                 <textarea class="inline-field inline-desc" data-inline="description" aria-label="Descripción" rows="2">${escapeHtml(item.description || "")}</textarea>
@@ -161,7 +173,7 @@
               </div>
             </div>
             <div class="dish-card__actions">
-              <button class="btn btn-ghost btn-sm" type="button" data-edit="${item.id}">Más</button>
+              <button class="btn btn-ghost btn-sm" type="button" data-edit="${item.id}">Editar</button>
               <button class="btn btn-ghost btn-sm" type="button" data-toggle-pub="${item.id}">${item.published ? "Ocultar" : "Publicar"}</button>
               <button class="btn btn-danger btn-sm" type="button" data-delete="${item.id}">Eliminar</button>
             </div>
@@ -218,33 +230,40 @@
   }
 
   function setPhotoPreview(path) {
+    let el = document.getElementById("photo-preview");
+    if (!el) return;
     const src = imageSrc(path);
     if (!src) {
-      photoPreview.className = "photo-preview is-empty";
-      photoPreview.textContent = "Sin foto";
-      if (photoPreview.tagName === "IMG") {
-        /* keep as div replacement handled below */
+      if (el.tagName === "IMG") {
+        const div = document.createElement("div");
+        div.id = "photo-preview";
+        div.className = "photo-preview is-empty";
+        div.textContent = "Sin foto · pulsa para añadir";
+        el.replaceWith(div);
+      } else {
+        el.className = "photo-preview is-empty";
+        el.textContent = "Sin foto · pulsa para añadir";
+        el.removeAttribute("src");
       }
-      photoPreview.removeAttribute("src");
       return;
     }
-    photoPreview.className = "photo-preview";
-    photoPreview.textContent = "";
-    if (photoPreview.tagName !== "IMG") {
+    if (el.tagName !== "IMG") {
       const img = document.createElement("img");
       img.id = "photo-preview";
       img.className = "photo-preview";
       img.alt = "Foto del plato";
       img.src = src;
-      photoPreview.replaceWith(img);
+      el.replaceWith(img);
     } else {
-      photoPreview.src = src;
-      photoPreview.alt = "Foto del plato";
+      el.src = src;
+      el.className = "photo-preview";
+      el.alt = "Foto del plato";
     }
   }
 
   function refreshPhotoPreviewFromInput() {
     const el = document.getElementById("photo-preview");
+    if (!el) return;
     const path = document.getElementById("item-image").value.trim();
     const src = imageSrc(path);
     if (!src) {
@@ -252,11 +271,11 @@
         const div = document.createElement("div");
         div.id = "photo-preview";
         div.className = "photo-preview is-empty";
-        div.textContent = "Sin foto";
+        div.textContent = "Sin foto · pulsa para añadir";
         el.replaceWith(div);
       } else {
         el.className = "photo-preview is-empty";
-        el.textContent = "Sin foto";
+        el.textContent = "Sin foto · pulsa para añadir";
       }
       return;
     }
@@ -300,6 +319,75 @@
     await client.storage.from("menu").remove([path]);
   }
 
+  function syncFeaturedFields() {
+    if (chefFields) chefFields.hidden = !itemChef?.checked;
+    if (popularFields) popularFields.hidden = !itemPopular?.checked;
+  }
+
+  function openPhotoSheet(itemId) {
+    photoTargetId = itemId;
+    const item = items.find((row) => row.id === itemId);
+    const removeBtn = document.getElementById("photo-sheet-remove");
+    if (removeBtn) removeBtn.hidden = !item?.image_path;
+    if (photoSheet) {
+      photoSheet.hidden = false;
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function closePhotoSheet() {
+    photoTargetId = null;
+    if (photoSheet) photoSheet.hidden = true;
+    if (!modal.classList.contains("open")) document.body.style.overflow = "";
+  }
+
+  async function applyListPhotoUpload(itemId, file) {
+    if (!itemId || !file) return;
+    listStatus.className = "status";
+    listStatus.textContent = "Subiendo foto…";
+    try {
+      const item = items.find((row) => row.id === itemId);
+      const previousImage = item?.image_path || null;
+      const publicUrl = await uploadPhoto(itemId, file);
+      if (previousImage && previousImage !== publicUrl) {
+        try {
+          await deleteStorageIfNeeded(previousImage);
+        } catch (_) {}
+      }
+      await patchItem(itemId, { image_path: publicUrl });
+      renderList();
+      listStatus.className = "status ok";
+      listStatus.textContent = "Foto actualizada.";
+      setTimeout(() => {
+        if (listStatus.textContent === "Foto actualizada.") listStatus.textContent = "";
+      }, 1200);
+    } catch (err) {
+      listStatus.className = "status error";
+      listStatus.textContent = err.message || "No se pudo subir la foto.";
+    }
+  }
+
+  async function applyListPhotoRemove(itemId) {
+    if (!itemId) return;
+    if (!confirm("¿Eliminar la foto de este plato?")) return;
+    listStatus.className = "status";
+    listStatus.textContent = "Eliminando foto…";
+    try {
+      const item = items.find((row) => row.id === itemId);
+      await deleteStorageIfNeeded(item?.image_path);
+      await patchItem(itemId, { image_path: null });
+      renderList();
+      listStatus.className = "status ok";
+      listStatus.textContent = "Foto eliminada.";
+      setTimeout(() => {
+        if (listStatus.textContent === "Foto eliminada.") listStatus.textContent = "";
+      }, 1200);
+    } catch (err) {
+      listStatus.className = "status error";
+      listStatus.textContent = err.message || "No se pudo eliminar la foto.";
+    }
+  }
+
   function openModal(item) {
     editingId = item?.id || null;
     pendingPhotoFile = null;
@@ -330,6 +418,7 @@
     document.getElementById("item-pop-blurb").value = item?.featured_popular_blurb || "";
     photoFile.value = "";
     refreshPhotoPreviewFromInput();
+    syncFeaturedFields();
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
@@ -480,9 +569,15 @@
   });
 
   itemsBody.addEventListener("click", async (event) => {
+    const photoBtn = event.target.closest("[data-photo]");
     const editBtn = event.target.closest("[data-edit]");
     const deleteBtnEl = event.target.closest("[data-delete]");
     const toggleBtn = event.target.closest("[data-toggle-pub]");
+
+    if (photoBtn) {
+      openPhotoSheet(photoBtn.getAttribute("data-photo"));
+      return;
+    }
 
     if (editBtn) {
       const item = items.find((row) => row.id === editBtn.getAttribute("data-edit"));
@@ -516,12 +611,49 @@
     }
   });
 
+  document.getElementById("photo-sheet-upload")?.addEventListener("click", () => {
+    listPhotoFile.value = "";
+    listPhotoFile.click();
+  });
+
+  document.getElementById("photo-sheet-remove")?.addEventListener("click", async () => {
+    const id = photoTargetId;
+    closePhotoSheet();
+    await applyListPhotoRemove(id);
+  });
+
+  document.getElementById("photo-sheet-cancel")?.addEventListener("click", closePhotoSheet);
+
+  photoSheet?.addEventListener("click", (event) => {
+    if (event.target === photoSheet) closePhotoSheet();
+  });
+
+  listPhotoFile?.addEventListener("change", async () => {
+    const file = listPhotoFile.files?.[0];
+    const id = photoTargetId;
+    closePhotoSheet();
+    if (file && id) await applyListPhotoUpload(id, file);
+  });
+
+  itemChef?.addEventListener("change", syncFeaturedFields);
+  itemPopular?.addEventListener("change", syncFeaturedFields);
+
+  photoPreviewBtn?.addEventListener("click", () => {
+    photoFile.click();
+  });
+
   modal.addEventListener("click", (event) => {
     if (event.target === modal) closeModal();
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
+    if (event.key === "Escape") {
+      if (photoSheet && !photoSheet.hidden) {
+        closePhotoSheet();
+        return;
+      }
+      if (modal.classList.contains("open")) closeModal();
+    }
   });
 
   photoFile.addEventListener("change", () => {

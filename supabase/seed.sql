@@ -2,7 +2,7 @@
 truncate table public.menu_items cascade;
 truncate table public.menu_categories cascade;
 
-insert into public.menu_categories (id, slug, name, eyebrow, section_note, pastel_class, layout, sort_order, active) values ('1c980ba8-df79-5054-962b-e41b139c0495'::uuid, 'ensaladas', 'Ensaladas', '01 — Fresco', NULL, 'pastel-sage', 'standard', 0, true);
+insert into public.menu_categories (id, slug, name, eyebrow, section_note, pastel_class, layout, sort_order, active) values ('1c980ba8-df79-5054-962b-e41b139c0495'::uuid, 'ensaladas', 'Ensaladas', '01 — Fresco', NULL, 'pastel-sage', 'two_col', 0, true);
 insert into public.menu_categories (id, slug, name, eyebrow, section_note, pastel_class, layout, sort_order, active) values ('118c6997-c202-5d1c-aadd-ed6ef0dce441'::uuid, 'entrantes', 'Entrantes', '02 — Para abrir boca', NULL, NULL, 'two_col', 1, true);
 insert into public.menu_categories (id, slug, name, eyebrow, section_note, pastel_class, layout, sort_order, active) values ('f8ff884c-21c1-5c43-939a-2c806fba1831'::uuid, 'pizzas', 'Pizzas', '03 — Dal forno', 'Masa de larga fermentación, horneada al estilo napoletano tradicional.', 'pastel-blush', 'two_col', 2, true);
 insert into public.menu_categories (id, slug, name, eyebrow, section_note, pastel_class, layout, sort_order, active) values ('a543cad9-2859-5d21-8a70-d47b146068c2'::uuid, 'focaccia', 'Focaccia', '04 — Ligera y crujiente', NULL, NULL, 'two_col', 3, true);

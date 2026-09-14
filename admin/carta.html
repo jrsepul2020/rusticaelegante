@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/admin/admin.css?v=20260910login" />
+  <link rel="stylesheet" href="/admin/admin.css?v=20260914carta" />
 </head>
 <body>
   <div class="admin-shell">
@@ -35,7 +35,7 @@
         <div class="toolbar">
           <div>
             <h1>Carta</h1>
-            <p class="lead">Toca un texto para editarlo al momento. Usa «Más» para foto y detalles.</p>
+            <p class="lead">Toca un texto para editarlo al momento. Pulsa la foto para cambiarla o quitarla. Usa «Editar» para el resto de detalles.</p>
           </div>
           <button class="btn btn-desktop-new" type="button" id="new-item-btn">Nuevo plato</button>
         </div>
@@ -57,86 +57,122 @@
 
   <button class="btn fab" type="button" id="fab-new" aria-label="Nuevo plato">+ Plato</button>
 
+  <input id="list-photo-file" type="file" accept="image/*" hidden />
+
+  <div class="photo-sheet" id="photo-sheet" hidden>
+    <div class="photo-sheet__panel" role="dialog" aria-modal="true" aria-labelledby="photo-sheet-title">
+      <p id="photo-sheet-title" class="photo-sheet__title">Foto del plato</p>
+      <button class="btn" type="button" id="photo-sheet-upload">Subir o cambiar foto</button>
+      <button class="btn btn-danger" type="button" id="photo-sheet-remove">Eliminar foto</button>
+      <button class="btn btn-ghost" type="button" id="photo-sheet-cancel">Cancelar</button>
+    </div>
+  </div>
+
   <div class="modal-backdrop" id="item-modal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal modal--wide" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div class="modal-head">
-        <h2 id="modal-title">Plato</h2>
+        <div>
+          <h2 id="modal-title">Plato</h2>
+          <p class="lead modal-lead" id="modal-lead">Completa los datos del plato. La foto se gestiona arriba.</p>
+        </div>
         <button class="btn btn-ghost btn-sm" type="button" id="cancel-btn">Cerrar</button>
       </div>
-      <p class="lead" id="modal-lead">Foto, categoría y opciones avanzadas.</p>
-      <form id="item-form">
+
+      <form id="item-form" class="modal-form">
         <input type="hidden" id="item-id" />
 
-        <div class="photo-box">
-          <div class="photo-preview is-empty" id="photo-preview">Sin foto</div>
-          <div class="photo-actions">
-            <label class="btn btn-ghost">
-              Añadir / cambiar
-              <input id="item-photo-file" type="file" accept="image/*" />
+        <section class="form-section">
+          <h3 class="form-section__title">Foto</h3>
+          <div class="photo-box photo-box--modal">
+            <button type="button" class="photo-preview-btn" id="photo-preview-btn" aria-label="Cambiar o quitar foto">
+              <div class="photo-preview is-empty" id="photo-preview">Sin foto · pulsa para añadir</div>
+            </button>
+            <div class="photo-actions">
+              <label class="btn btn-ghost">
+                Subir foto
+                <input id="item-photo-file" type="file" accept="image/*" />
+              </label>
+              <button class="btn btn-danger" type="button" id="remove-photo-btn">Quitar foto</button>
+            </div>
+            <label class="field-advanced">Ruta o URL (avanzado)
+              <input id="item-image" type="text" placeholder="assets/carta/… o URL de Storage" />
             </label>
-            <button class="btn btn-danger" type="button" id="remove-photo-btn">Quitar foto</button>
           </div>
-          <label>Ruta / URL
-            <input id="item-image" type="text" placeholder="assets/carta/… o URL de Storage" />
-          </label>
-        </div>
+        </section>
 
-        <div class="row">
-          <label>Categoría
-            <select id="item-category" required></select>
+        <section class="form-section">
+          <h3 class="form-section__title">Datos básicos</h3>
+          <div class="row">
+            <label>Categoría
+              <select id="item-category" required></select>
+            </label>
+            <label>Precio
+              <input id="item-price" type="text" placeholder="12,50€" required />
+            </label>
+          </div>
+          <label>Nombre
+            <input id="item-name" type="text" required />
           </label>
-          <label>Precio
-            <input id="item-price" type="text" placeholder="12,50€" required />
+          <label>Nota junto al nombre
+            <input id="item-name-note" type="text" placeholder="Ej. 2 unidades" />
           </label>
-        </div>
-        <label>Nombre
-          <input id="item-name" type="text" required />
-        </label>
-        <label>Nota del nombre
-          <input id="item-name-note" type="text" placeholder="2 unidades" />
-        </label>
-        <label>Descripción
-          <textarea id="item-description"></textarea>
-        </label>
-        <div class="row-3">
-          <label>Badge
-            <select id="item-badge">
-              <option value="">Ninguno</option>
-              <option value="veggie">Vegetariana</option>
-              <option value="spicy">Picante</option>
-              <option value="award">Premio</option>
-            </select>
+          <label>Descripción
+            <textarea id="item-description"></textarea>
           </label>
-          <label>Texto badge
-            <input id="item-badge-label" type="text" placeholder="Vegetariana" />
+          <div class="row-3">
+            <label>Etiqueta del plato
+              <select id="item-badge">
+                <option value="">Ninguna</option>
+                <option value="veggie">Vegetariana</option>
+                <option value="spicy">Picante</option>
+                <option value="award">Premio</option>
+              </select>
+            </label>
+            <label>Texto de la etiqueta
+              <input id="item-badge-label" type="text" placeholder="Vegetariana" />
+            </label>
+            <label>Orden en la carta
+              <input id="item-sort" type="number" step="1" value="0" inputmode="numeric" />
+            </label>
+          </div>
+          <label class="field-advanced">Ancla URL (opcional)
+            <input id="item-anchor" type="text" placeholder="plato-margarita" />
           </label>
-          <label>Orden
-            <input id="item-sort" type="number" step="1" value="0" inputmode="numeric" />
-          </label>
-        </div>
-        <label>Anchor id
-          <input id="item-anchor" type="text" placeholder="plato-margarita" />
-        </label>
-        <label class="check"><input id="item-published" type="checkbox" checked /> Publicado en la web</label>
-        <label class="check"><input id="item-signature" type="checkbox" /> Destacado firma (fondo rojo)</label>
-        <label class="check"><input id="item-chef" type="checkbox" /> Recomendación del chef</label>
-        <label class="check"><input id="item-popular" type="checkbox" /> Pizza popular</label>
-        <div class="row">
-          <label>Kicker chef
-            <input id="item-chef-kicker" type="text" />
-          </label>
-          <label>Blurb chef
-            <input id="item-chef-blurb" type="text" />
-          </label>
-        </div>
-        <div class="row">
-          <label>Kicker popular
-            <input id="item-pop-kicker" type="text" />
-          </label>
-          <label>Blurb popular
-            <input id="item-pop-blurb" type="text" />
-          </label>
-        </div>
+        </section>
+
+        <section class="form-section">
+          <h3 class="form-section__title">Visibilidad</h3>
+          <div class="check-grid">
+            <label class="check"><input id="item-published" type="checkbox" checked /> Publicado en la web</label>
+            <label class="check"><input id="item-signature" type="checkbox" /> Destacado firma (fondo rojo en la carta)</label>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h3 class="form-section__title">Bloques destacados</h3>
+          <p class="form-section__hint">Estos textos solo se usan si activas la ficha en «Recomendaciones del chef» o «Las pizzas que más nos piden».</p>
+          <div class="check-grid">
+            <label class="check"><input id="item-chef" type="checkbox" /> Mostrar en recomendaciones del chef</label>
+            <label class="check"><input id="item-popular" type="checkbox" /> Mostrar en pizzas populares</label>
+          </div>
+          <div class="row featured-fields" id="chef-fields">
+            <label>Etiqueta roja sobre la ficha (chef)
+              <input id="item-chef-kicker" type="text" placeholder="Ej. Del chef · Imprescindible" />
+            </label>
+            <label>Texto corto bajo el título (chef)
+              <input id="item-chef-blurb" type="text" placeholder="Una frase breve para la ficha" />
+            </label>
+          </div>
+          <div class="row featured-fields" id="popular-fields">
+            <label>Etiqueta sobre la ficha (popular)
+              <input id="item-pop-kicker" type="text" placeholder="Ej. Finalista · La más pedida" />
+            </label>
+            <label>Texto corto bajo el título (popular)
+              <input id="item-pop-blurb" type="text" placeholder="Una frase breve para la ficha" />
+            </label>
+          </div>
+        </section>
+
         <p class="status" id="form-status" role="status"></p>
         <div class="modal-actions">
           <button class="btn btn-danger" type="button" id="delete-btn" hidden>Eliminar</button>
@@ -150,6 +186,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/js/supabase-config.js?v=20260910a"></script>
   <script src="/js/menu-api.js?v=20260910a"></script>
-  <script src="/admin/admin.js?v=20260910d"></script>
+  <script src="/admin/admin.js?v=20260914carta"></script>
 </body>
 </html>

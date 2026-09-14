@@ -7,7 +7,7 @@ window.RUSTICA_MENU_FALLBACK = {
       "eyebrow": "01 — Fresco",
       "section_note": null,
       "pastel_class": "pastel-sage",
-      "layout": "standard",
+      "layout": "two_col",
       "sort_order": 0,
       "active": true
     },
