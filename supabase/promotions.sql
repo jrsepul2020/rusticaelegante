@@ -56,11 +56,11 @@ insert into public.promotions (slot, title, image_path, details, button_label, b
 values
   (
     1,
-    'Promo de temporada',
-    'assets/imagenes/promo1.jpeg',
-    'Consulta condiciones al reservar. Las ofertas pueden variar según disponibilidad.',
-    'Reservar',
-    'tel:+34611829414',
+    '2x1 todos los lunes',
+    'assets/imagenes/promocion-2x1.jpeg',
+    '2x1 en pizzas seleccionadas: Margherita, Diavola, Prosciutto, Prosciutto e Funghi, Quattro K y Tonno.',
+    'Ver Carta y Pedir',
+    'carta-rustica-napoletana/#pizzas-title',
     true
   ),
   (

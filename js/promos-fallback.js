@@ -2,11 +2,11 @@ window.RUSTICA_PROMOS_FALLBACK = [
   {
     id: "fallback-1",
     slot: 1,
-    title: "Promo de temporada",
-    image_path: "assets/imagenes/promo1.jpeg",
-    details: "Consulta condiciones al reservar. Las ofertas pueden variar según disponibilidad.",
-    button_label: "Reservar",
-    button_url: "tel:+34611829414",
+    title: "2x1 todos los lunes",
+    image_path: "assets/imagenes/promocion-2x1.jpeg",
+    details: "2x1 en pizzas seleccionadas: Margherita, Diavola, Prosciutto, Prosciutto e Funghi, Quattro K y Tonno.",
+    button_label: "Ver Carta y Pedir",
+    button_url: "carta-rustica-napoletana/#pizzas-title",
     published: true
   },
   {

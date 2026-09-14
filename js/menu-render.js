@@ -25,7 +25,7 @@
   function dishImageHtml(item) {
     let path = item.image_path;
     if (!path && /maradona/i.test(item.name || "")) {
-      path = "assets/carta/placeholder-ensalada-maradona.svg";
+      path = "assets/carta/ensalada-maradona.jpeg";
     }
     if (!path) return "";
     const isPlaceholder = /placeholder/i.test(path);
@@ -61,7 +61,7 @@
     const href = anchor ? `#${escapeHtml(anchor)}` : "#";
     let path = item.image_path;
     if (!path && /maradona/i.test(item.name || "")) {
-      path = "assets/carta/placeholder-ensalada-maradona.svg";
+      path = "assets/carta/ensalada-maradona.jpeg";
     }
     const img = path
       ? `<img src="${escapeHtml(RusticaMenuApi.assetUrl(path))}" alt="" loading="lazy" decoding="async" />`

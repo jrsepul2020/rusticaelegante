@@ -12,7 +12,7 @@ Existe un brief relacionado en `../RUSTICANAPOLETANA/CLAUDE.md`, pero describe u
 
 Diferencias verificadas:
 
-- El contacto ya se sincronizó por indicación del usuario con el teléfono `611 829 414`; las reservas y consultas se realizan por llamada.
+- El contacto ya se sincronizó por indicación del usuario con el teléfono `611 82 94 14`; las reservas y consultas se realizan por llamada.
 - Este demo combina una base oscura con superficies editoriales claras `#f2f0ed` y usa Inter/Cormorant Garamond; el brief define una base crema general y una única tipografía Poppins.
 - Este demo muestra reconocimientos “50 Top Pizza Europa”; el brief enumera Guía Repsol 2026, 2º Mejor Pizzero de España 2026 y otros premios.
 - Este demo es una landing estática; el brief plantea más secciones y un futuro panel con Supabase.
@@ -103,7 +103,7 @@ Todas las rutas comparten la misma estructura de top bar, `<header class="site-h
 No existe estado persistente ni intercambio de datos. Las conversiones salen del sitio mediante llamadas:
 
 - Teléfono: `tel:+34611829414`.
-- Número visible: `611 829 414`.
+- Número visible: `611 82 94 14`.
 - Dirección: C/ Egido 13, Cazalla de la Sierra, Sevilla.
 - Horario: jueves a lunes, 20:00-00:00; cerrado martes y miércoles.
 
