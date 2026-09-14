@@ -1056,6 +1056,10 @@ a.pizza-slide:hover{
   color:#fff;
   padding:clamp(76px,8vw,140px) max(32px,calc((100vw - 1760px)/2)) 30px;
   border-top:0;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:15px;
+  line-height:1.5;
+  font-weight:500;
 }
 
 .site-footer__embers,
@@ -1080,10 +1084,13 @@ a.pizza-slide:hover{
   flex-direction:column;
   align-items:flex-start;
   gap:16px;
-  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
-  font-size:clamp(34px,4.2vw,58px);
-  line-height:.82;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:clamp(28px,3.2vw,44px);
+  font-weight:700;
+  line-height:.88;
   letter-spacing:-.02em;
+  text-decoration:none;
+  color:#fff;
 }
 
 .site-footer__mark{
@@ -1099,21 +1106,30 @@ a.pizza-slide:hover{
   line-height:.83;
   letter-spacing:-1px;
   font-weight:700;
+  font-family:Inter,Arial,Helvetica,sans-serif;
 }
 
 .site-footer__mark span{display:block;margin:0;color:inherit}
 .site-footer__wordmark{display:flex;flex-direction:column;align-items:flex-start}
 .site-footer__wordmark span:last-child{color:var(--site-red);margin-left:.18em}
-.site-footer__claim{max-width:420px;margin:28px 0 0;color:#b3ada6;font-size:14px;line-height:1.75}
+.site-footer__claim{
+  max-width:420px;
+  margin:28px 0 0;
+  color:#b3ada6;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:15px;
+  line-height:1.6;
+  font-weight:500;
+}
 .site-footer__title{
   margin:0 0 26px;
   color:#FDC333;
-  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
-  font-size:clamp(36px,3.2vw,52px);
-  font-weight:600;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:clamp(22px,2vw,28px);
+  font-weight:700;
   letter-spacing:-.015em;
   text-transform:none;
-  line-height:1;
+  line-height:1.1;
 }
 .site-footer__links{display:grid;gap:12px}
 .site-footer__links a{
@@ -1121,9 +1137,12 @@ a.pizza-slide:hover{
   align-items:center;
   justify-content:flex-start;
   gap:12px;
-  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
-  font-size:clamp(22px,1.8vw,28px);
-  line-height:1.1;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:15px;
+  font-weight:500;
+  line-height:1.4;
+  color:#fff;
+  text-decoration:none;
   transition:color .2s,padding .2s;
 }
 .site-footer__links a:hover{color:var(--site-red);padding-left:4px}
@@ -1131,51 +1150,53 @@ a.pizza-slide:hover{
   order:-1;
   color:var(--site-red);
   font-family:Inter,Arial,sans-serif!important;
-  font-size:16px;
+  font-size:15px;
   font-weight:700;
   transition:transform .2s;
 }
 .site-footer__links a:hover .footer-arrow{transform:translateX(4px)}
-.site-footer__contact{display:grid;gap:20px;justify-items:start}
+.site-footer__contact{display:grid;gap:16px;justify-items:start}
 .footer-ico{
-  width:22px;
-  height:22px;
+  width:18px;
+  height:18px;
   flex:0 0 auto;
   color:var(--site-red);
 }
 .site-footer__phone,
-.site-footer__address,
-.site-footer__schedule{
+.site-footer__address{
   display:flex;
   align-items:flex-start;
-  gap:12px;
+  gap:10px;
   margin:0;
 }
 .site-footer__phone{
-  font-family:Inter,Arial,sans-serif!important;
-  font-size:clamp(28px,2.8vw,42px);
-  font-weight:700;
-  line-height:1;
-  letter-spacing:-.02em;
+  font-family:Inter,Arial,Helvetica,sans-serif!important;
+  font-size:15px;
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:0;
   color:#fff;
   text-decoration:none;
 }
 .site-footer__phone:hover{color:var(--site-red)}
-.site-footer__phone .footer-ico{margin-top:.28em}
+.site-footer__phone .footer-ico{margin-top:.15em}
 .site-footer__address{
   color:#fff;
-  font-size:clamp(24px,2.4vw,36px);
-  line-height:1.25;
+  font-size:15px;
+  line-height:1.5;
   font-style:normal;
-  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
-  max-width:14ch;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-weight:500;
+  max-width:none;
 }
-.site-footer__address .footer-ico{margin-top:.35em}
+.site-footer__address .footer-ico{margin-top:.2em}
 .site-footer__maps{
   margin-top:2px;
   min-height:42px;
   padding:0 16px;
-  font-size:11px;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:15px;
+  font-weight:600;
   border-color:rgba(255,255,255,.45);
   color:#fff;
 }
@@ -1184,83 +1205,89 @@ a.pizza-slide:hover{
   background:rgba(255,255,255,.08);
 }
 .site-footer__schedule{
+  z-index:1;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:10px;
+  margin:clamp(36px,4vw,56px) 0 0;
+  padding:18px 0 0;
+  border-top:1px solid rgba(255,255,255,.14);
   color:#d8d2cb;
-  font-family:Inter,Arial,sans-serif!important;
-  font-size:clamp(24px,2.4vw,36px);
+  font-family:Inter,Arial,Helvetica,sans-serif!important;
+  font-size:15px;
   font-weight:500;
-  line-height:1.25;
+  line-height:1.4;
+  white-space:nowrap;
+  overflow-x:auto;
 }
-.site-footer__schedule .footer-ico{margin-top:.35em}
+.site-footer__schedule .footer-ico{margin-top:0;flex-shrink:0}
 .site-footer__schedule strong{
-  display:block;
+  display:inline;
   color:#fff;
-  margin-bottom:6px;
-  font-family:Inter,Arial,sans-serif!important;
-  font-size:.55em;
-  font-weight:800;
-  letter-spacing:.08em;
-  text-transform:uppercase;
+  margin:0;
+  font-family:Inter,Arial,Helvetica,sans-serif!important;
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:0;
+  text-transform:none;
 }
 
 .site-footer__legal{
-  width:100%;
   display:flex;
-  justify-content:center;
+  justify-content:flex-end;
   flex-wrap:wrap;
-  gap:14px 22px;
-  margin-top:6px;
-  padding-top:16px;
-  border-top:1px solid rgba(255,255,255,.14);
+  gap:10px 18px;
+  margin:0;
+  padding:0;
+  border:0;
 }
 .site-footer__legal a{
-  color:#f0ebe4;
-  font-family:Inter,Arial,sans-serif!important;
-  font-size:14px;
-  font-weight:600;
-  letter-spacing:.02em;
+  color:#d2ccc4;
+  font-family:Inter,Arial,Helvetica,sans-serif!important;
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:0;
   text-transform:none;
   text-decoration:none;
   transition:color .2s;
+  white-space:nowrap;
 }
 .site-footer__legal a:hover{color:#FDC333}
 
 .site-footer__bottom{
   z-index:1;
   position:relative;
-  margin-top:clamp(56px,7vw,100px);
+  margin-top:22px;
   padding-top:22px;
   border-top:1px solid rgba(255,255,255,.14);
   display:flex;
   align-items:center;
-  justify-content:center;
-  gap:16px;
+  justify-content:flex-start;
+  gap:16px 24px;
   color:#d2ccc4;
-  font-family:Inter,Arial,sans-serif;
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:.02em;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:0;
   text-transform:none;
   line-height:1.4;
 }
 .site-footer__credits{
-  margin:0;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:center;
-  gap:6px 10px;
-  text-align:center;
-}
-.site-footer__credits span+span::before{
-  content:"·";
-  margin-right:10px;
-  color:rgba(255,255,255,.35);
+  margin:0 auto 0 0;
+  display:block;
+  text-align:left;
+  color:#d2ccc4;
+  font-size:15px;
+  font-weight:500;
+  flex:1 1 auto;
+  min-width:0;
 }
 .site-footer__top{
-  position:absolute;
-  right:0;
-  top:50%;
-  transform:translateY(-50%);
+  position:static;
+  transform:none;
+  flex:0 0 auto;
   width:40px;
   height:40px;
   display:inline-grid;
@@ -1782,32 +1809,41 @@ a.pizza-slide:hover{
   .site-footer{padding:80px 20px 25px}
   .site-footer__grid{grid-template-columns:1fr;gap:48px}
   .site-footer__identity{grid-column:auto}
-  .site-footer__brand{font-size:clamp(44px,13vw,72px)}
-  .site-footer__mark{width:104px;height:104px;font-size:28px}
+  .site-footer__brand{font-size:clamp(28px,8vw,40px)}
+  .site-footer__mark{width:84px;height:84px;font-size:22px}
   .site-footer__claim{margin-top:22px}
-  .site-footer__address{max-width:none;font-size:clamp(26px,7.5vw,34px)}
+  .site-footer__address{max-width:none;font-size:15px}
   .site-footer__maps{width:100%;justify-content:center}
+  .site-footer__schedule{
+    white-space:normal;
+    margin-top:40px;
+  }
   .site-footer__bottom{
-    margin-top:56px;
+    margin-top:18px;
     padding-right:48px;
-    flex-direction:row;
-    justify-content:center;
-    gap:10px;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:flex-start;
+    gap:14px;
+  }
+  .site-footer__credits{text-align:left}
+  .site-footer__legal{
+    justify-content:flex-start;
+    width:100%;
   }
   .site-footer__top{
+    position:absolute;
+    right:0;
+    bottom:0;
     width:36px;
     height:36px;
     font-size:16px;
-  }
-  .site-footer__legal{
-    justify-content:center;
   }
   .site-footer__contact{
     justify-items:stretch;
   }
   .site-footer__phone,
-  .site-footer__address,
-  .site-footer__schedule{
+  .site-footer__address{
     justify-self:start;
   }
 
@@ -1868,10 +1904,10 @@ body p.newsletter-status{font-size:14px!important;letter-spacing:0!important;tex
 body p.thanks-panel__eyebrow{font-size:11px!important;letter-spacing:.18em!important}
 body p.thanks-panel__lead{font-size:clamp(18px,1.35vw,22px)!important;line-height:1.55!important}
 body p.thanks-panel__note{font-size:15px!important;line-height:1.55!important}
-body p.site-footer__title{font-size:clamp(36px,3.2vw,52px)!important;line-height:1!important;letter-spacing:-.015em!important;text-transform:none!important;font-weight:600!important;color:#FDC333!important}
-body p.site-footer__claim{font-size:14px!important;line-height:1.75!important}
-body p.site-footer__schedule{font-size:clamp(24px,2.4vw,36px)!important;line-height:1.25!important;color:#d8d2cb!important;font-family:Inter,Arial,sans-serif!important}
-body p.site-footer__credits{font-size:13px!important;line-height:1.45!important;font-weight:600!important;letter-spacing:.02em!important;color:#d2ccc4!important;text-transform:none!important}
+body p.site-footer__title{font-size:clamp(22px,2vw,28px)!important;line-height:1.1!important;letter-spacing:-.015em!important;text-transform:none!important;font-weight:700!important;color:#FDC333!important;font-family:Inter,Arial,Helvetica,sans-serif!important}
+body p.site-footer__claim{font-size:15px!important;line-height:1.6!important;font-family:Inter,Arial,Helvetica,sans-serif!important}
+body p.site-footer__schedule{font-size:15px!important;line-height:1.4!important;color:#d8d2cb!important;font-family:Inter,Arial,Helvetica,sans-serif!important;font-weight:500!important}
+body p.site-footer__credits{font-size:15px!important;line-height:1.4!important;font-weight:500!important;letter-spacing:0!important;color:#d2ccc4!important;text-transform:none!important;font-family:Inter,Arial,Helvetica,sans-serif!important}
 
 
 /* numeric sans */

@@ -4,6 +4,7 @@
   "outputDirectory": ".",
   "framework": null,
   "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/admin", "destination": "/admin/", "permanent": true },
     { "source": "/promociones", "destination": "/promociones/", "permanent": true },
     { "source": "/carta-rustica-napoletana", "destination": "/carta-rustica-napoletana/", "permanent": true },
@@ -14,7 +15,8 @@
     { "source": "/aviso-legal", "destination": "/aviso-legal/", "permanent": true },
     { "source": "/politica-privacidad", "destination": "/politica-privacidad/", "permanent": true },
     { "source": "/politica-cookies", "destination": "/politica-cookies/", "permanent": true },
-    { "source": "/gracias-newsletter", "destination": "/gracias-newsletter/", "permanent": true }
+    { "source": "/gracias-newsletter", "destination": "/gracias-newsletter/", "permanent": true },
+    { "source": "/:path*/index.html", "destination": "/:path*/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/admin/", "destination": "/admin/index.html" },
