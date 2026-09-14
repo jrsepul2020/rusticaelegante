@@ -394,11 +394,12 @@ body.menu-page{
 }
 .promo-home__intro h2{
   margin:10px 0 0;
-  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-family:Inter,Arial,Helvetica,sans-serif;
   font-size:clamp(30px,3.6vw,52px);
   line-height:.92;
   letter-spacing:-.03em;
   color:#111;
+  font-weight:700;
 }
 .promo-home__all{
   display:inline-flex;
@@ -470,16 +471,17 @@ body.menu-page{
 }
 .promo-card__title{
   margin:0;
-  font-family:"Cormorant Garamond",Garamond,Georgia,serif;
+  font-family:Inter,Arial,Helvetica,sans-serif;
   font-size:clamp(16px,1.8vw,34px);
   line-height:1.05;
-  font-weight:600;
+  font-weight:700;
 }
 .promo-card__details{
   margin:0;
   color:#5f5a54;
   font-size:clamp(11px,1.05vw,14px);
   line-height:1.5;
+  font-family:Inter,Arial,Helvetica,sans-serif;
 }
 
 @media(max-width:860px){
