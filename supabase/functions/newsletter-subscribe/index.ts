@@ -4,6 +4,10 @@
 // Opcionales:
 //   MAILRELAY_BASE_URL = https://rusticanapoletana.ipzmarketing.com
 //   MAILRELAY_GROUP_ID = 2
+//
+// IMPORTANTE: tras cada cambio, redesplegar en Supabase.
+// Mailrelay NO envía el correo de confirmación solo con sync:
+// hay que llamar a POST /subscribers/{id}/resend_confirmation_email.
 
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
@@ -33,6 +37,27 @@ function subscriberId(payload: unknown): number | null {
   return Number.isFinite(n) && n > 0 ? n : null;
 }
 
+async function findSubscriberIdByEmail(
+  baseUrl: string,
+  headers: Record<string, string>,
+  email: string
+): Promise<number | null> {
+  const url = `${baseUrl}/api/v1/subscribers?q[email_eq]=${encodeURIComponent(email)}&per_page=1`;
+  const res = await fetch(url, { method: "GET", headers });
+  if (!res.ok) {
+    console.error("Mailrelay lookup error", res.status, await res.text());
+    return null;
+  }
+  const payload = await res.json().catch(() => null);
+  if (Array.isArray(payload)) return subscriberId(payload[0]);
+  if (payload && typeof payload === "object") {
+    const root = payload as Record<string, unknown>;
+    if (Array.isArray(root.data)) return subscriberId(root.data[0]);
+    return subscriberId(payload);
+  }
+  return null;
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: CORS });
@@ -43,7 +68,10 @@ serve(async (req) => {
   }
 
   const apiKey = Deno.env.get("MAILRELAY_API_KEY") || "";
-  const baseUrl = (Deno.env.get("MAILRELAY_BASE_URL") || "https://rusticanapoletana.ipzmarketing.com").replace(/\/$/, "");
+  const baseUrl = (Deno.env.get("MAILRELAY_BASE_URL") || "https://rusticanapoletana.ipzmarketing.com").replace(
+    /\/$/,
+    ""
+  );
   const groupId = Number(Deno.env.get("MAILRELAY_GROUP_ID") || "2");
 
   if (!apiKey) {
@@ -105,21 +133,12 @@ serve(async (req) => {
       });
     }
 
-    const id = subscriberId(data);
-    if (id) {
-      const confirm = await fetch(`${baseUrl}/api/v1/subscribers/${id}/resend_confirmation_email`, {
-        method: "POST",
-        headers
-      });
-      if (!confirm.ok) {
-        const confirmText = await confirm.text();
-        console.error("Mailrelay confirmation error", confirm.status, confirmText);
-        return json(502, {
-          ok: false,
-          error: "Alta creada, pero no se pudo enviar el correo de confirmación."
-        });
-      }
-    } else {
+    let id = subscriberId(data);
+    if (!id) {
+      id = await findSubscriberIdByEmail(baseUrl, headers, email);
+    }
+
+    if (!id) {
       console.error("Mailrelay sync sin id de suscriptor", data);
       return json(502, {
         ok: false,
@@ -127,8 +146,26 @@ serve(async (req) => {
       });
     }
 
+    // 204 No Content = éxito según la API de Mailrelay
+    const confirm = await fetch(`${baseUrl}/api/v1/subscribers/${id}/resend_confirmation_email`, {
+      method: "POST",
+      headers
+    });
+
+    if (!(confirm.status === 204 || confirm.ok)) {
+      const confirmText = await confirm.text();
+      console.error("Mailrelay confirmation error", confirm.status, confirmText);
+      return json(502, {
+        ok: false,
+        error:
+          "Alta creada, pero Mailrelay no envió el correo de confirmación. Revisa remitente confirmado y plantilla de doble opt-in.",
+        confirmation_status: confirm.status
+      });
+    }
+
     return json(200, {
       ok: true,
+      confirmation_sent: true,
       message: "¡Listo! Revisa tu correo y confirma la suscripción."
     });
   } catch (err) {

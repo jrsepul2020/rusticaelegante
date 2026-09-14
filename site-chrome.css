@@ -836,13 +836,15 @@ a.pizza-slide:hover{
 .newsletter-form{display:grid;gap:22px;padding-top:6px}
 .newsletter-form__fields{
   display:grid;
-  grid-template-columns:minmax(160px,.7fr) minmax(240px,1fr) auto;
-  gap:14px 12px;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;
+  gap:14px 16px;
   align-items:end;
 }
 
 .newsletter-field{
-  display:grid;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
   gap:10px;
   min-width:0;
   color:#fff;
@@ -852,7 +854,9 @@ a.pizza-slide:hover{
 }
 
 .newsletter-field__label{
+  display:block;
   margin:0;
+  min-height:1.2em;
   font:700 16px/1.2 Inter,sans-serif;
   letter-spacing:0;
   text-transform:none;
@@ -862,6 +866,7 @@ a.pizza-slide:hover{
 .newsletter-field input{
   width:100%;
   min-width:0;
+  height:58px;
   min-height:58px;
   padding:14px 16px;
   border:1px solid #fff;
@@ -875,6 +880,7 @@ a.pizza-slide:hover{
 .newsletter-field input::placeholder{color:#8a847d;font-weight:500}
 .newsletter-field input:focus{outline:2px solid #050505;outline-offset:2px}
 .newsletter-form button{
+  height:58px;
   min-height:58px;
   padding:0 28px;
   border:1px solid #000;
@@ -884,6 +890,7 @@ a.pizza-slide:hover{
   letter-spacing:.1em;
   text-transform:uppercase;
   align-self:end;
+  box-sizing:border-box;
 }
 
 .newsletter-form button:disabled{cursor:not-allowed;opacity:.72}
@@ -1848,8 +1855,14 @@ a.pizza-slide:hover{
   }
 
   .newsletter-prefooter{padding:65px 20px}
-  .newsletter-form__fields{grid-template-columns:1fr 1fr}
-  .newsletter-form button{grid-column:1/-1}
+  .newsletter-form__fields{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    align-items:start;
+  }
+  .newsletter-form button{
+    grid-column:1/-1;
+    width:100%;
+  }
 
   .legal-content{grid-template-columns:1fr}
   .legal-index{position:static}

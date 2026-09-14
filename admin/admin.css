@@ -144,7 +144,7 @@ textarea{min-height:110px;resize:vertical}
   padding:18px 16px calc(24px + var(--safe-bottom));
   -webkit-overflow-scrolling:touch;
 }
-.modal--wide{max-width:980px}
+.modal--wide{max-width:1180px}
 .modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px;position:sticky;top:0;background:var(--panel);padding-bottom:8px;z-index:2}
 .modal-lead{margin:6px 0 0!important}
 .modal-form{display:grid;gap:4px}
@@ -158,16 +158,19 @@ textarea{min-height:110px;resize:vertical}
 .form-section__hint{margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.45;text-transform:none;letter-spacing:0}
 .check-grid{display:grid;gap:4px;margin-bottom:8px}
 .featured-fields{margin-top:8px}
-.field-advanced{opacity:.85}
 .modal-actions{
-  display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;
+  display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:8px;margin-top:12px;
   position:sticky;bottom:0;background:linear-gradient(180deg,transparent,var(--panel) 28%);padding-top:16px;
 }
-.modal-actions .btn-wide{grid-column:1 / -1}
+.modal-actions #delete-btn{margin-right:auto}
+.modal-actions .btn{
+  width:auto;min-width:0;flex:0 0 auto;
+  min-height:34px;height:34px;padding:0 14px;font-size:11px;letter-spacing:.05em;
+}
 .check{display:flex;align-items:center;gap:10px;text-transform:none;letter-spacing:0;font-size:15px;color:var(--text);margin-bottom:12px;min-height:44px}
 .check input{width:20px;height:20px;accent-color:var(--red)}
 .photo-box{display:grid;gap:10px;margin-bottom:0}
-.photo-box--modal{max-width:420px}
+.photo-box--modal{max-width:none}
 .photo-preview-btn{
   display:block;width:100%;padding:0;border:0;background:transparent;cursor:pointer;border-radius:14px;
 }
@@ -292,10 +295,10 @@ body.login-page{
   .admin-main{width:min(1100px,100%);padding:28px 20px 60px}
   .modal-backdrop{align-items:center;padding:24px}
   .modal{border-radius:16px;max-height:min(92vh,960px);padding:28px 28px 24px}
-  .modal--wide{width:min(980px,96vw)}
-  .photo-box--modal{max-width:none;grid-template-columns:minmax(240px,320px) 1fr;align-items:start;gap:16px}
-  .photo-box--modal .photo-preview-btn{grid-row:1 / span 3}
-  .photo-box--modal .field-advanced{grid-column:2}
+  .modal--wide{width:min(1180px,96vw)}
+  .photo-box--modal{grid-template-columns:minmax(240px,320px) 1fr;align-items:start;gap:16px}
+  .photo-box--modal .photo-preview-btn{grid-row:1 / span 2}
+  .photo-box--modal .photo-actions{align-self:center}
   .fab{display:none}
   .toolbar .btn-desktop-new{display:inline-flex}
   .dish-card__actions{grid-template-columns:repeat(3,auto);justify-content:end}
